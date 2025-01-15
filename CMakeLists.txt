@@ -1,24 +1,9 @@
 cmake_minimum_required (VERSION 3.5.1)
 
-### To use gcc/g++ on a Macintosh, you must set the Compilers
-### here, not inside the project
-##if(APPLE)
-##       set(CMAKE_C_COMPILER "/usr/local/bin/gcc-7")
-##       set(CMAKE_CXX_COMPILER "/usr/local/bin/g++-7")
-##endif()
-### TODO: for now, we use CLang for Mac
-###
-### In order to create OpenFHE's static libraries you should enable
-### the BUILD_STATIC option. For that, you run "cmake .. -DBUILD_STATIC=ON".
-### After having your link completed you will find static libs
-### with the suffix "_static" in ./build/libs/.
-### Examples: OPENFHEpke_static.a, OPENFHEcore_static.a, etc.
-### After you run "make install" in your build directory, you can build your custom application.
-### If you need your application to be linked statically, then run "cmake .. -DBUILD_STATIC=ON"
-
 project(demo CXX)
 set(CMAKE_CXX_STANDARD 17)
-option( BUILD_STATIC "Set to ON to include static versions of the library" OFF)
+
+option(BUILD_STATIC "Set to ON to include static versions of the library" OFF)
 
 find_package(OpenFHE CONFIG REQUIRED)
 if (OpenFHE_FOUND)
@@ -30,31 +15,67 @@ if (OpenFHE_FOUND)
     message(STATUS "OpenFHE Native Backend size: ${OpenFHE_NATIVE_SIZE}")
 else()
     message(FATAL_ERROR "PACKAGE OpenFHE NOT FOUND")
-endif ()
-
-set( CMAKE_CXX_FLAGS ${OpenFHE_CXX_FLAGS} )
-
-include_directories( ${OPENMP_INCLUDES} )
-include_directories( ${OpenFHE_INCLUDE} )
-include_directories( ${OpenFHE_INCLUDE}/third-party/include )
-include_directories( ${OpenFHE_INCLUDE}/core )
-include_directories( ${OpenFHE_INCLUDE}/pke )
-include_directories( ${OpenFHE_INCLUDE}/binfhe )
-### add directories for other OpenFHE modules as needed for your project
-
-link_directories( ${OpenFHE_LIBDIR} )
-link_directories( ${OPENMP_LIBRARIES} )
-if(BUILD_STATIC)
-    set( CMAKE_EXE_LINKER_FLAGS "${OpenFHE_EXE_LINKER_FLAGS} -static")
-    link_libraries( ${OpenFHE_STATIC_LIBRARIES} )
-else()
-    set( CMAKE_EXE_LINKER_FLAGS ${OpenFHE_EXE_LINKER_FLAGS} )
-    link_libraries( ${OpenFHE_SHARED_LIBRARIES} )
 endif()
 
-### ADD YOUR EXECUTABLE(s) HERE
-### add_executable( EXECUTABLE-NAME SOURCES )
-###
-### EXAMPLE:
-### add_executable( test demo-simple-example.cpp )
-add_executable( main src/main.cpp )
+# Use the compiler flags from OpenFHE
+set(CMAKE_CXX_FLAGS ${OpenFHE_CXX_FLAGS})
+
+# Include paths for OpenFHE + (optionally) OpenMP
+include_directories(
+    ${OPENMP_INCLUDES}
+    ${OpenFHE_INCLUDE}
+    ${OpenFHE_INCLUDE}/third-party/include
+    ${OpenFHE_INCLUDE}/core
+    ${OpenFHE_INCLUDE}/pke
+    ${OpenFHE_INCLUDE}/binfhe
+)
+
+# Where to find libraries
+link_directories(
+    ${OpenFHE_LIBDIR}
+    ${OPENMP_LIBRARIES}
+)
+
+# Handle static vs. shared linking with OpenFHE
+if(BUILD_STATIC)
+    set(CMAKE_EXE_LINKER_FLAGS "${OpenFHE_EXE_LINKER_FLAGS} -static")
+else()
+    set(CMAKE_EXE_LINKER_FLAGS "${OpenFHE_EXE_LINKER_FLAGS}")
+endif()
+
+##################################################
+# 1) Build a library from demo_256bit.cpp
+##################################################
+add_library(demo_256bit
+    ${PROJECT_SOURCE_DIR}/src/demo_256bit.cpp
+)
+
+# Let the library see your include/ folder
+target_include_directories(demo_256bit PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+# Link OpenFHE with demo_256bit
+if(BUILD_STATIC)
+    target_link_libraries(demo_256bit PRIVATE ${OpenFHE_STATIC_LIBRARIES})
+else()
+    target_link_libraries(demo_256bit PRIVATE ${OpenFHE_SHARED_LIBRARIES})
+endif()
+
+##################################################
+# 2) Build the main executable from main.cpp
+##################################################
+add_executable(main
+    ${PROJECT_SOURCE_DIR}/src/main.cpp
+)
+
+# Let main see your include/ folder
+target_include_directories(main PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+# Finally, link main with:
+# - the demo_256bit library (which has runDemo(), etc.)
+# - OpenFHE, if you want to do so here as well
+target_link_libraries(main PRIVATE demo_256bit)
+
