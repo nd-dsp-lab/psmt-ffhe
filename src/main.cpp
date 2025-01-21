@@ -1,7 +1,8 @@
 #include "tests.h"
 
 int main() {
-    testAllBackends();
+    // testAllBackends();
+    testFullProtocol();
     return 0;
 }
 

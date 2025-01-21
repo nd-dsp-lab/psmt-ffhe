@@ -2,7 +2,7 @@
 #define SERVER_H
 
 #include "HE.h"
-#include "openfhe.h"
+#include <openfhe.h>
 #include "core.h"
 
 using namespace lbcrypto;

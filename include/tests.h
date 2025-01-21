@@ -12,9 +12,5 @@ void testVAFs();
 void testNPC();
 void testAllBackends();
 
-// Helpers
-void intPacking();
-void genData();
-
 
 #endif

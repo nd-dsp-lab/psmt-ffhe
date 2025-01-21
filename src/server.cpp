@@ -86,6 +86,8 @@ EncryptedDB constructEncDB (
     // TODO: Patch this code
     int32_t kVal = encVec.size();
 
+    std::cout << kVal << std::endl;
+
     // Step 2. Construct each Chunks
     int64_t numItems = dataVec.size();
     int64_t capacity = ringDim / numPack;
@@ -179,7 +181,8 @@ std::vector<Ciphertext<DCRTPoly>> extractCtxts (
         // Multiply Mask
         _tmp = bfv.mult(queryCtxt, masks[i]);
 
-        for (int32_t j = 1; j < kVal / numPack; j *= 2) {
+        // Rotate and Add to fill them up.
+        for (int32_t j = numPack; j < kVal; j *= 2) {
             __tmp = bfv.rotate(_tmp, j);
             _tmp = bfv.add(_tmp, __tmp);
         }

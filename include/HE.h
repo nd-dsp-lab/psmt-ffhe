@@ -7,6 +7,9 @@ using namespace lbcrypto;
 
 class HE {
 public:
+    int64_t ringDim;
+    int64_t prime;
+
     // Constructor for BFV or BGV mode, but default here is BFV.
     HE(const std::string& mode    = "BFV",
        int64_t          modulus = 65537,
@@ -45,6 +48,10 @@ public:
         double sizeMB   = (static_cast<double>(1ULL << static_cast<size_t>(std::round(logRing))) 
                          * logPtMod * 2.0) / (1ULL << 23);
 
+        // BFV parameter
+        ringDim = cc->GetRingDimension();
+        prime = modulus;
+
         std::cout << "Mode: " << mode << std::endl;
         std::cout << "log2 q = " << log2(cc->GetCryptoParameters()->GetElementParams()->GetModulus().ConvertToDouble())
               << std::endl;
@@ -53,8 +60,7 @@ public:
         std::cout << "CTXT Size in MB approx:         " << sizeMB << std::endl;
     }
 
-    int64_t ringDim = 32768;
-    int64_t prime = 65537;
+
 
     // Packing/Encryption/Decryption
     Plaintext packing(const std::vector<int64_t>& vals) {

@@ -25,6 +25,7 @@ std::vector<std::vector<int64_t>> genData(
     return ret;
 }
 
+// Main Test Code
 void testFullProtocol() {
     std::cout << "TEST START!" << std::endl;
 
@@ -74,7 +75,7 @@ void testFullProtocol() {
 }
 
 // Helper Functions for pack integers
-std::vector<int64_t> intPacking(std::vector<uint16_t> shortVec) {
+std::vector<int64_t> intPacking(std::vector<uint64_t> shortVec) {
     std::vector<int64_t> ret;
     uint64_t _tmp;
     uint32_t numShorts = shortVec.size();
@@ -98,10 +99,10 @@ void testEncoding() {
     
     for (int i = 0; i < 4; i++) {
         serverMsg.push_back(intPacking({
-            0,1,2,3,
-            4,5,6,7,
-            8,9,10,11,
-            12,13,14,15
+            90,12,29,37,
+            42,53,68,71,
+            80,95,10,11,
+            122,143,147,1590
         }));        
     }
 
@@ -247,11 +248,66 @@ void testNPC() {
     }        
 }
 
+void testRotAdd() {
+    std::cout << "<<< Test Code for Rotation and Addition Technique >>>" << std::endl;
+
+    // Test 1
+    {
+        HE bfv("BFV", 65537, 20);        
+        std::vector<int64_t> msgVec = {1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0};
+        auto ptxt = bfv.packing(msgVec);
+        auto ctxt = bfv.encrypt(ptxt);
+        int32_t kVal = 4;
+        int32_t numPack = 1;
+
+        Ciphertext<DCRTPoly> _tmp;
+
+        for (int i = numPack; i < kVal; i *= 2 ) {
+            _tmp = bfv.rotate(ctxt, i);
+            ctxt = bfv.add(ctxt, _tmp);
+        }
+
+        std::vector<int64_t> retVec = bfv.decrypt(ctxt)->GetPackedValue();
+
+        for (int i = 0; i < 16; i++) {
+            std::cout << retVec[i] << " ";
+        }        
+        std::cout << std::endl;
+    }
+
+    // Test 2
+    {
+        HE bfv("BFV", 65537, 20);        
+        std::vector<int64_t> msgVec = {0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0};
+        auto ptxt = bfv.packing(msgVec);
+        auto ctxt = bfv.encrypt(ptxt);
+        int32_t kVal = 4;
+        int32_t numPack = 2;
+
+        Ciphertext<DCRTPoly> _tmp;
+
+        for (int i = numPack; i < kVal; i *= 2 ) {
+            _tmp = bfv.rotate(ctxt, i);
+            ctxt = bfv.add(ctxt, _tmp);
+        }
+
+        std::vector<int64_t> retVec = bfv.decrypt(ctxt)->GetPackedValue();
+
+        for (int i = 0; i < 16; i++) {
+            std::cout << retVec[i] << " ";
+        }        
+        std::cout << std::endl;
+    }
+
+
+}
+
 
 // Test code for all backends
 void testAllBackends() {
     // More test functions will be added.
-    testEncoding();
-    testVAFs();
-    testNPC();
+    // testEncoding();
+    // testVAFs();
+    // testNPC();
+    // testRotAdd();
 }
