@@ -20,8 +20,8 @@ size_t ctxt_size(OFHECtxt& ctxt) {
   size_t size = 0;
   for (auto& element : ctxt->GetElements()) {
     for (auto& subelements : element.GetAllElements()) {
-      auto lenght = subelements.GetLength();
-      size += lenght * sizeof(subelements[0]);
+      auto length = subelements.GetLength();
+      size += length * sizeof(subelements[0]);
     }
   }
   return size;
