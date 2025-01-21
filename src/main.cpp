@@ -1,7 +1,7 @@
 #include "tests.h"
 
 int main() {
-    runTest();
+    testAllBackends();
     return 0;
 }
 

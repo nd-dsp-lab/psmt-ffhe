@@ -5,7 +5,16 @@
 #include "server.h"
 #include "client.h"
 
-void runTest();
+// Main Test Functions
+void testFullProtocol();
 void testEncoding();
+void testVAFs();
+void testNPC();
+void testAllBackends();
+
+// Helpers
+void intPacking();
+void genData();
+
 
 #endif

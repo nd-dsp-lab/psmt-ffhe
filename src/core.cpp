@@ -79,20 +79,20 @@ Ciphertext<DCRTPoly> compVAF (
 ) {
     if (prime == 65537) {
         return compVAF16(bfv, ctxt, ptOne);
-    }
+    } else {
+        std::vector<int32_t> bits = bitDecomp(prime - 1);
+        int32_t numBits = bits.size();
 
-    std::vector<int32_t> bits = bitDecomp(prime);
-    int32_t numBits = bits.size();
-
-    Ciphertext<DCRTPoly> ret = ctxt;
-    // Reversely Search
-    for (int i = numBits - 2; i >= 0; i--) {
-        ret = bfv.square(ret);
-        if (bits[i]) {
-            ret = bfv.mult(ret, ctxt);
+        Ciphertext<DCRTPoly> ret = ctxt;
+        // Reversely Search
+        for (int i = numBits - 2; i >= 0; i--) {
+            ret = bfv.square(ret);
+            if (bits[i]) {
+                ret = bfv.mult(ret, ctxt);
+            }
         }
-    }
-    return ret;
+        return bfv.sub(ptOne, ret);
+    }    
 }
 
 // Rotate and Multiplication
