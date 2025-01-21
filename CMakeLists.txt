@@ -48,6 +48,12 @@ endif()
 ##################################################
 add_library(demo_256bit
     ${PROJECT_SOURCE_DIR}/src/demo_256bit.cpp
+    ${PROJECT_SOURCE_DIR}/src/demo_comp.cpp
+    ${PROJECT_SOURCE_DIR}/src/core.cpp
+    ${PROJECT_SOURCE_DIR}/include/HE.h
+    ${PROJECT_SOURCE_DIR}/src/server.cpp
+    ${PROJECT_SOURCE_DIR}/src/client.cpp
+    ${PROJECT_SOURCE_DIR}/src/tests.cpp
 )
 
 # Let the library see your include/ folder

@@ -1,7 +1,7 @@
-#include "demo_256bit.h"
+#include "tests.h"
 
 int main() {
-    runDemo();
+    runTest();
     return 0;
 }
 
