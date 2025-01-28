@@ -1,5 +1,6 @@
 // Operations for Server
 #include <openfhe.h>
+#include <omp.h>
 #include "server.h"
 #include "HE.h"
 #include "core.h"
@@ -85,8 +86,6 @@ EncryptedDB constructEncDB (
 
     // TODO: Patch this code
     int32_t kVal = encVec.size();
-
-    std::cout << kVal << std::endl;
 
     // Step 2. Construct each Chunks
     int64_t numItems = dataVec.size();
@@ -278,15 +277,16 @@ Ciphertext<DCRTPoly> compInterDB (
     );
 
     std::vector<Ciphertext<DCRTPoly>> chunkIntRes;
+    Ciphertext<DCRTPoly> chunkRet;
 
+    #pragma omp parallel for
     for (int32_t i = 0; i < DB.numChunks; i++) {
         // TODO: Parallelization
-        chunkIntRes.push_back(
-            compInter(
-                bfv, DB.chunks[i], extCtxts,
-                DB.ptAlpha, DB.ptOne
-            )
+        chunkRet = compInter(
+            bfv, DB.chunks[i], extCtxts,
+            DB.ptAlpha, DB.ptOne
         );
+        chunkIntRes.push_back(chunkRet);
     }
 
     // Aggregation
@@ -315,6 +315,7 @@ Ciphertext<DCRTPoly> compInterDBHybrid (
 
     std::vector<Ciphertext<DCRTPoly>> chunkIntRes;
 
+    #pragma omp parallel for
     for (int32_t i = 0; i < DB.numChunks; i++) {
         // TODO: Parallelization
         chunkIntRes.push_back(

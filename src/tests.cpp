@@ -25,17 +25,37 @@ std::vector<std::vector<int64_t>> genData(
     return ret;
 }
 
+// Useful Promes
+# define Prime16 65537
+# define Prime19 786433
+# define Prime23 8519681
+# define Prime31 4293918721 
+# define Prime33 8590983169
+
+
+size_t ctxtSize(Ciphertext<DCRTPoly>& ctxt) {
+  size_t size = 0;
+  for (auto& element : ctxt->GetElements()) {
+    for (auto& subelements : element.GetAllElements()) {
+      auto lenght = subelements.GetLength();
+      size += lenght * sizeof(subelements[0]);
+    }
+  }
+  return size;
+};
+
+
 // Main Test Code
 void testFullProtocol() {
     std::cout << "TEST START!" << std::endl;
 
     std::cout << "Step 1-1: Setup FHE" << std::endl;
-    HE bfv("BFV", 65537, 18);
+    HE bfv("BFV", Prime16, 20);
 
     std::cout << "Step 1-2: Setup Databases" << std::endl;
     std::vector<int64_t> clientMsg = {theAnswer, theAnswer, theAnswer, theAnswer};
     std::vector<std::vector<int64_t>> serverMsg = genData(
-        (1<<20), 1
+        (1<<20), 4
     );  
 
     // Inject Server's MSG
@@ -58,9 +78,11 @@ void testFullProtocol() {
     std::cout << "Step 3: Query Encryption" << std::endl;
     auto queryCtxt = bfv.encrypt(bfv.packing(clientPrepMsg));
 
+    size_t querySize = ctxtSize(queryCtxt);
+
     std::cout << "Step 4: Do Intersection" << std::endl;
     auto t1 = std::chrono::high_resolution_clock::now();
-    auto interResCtxt = compInterDB(
+    auto interResCtxt = compInterDBHybrid(
         bfv, serverDB, queryCtxt
     );
     auto t2 = std::chrono::high_resolution_clock::now();
@@ -72,6 +94,7 @@ void testFullProtocol() {
     auto ret = checkIntResult(bfv, interResCtxt);
 
     std::cout << "Inter Result: " << ret << std::endl;
+    std::cout << "Query Size: " << (double)(querySize) / 1000000 << "Mb" << std::endl;
 }
 
 // Helper Functions for pack integers
