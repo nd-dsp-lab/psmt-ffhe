@@ -80,6 +80,14 @@ Ciphertext<DCRTPoly> compInterNoVAF (
     Plaintext ptAlpha
 );
 
+Ciphertext<DCRTPoly> compProbInter (
+    HE &bfv,
+    const EncryptedChunk &chunk,
+    const std::vector<Ciphertext<DCRTPoly>> &extCtxts,
+    Plaintext ptAlpha,
+    Plaintext ptOne
+);
+
 // Main Functions
 Ciphertext<DCRTPoly> compInterDB (
     HE &bfv,
@@ -88,6 +96,12 @@ Ciphertext<DCRTPoly> compInterDB (
 );
 
 Ciphertext<DCRTPoly> compInterDBHybrid (
+    HE &bfv,
+    const EncryptedDB &DB,
+    Ciphertext<DCRTPoly> queryCtxt
+);
+
+Ciphertext<DCRTPoly> compProbInterDB (
     HE &bfv,
     const EncryptedDB &DB,
     Ciphertext<DCRTPoly> queryCtxt

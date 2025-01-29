@@ -265,6 +265,48 @@ Ciphertext<DCRTPoly> compInterNoVAF (
     }
 }
 
+Ciphertext<DCRTPoly> compProbInter (
+    HE &bfv,
+    const EncryptedChunk &chunk,
+    const std::vector<Ciphertext<DCRTPoly>> &extCtxts,
+    Plaintext ptAlpha,
+    Plaintext ptOne
+) { 
+    // Compute Difference
+    int32_t numCtxts = extCtxts.size();
+    // Differences
+    std::vector<Ciphertext<DCRTPoly>> diffCtxts;
+
+    // TODO: throw an error when sizes do not match
+    for (int32_t i = 0; i < numCtxts; i++) {
+        diffCtxts.push_back(
+            bfv.sub(chunk.payload[i], extCtxts[i])
+        );
+    }
+    
+    // TODO: Make it this as a parameter
+    int numRand = 128 / (int)(std::log2(bfv.prime));
+
+    // Run NPC
+    Ciphertext<DCRTPoly> ret = compProbNPC(
+        bfv, diffCtxts, ptAlpha, numRand
+    );
+
+    // Compute VAF
+    ret = compVAF(bfv, ret, chunk.prime, ptOne);
+
+    // Multiplicative Aggregation (Optional)
+    if (chunk.numPack == 1) {
+        return ret;
+    } else {
+        ret = compRotMult(
+            bfv, ret, chunk.numPack
+        );
+        return ret;
+    }
+}
+
+
 // Main Intersection Function 
 Ciphertext<DCRTPoly> compInterDB (
     HE &bfv,
@@ -337,4 +379,41 @@ Ciphertext<DCRTPoly> compInterDBHybrid (
         ret = bfv.mult(ret, DB.finalMask);
         return ret;
     }    
+}
+
+// Main Intersection Function 
+Ciphertext<DCRTPoly> compProbInterDB (
+    HE &bfv,
+    const EncryptedDB &DB,
+    Ciphertext<DCRTPoly> queryCtxt
+) {
+    // Extract Query Cipehrtext
+    std::vector<Ciphertext<DCRTPoly>> extCtxts = extractCtxts(
+        bfv, queryCtxt, DB.numPack, DB.kVal, DB.masks
+    );
+
+    std::vector<Ciphertext<DCRTPoly>> chunkIntRes;
+    Ciphertext<DCRTPoly> chunkRet;
+
+    #pragma omp parallel for
+    for (int32_t i = 0; i < DB.numChunks; i++) {
+        // TODO: Parallelization
+        chunkRet = compProbInter(
+            bfv, DB.chunks[i], extCtxts,
+            DB.ptAlpha, DB.ptOne
+        );
+        chunkIntRes.push_back(chunkRet);
+    }
+
+    // Aggregation
+    // Additive Aggregation
+    Ciphertext<DCRTPoly> ret = bfv.addmany(chunkIntRes);
+
+    // Final Masking
+    if (DB.numPack == 1) {
+        return ret;
+    } else {
+        ret = bfv.mult(ret, DB.finalMask);
+        return ret;
+    }
 }

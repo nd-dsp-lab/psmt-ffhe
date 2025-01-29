@@ -42,4 +42,16 @@ Ciphertext<DCRTPoly> compRotNPC(
     Plaintext ptAlpha
 );
 
+Ciphertext<DCRTPoly> randWSum (
+    HE &bfv,
+    std::vector<Ciphertext<DCRTPoly>> ctxts
+);
+
+Ciphertext<DCRTPoly> compProbNPC(
+    HE &bfv,
+    std::vector<Ciphertext<DCRTPoly>> ctxts,    
+    Plaintext ptAlpha,
+    uint32_t numRand
+);
+
 #endif

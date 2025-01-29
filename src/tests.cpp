@@ -82,7 +82,7 @@ void testFullProtocol() {
 
     std::cout << "Step 4: Do Intersection" << std::endl;
     auto t1 = std::chrono::high_resolution_clock::now();
-    auto interResCtxt = compInterDBHybrid(
+    auto interResCtxt = compProbInterDB(
         bfv, serverDB, queryCtxt
     );
     auto t2 = std::chrono::high_resolution_clock::now();
@@ -325,6 +325,154 @@ void testRotAdd() {
 
 }
 
+// Test code for basic OPs
+void testBasicOPs() {
+    std::cout << "<<< Test for Basic Operations >>>" << std::endl;
+
+    HE bfv("BFV", 65537, 20);
+
+    // Test 1. Addition
+    {   
+        std::cout << "<<< Addition Test >>>" << std::endl;
+        Ciphertext<DCRTPoly> ct1, ct2, _ct;
+        Plaintext pt1, pt2;
+        std::vector<int64_t> msg1(1<<15, 42);
+        std::vector<int64_t> msg2(1<<15, 36);
+        pt1 = bfv.packing(msg1);
+        pt2 = bfv.packing(msg2);
+        ct1 = bfv.encrypt(pt1);
+        ct2 = bfv.encrypt(pt2);
+
+        auto t1 = std::chrono::high_resolution_clock::now();
+        for (int i = 0; i < 1000; i++) {
+            _ct = bfv.add(ct1, ct2);
+        }
+        auto t2 = std::chrono::high_resolution_clock::now();
+        double timeSec = std::chrono::duration<double>(t2 - t1).count();
+        std::cout << "Done! (1000its) Time Elapsed: " << timeSec << "s" << std::endl;
+    }
+    // Test 2
+    {   
+        std::cout << "<<< Scalar Multiplication Test >>>" << std::endl;
+        Ciphertext<DCRTPoly> ct1, _ct;
+        Plaintext pt1, pt2;
+        std::vector<int64_t> msg1(1<<15, 42);
+        std::vector<int64_t> msg2(1<<15, 36);
+        pt1 = bfv.packing(msg1);
+        pt2 = bfv.packing(msg2);
+        ct1 = bfv.encrypt(pt1);
+
+        auto t1 = std::chrono::high_resolution_clock::now();
+        for (int i = 0; i < 1000; i++) {
+            _ct = bfv.mult(ct1, pt2);
+        }
+        auto t2 = std::chrono::high_resolution_clock::now();
+        double timeSec = std::chrono::duration<double>(t2 - t1).count();
+        std::cout << "Done! (1000its) Time Elapsed: " << timeSec << "s" << std::endl;
+    }
+    // Test 3
+    // {   
+    //     std::cout << "<<< Multiplication Test >>>" << std::endl;
+    //     Ciphertext<DCRTPoly> ct1, ct2, _ct;
+    //     Plaintext pt1, pt2;
+    //     std::vector<int64_t> msg1(1<<15, 42);
+    //     std::vector<int64_t> msg2(1<<15, 36);
+    //     pt1 = bfv.packing(msg1);
+    //     pt2 = bfv.packing(msg2);
+    //     ct1 = bfv.encrypt(pt1);
+    //     ct2 = bfv.encrypt(pt2);
+
+    //     auto t1 = std::chrono::high_resolution_clock::now();
+    //     for (int i = 0; i < 1000; i++) {
+    //         _ct = bfv.mult(ct1, ct2);
+    //     }
+    //     auto t2 = std::chrono::high_resolution_clock::now();
+    //     double timeSec = std::chrono::duration<double>(t2 - t1).count();
+    //     std::cout << "Done! (1000its) Time Elapsed: " << timeSec << "s" << std::endl;
+    // }
+
+    // Test 4
+    {   
+        std::cout << "<<< Packing Test >>>" << std::endl;
+        Plaintext _pt;
+        std::vector<int64_t> msg1(1<<15, 42);
+
+        auto t1 = std::chrono::high_resolution_clock::now();
+        for (int i = 0; i < 1000; i++) {
+            _pt = bfv.packing(msg1);
+        }
+        auto t2 = std::chrono::high_resolution_clock::now();
+        double timeSec = std::chrono::duration<double>(t2 - t1).count();
+        std::cout << "Done! (1000its) Time Elapsed: " << timeSec << "s" << std::endl;
+    }
+}
+
+void testProbNPC(int k) {
+    std::cout << "<< Test Code for Exact and Probabilistic NPCs" << std::endl;
+    HE bfv("BFV", 65537, 20);  
+
+    // Test 1
+    {
+        std::cout << "Test 1: Compute Exact NPC" << std::endl;        
+        std::vector<Ciphertext<DCRTPoly>> ctxts;
+        Plaintext _tmpPtxt; Ciphertext<DCRTPoly> _tmpCtxt;        
+        std::vector<int64_t> msgAlpha(1<<15, 3);
+        Plaintext ptAlpha = bfv.packing(msgAlpha);
+
+        for (int i = 0; i < k; i++) {
+            std::vector<int64_t> msgVec(1<<15, 42);
+            msgVec[3] = 0;
+            _tmpPtxt = bfv.packing(msgVec);
+            _tmpCtxt = bfv.encrypt(_tmpPtxt);
+            ctxts.push_back(_tmpCtxt);
+        }
+
+        // Run NPCs
+        auto t1 = std::chrono::high_resolution_clock::now();
+        auto ret = compNPC(bfv, ctxts, ptAlpha);
+        auto t2 = std::chrono::high_resolution_clock::now();
+        double timeSec = std::chrono::duration<double>(t2 - t1).count();        
+        std::cout << "Done! Time Elapsed: " << timeSec << "s" << std::endl;
+        std::cout << "<<< 4th Result Should be 0 >>>" << std::endl;        
+        auto retVec = bfv.decrypt(ret)->GetPackedValue();
+        for (int i = 0; i < 10; i++) {
+            std::cout << retVec[i] << " ";
+        }
+        std::cout << std::endl;
+    }   
+
+    // Test 2
+    {
+        std::cout << "Test 2: Compute Probabilistic NPC" << std::endl;      
+        std::vector<Ciphertext<DCRTPoly>> ctxts;
+        Plaintext _tmpPtxt; Ciphertext<DCRTPoly> _tmpCtxt;        
+        std::vector<int64_t> msgAlpha(1<<15, 3);
+        Plaintext ptAlpha = bfv.packing(msgAlpha);
+
+        for (int i = 0; i < k; i++) {
+            std::vector<int64_t> msgVec(1<<15, 42);
+            msgVec[3] = 0;
+            _tmpPtxt = bfv.packing(msgVec);
+            _tmpCtxt = bfv.encrypt(_tmpPtxt);
+            ctxts.push_back(_tmpCtxt);
+        }
+
+        // Run NPCs
+        int numRand = 8;
+        auto t1 = std::chrono::high_resolution_clock::now();
+        auto ret = compProbNPC(bfv, ctxts, ptAlpha, numRand);
+        auto t2 = std::chrono::high_resolution_clock::now();
+        double timeSec = std::chrono::duration<double>(t2 - t1).count();        
+        std::cout << "Done! Time Elapsed: " << timeSec << "s" << std::endl;
+        std::cout << "<<< 4th Result Should be 0 >>>" << std::endl;        
+        auto retVec = bfv.decrypt(ret)->GetPackedValue();
+        for (int i = 0; i < 10; i++) {
+            std::cout << retVec[i] << " ";
+        }
+        std::cout << std::endl;
+    }       
+}
+
 
 // Test code for all backends
 void testAllBackends() {
@@ -333,4 +481,5 @@ void testAllBackends() {
     // testVAFs();
     // testNPC();
     // testRotAdd();
+    // testBasicOPs();
 }

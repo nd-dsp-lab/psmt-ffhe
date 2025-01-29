@@ -10,7 +10,9 @@ void testFullProtocol();
 void testEncoding();
 void testVAFs();
 void testNPC();
-void testAllBackends();
+void testBasicOPs();
+void testProbNPC(int k);
 
+void testAllBackends();
 
 #endif

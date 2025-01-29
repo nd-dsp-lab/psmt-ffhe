@@ -131,3 +131,47 @@ Ciphertext<DCRTPoly> compRotNPC(
     }
     return ret;
 }
+
+// Random Linear Combination
+Ciphertext<DCRTPoly> randWSum (
+    HE &bfv,
+    std::vector<Ciphertext<DCRTPoly>> ctxts
+) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int64_t> dist(0, bfv.prime - 1);
+
+    std::vector<Ciphertext<DCRTPoly>> retVec;
+    Ciphertext<DCRTPoly> ret, _tmp; 
+    Plaintext _ptxt;
+    int64_t randNum;
+    for (uint32_t i = 0; i < ctxts.size(); i++) {
+        randNum = dist(gen);
+        std::vector<int64_t> randVec(bfv.ringDim, randNum);
+        _ptxt = bfv.packing(randVec);
+        _tmp = bfv.mult(ctxts[i], _ptxt);
+        retVec.push_back(_tmp);
+    }
+    ret = bfv.addmany(retVec);
+    return ret;
+}
+
+// Probabilistic NPC
+Ciphertext<DCRTPoly> compProbNPC(
+    HE &bfv,
+    std::vector<Ciphertext<DCRTPoly>> ctxts,    
+    Plaintext ptAlpha,
+    uint32_t numRand
+) {
+    // Run Probablistic NPC First
+    std::vector<Ciphertext<DCRTPoly>> randVec;
+    Ciphertext<DCRTPoly> ret, _tmp;
+
+    for (uint32_t i = 0; i < numRand; i++) {
+        _tmp = randWSum(bfv, ctxts);
+        randVec.push_back(_tmp);
+    }
+    // Second: Run Original NPC
+    ret = compNPC(bfv, randVec, ptAlpha);
+    return ret;
+}
