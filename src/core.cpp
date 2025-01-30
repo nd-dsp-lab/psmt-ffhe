@@ -141,17 +141,29 @@ Ciphertext<DCRTPoly> randWSum (
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int64_t> dist(0, bfv.prime - 1);
 
-    std::vector<Ciphertext<DCRTPoly>> retVec;
+    std::vector<Ciphertext<DCRTPoly>> retVec(ctxts.size());
     Ciphertext<DCRTPoly> ret, _tmp; 
     Plaintext _ptxt;
     int64_t randNum;
-    for (uint32_t i = 0; i < ctxts.size(); i++) {
-        randNum = dist(gen);
-        std::vector<int64_t> randVec(bfv.ringDim, randNum);
-        _ptxt = bfv.packing(randVec);
-        _tmp = bfv.mult(ctxts[i], _ptxt);
-        retVec.push_back(_tmp);
+
+    // Parallelize   
+    if (ctxts.size() >= 64) {
+        #pragma omp parallel for private(randNum, _ptxt)
+        for (uint32_t i = 0; i < ctxts.size(); i++) {
+            randNum = dist(gen);
+            std::vector<int64_t> randVec(bfv.ringDim, randNum);
+            _ptxt = bfv.packing(randVec);
+            retVec[i] = bfv.mult(ctxts[i], _ptxt);
+        }
+    } else {
+        for (uint32_t i = 0; i < ctxts.size(); i++) {
+            randNum = dist(gen);
+            std::vector<int64_t> randVec(bfv.ringDim, randNum);
+            _ptxt = bfv.packing(randVec);
+            retVec[i] = bfv.mult(ctxts[i], _ptxt);
+        }        
     }
+
     ret = bfv.addmany(retVec);
     return ret;
 }
@@ -164,12 +176,18 @@ Ciphertext<DCRTPoly> compProbNPC(
     uint32_t numRand
 ) {
     // Run Probablistic NPC First
-    std::vector<Ciphertext<DCRTPoly>> randVec;
+    std::vector<Ciphertext<DCRTPoly>> randVec(numRand);
     Ciphertext<DCRTPoly> ret, _tmp;
 
-    for (uint32_t i = 0; i < numRand; i++) {
-        _tmp = randWSum(bfv, ctxts);
-        randVec.push_back(_tmp);
+    if (ctxts.size() >= 64) {
+        for (uint32_t i = 0; i < numRand; i++) {
+            randVec[i] = randWSum(bfv, ctxts);        
+        }
+    } else {
+        #pragma omp parallel for
+        for (uint32_t i = 0; i < numRand; i++) {
+            randVec[i] = randWSum(bfv, ctxts);        
+        }
     }
     // Second: Run Original NPC
     ret = compNPC(bfv, randVec, ptAlpha);

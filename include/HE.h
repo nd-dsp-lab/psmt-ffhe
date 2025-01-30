@@ -38,7 +38,7 @@ public:
 
         keyPair = cc->KeyGen();
         cc->EvalMultKeyGen(keyPair.secretKey);
-        cc->EvalRotateKeyGen(keyPair.secretKey, {1, 2, 4, 8});
+        cc->EvalRotateKeyGen(keyPair.secretKey, {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192});
 
         // Print some approximate stats (optional)
         // Note: in BFV/BGV, GetPlaintextModulus() is not the same as ciphertext modulus,
@@ -123,6 +123,12 @@ public:
     ) {
         return cc->EvalMultMany(ct);
     }    
+
+    Ciphertext<DCRTPoly> compress(
+        const Ciphertext<DCRTPoly> &ct
+    ) {
+        return cc->Compress(ct);
+    }
 
     // (Optional) Rescale or compress if needed – not shown here
     // ...

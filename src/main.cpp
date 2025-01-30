@@ -2,7 +2,9 @@
 
 int main() {
     // testAllBackends();
-    // testProbNPC(128);
+    // testBasicOPs();
+    // testProbNPC(512);
+    // testAgg(512);
     testFullProtocol();
     return 0;
 }

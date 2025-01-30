@@ -55,7 +55,8 @@ void testFullProtocol() {
     std::cout << "Step 1-2: Setup Databases" << std::endl;
     std::vector<int64_t> clientMsg = {theAnswer, theAnswer, theAnswer, theAnswer};
     std::vector<std::vector<int64_t>> serverMsg = genData(
-        (1<<20), 4
+        (1<<20),    // numItem
+        4          // lenData; total size = lenData * 64
     );  
 
     // Inject Server's MSG
@@ -64,9 +65,9 @@ void testFullProtocol() {
     std::cout << "Step 1-3: Server Side Preprocessing" << std::endl;
     EncryptedDB serverDB = constructEncDB(
         bfv,
-        serverMsg,
-        1,
-        3
+        serverMsg,  // dataVec
+        1,          // numPack
+        3           // alpha
     );
 
     std::cout << "Step 2: Client Side Computation" << std::endl;
@@ -371,25 +372,25 @@ void testBasicOPs() {
         std::cout << "Done! (1000its) Time Elapsed: " << timeSec << "s" << std::endl;
     }
     // Test 3
-    // {   
-    //     std::cout << "<<< Multiplication Test >>>" << std::endl;
-    //     Ciphertext<DCRTPoly> ct1, ct2, _ct;
-    //     Plaintext pt1, pt2;
-    //     std::vector<int64_t> msg1(1<<15, 42);
-    //     std::vector<int64_t> msg2(1<<15, 36);
-    //     pt1 = bfv.packing(msg1);
-    //     pt2 = bfv.packing(msg2);
-    //     ct1 = bfv.encrypt(pt1);
-    //     ct2 = bfv.encrypt(pt2);
+    {   
+        std::cout << "<<< Multiplication Test >>>" << std::endl;
+        Ciphertext<DCRTPoly> ct1, ct2, _ct;
+        Plaintext pt1, pt2;
+        std::vector<int64_t> msg1(1<<15, 42);
+        std::vector<int64_t> msg2(1<<15, 36);
+        pt1 = bfv.packing(msg1);
+        pt2 = bfv.packing(msg2);
+        ct1 = bfv.encrypt(pt1);
+        ct2 = bfv.encrypt(pt2);
 
-    //     auto t1 = std::chrono::high_resolution_clock::now();
-    //     for (int i = 0; i < 1000; i++) {
-    //         _ct = bfv.mult(ct1, ct2);
-    //     }
-    //     auto t2 = std::chrono::high_resolution_clock::now();
-    //     double timeSec = std::chrono::duration<double>(t2 - t1).count();
-    //     std::cout << "Done! (1000its) Time Elapsed: " << timeSec << "s" << std::endl;
-    // }
+        auto t1 = std::chrono::high_resolution_clock::now();
+        for (int i = 0; i < 1000; i++) {
+            _ct = bfv.mult(ct1, ct2);
+        }
+        auto t2 = std::chrono::high_resolution_clock::now();
+        double timeSec = std::chrono::duration<double>(t2 - t1).count();
+        std::cout << "Done! (1000its) Time Elapsed: " << timeSec << "s" << std::endl;
+    }
 
     // Test 4
     {   
@@ -412,34 +413,34 @@ void testProbNPC(int k) {
     HE bfv("BFV", 65537, 20);  
 
     // Test 1
-    {
-        std::cout << "Test 1: Compute Exact NPC" << std::endl;        
-        std::vector<Ciphertext<DCRTPoly>> ctxts;
-        Plaintext _tmpPtxt; Ciphertext<DCRTPoly> _tmpCtxt;        
-        std::vector<int64_t> msgAlpha(1<<15, 3);
-        Plaintext ptAlpha = bfv.packing(msgAlpha);
+    // {
+    //     std::cout << "Test 1: Compute Exact NPC" << std::endl;        
+    //     std::vector<Ciphertext<DCRTPoly>> ctxts;
+    //     Plaintext _tmpPtxt; Ciphertext<DCRTPoly> _tmpCtxt;        
+    //     std::vector<int64_t> msgAlpha(1<<15, 3);
+    //     Plaintext ptAlpha = bfv.packing(msgAlpha);
 
-        for (int i = 0; i < k; i++) {
-            std::vector<int64_t> msgVec(1<<15, 42);
-            msgVec[3] = 0;
-            _tmpPtxt = bfv.packing(msgVec);
-            _tmpCtxt = bfv.encrypt(_tmpPtxt);
-            ctxts.push_back(_tmpCtxt);
-        }
+    //     for (int i = 0; i < k; i++) {
+    //         std::vector<int64_t> msgVec(1<<15, 42);
+    //         msgVec[3] = 0;
+    //         _tmpPtxt = bfv.packing(msgVec);
+    //         _tmpCtxt = bfv.encrypt(_tmpPtxt);
+    //         ctxts.push_back(_tmpCtxt);
+    //     }
 
-        // Run NPCs
-        auto t1 = std::chrono::high_resolution_clock::now();
-        auto ret = compNPC(bfv, ctxts, ptAlpha);
-        auto t2 = std::chrono::high_resolution_clock::now();
-        double timeSec = std::chrono::duration<double>(t2 - t1).count();        
-        std::cout << "Done! Time Elapsed: " << timeSec << "s" << std::endl;
-        std::cout << "<<< 4th Result Should be 0 >>>" << std::endl;        
-        auto retVec = bfv.decrypt(ret)->GetPackedValue();
-        for (int i = 0; i < 10; i++) {
-            std::cout << retVec[i] << " ";
-        }
-        std::cout << std::endl;
-    }   
+    //     // Run NPCs
+    //     auto t1 = std::chrono::high_resolution_clock::now();
+    //     auto ret = compNPC(bfv, ctxts, ptAlpha);
+    //     auto t2 = std::chrono::high_resolution_clock::now();
+    //     double timeSec = std::chrono::duration<double>(t2 - t1).count();        
+    //     std::cout << "Done! Time Elapsed: " << timeSec << "s" << std::endl;
+    //     std::cout << "<<< 4th Result Should be 0 >>>" << std::endl;        
+    //     auto retVec = bfv.decrypt(ret)->GetPackedValue();
+    //     for (int i = 0; i < 10; i++) {
+    //         std::cout << retVec[i] << " ";
+    //     }
+    //     std::cout << std::endl;
+    // }   
 
     // Test 2
     {
@@ -471,6 +472,30 @@ void testProbNPC(int k) {
         }
         std::cout << std::endl;
     }       
+}
+
+void testAgg(int numParties) {
+    std::cout << "<< Test Code for Measuring Aggregation Cost" << std::endl;
+    HE bfv("BFV", 65537, 20);  
+    Ciphertext<DCRTPoly> _tmp, __tmp, ret;
+    Plaintext _ptxt;
+    std::vector<int64_t> msgVec(bfv.ringDim, 42);
+
+    // Prepare Dataset    
+    std::vector<Ciphertext<DCRTPoly>> ctVec(numParties);
+    for (int i = 0; i < numParties; i++) {        
+        _ptxt = bfv.packing(msgVec);
+        _tmp = bfv.encrypt(_ptxt);
+        __tmp = bfv.compress(_tmp);
+        ctVec[i] = __tmp;
+    }
+
+    // Do Aggregation
+    auto t1 = std::chrono::high_resolution_clock::now();
+    ret = bfv.addmany(ctVec);
+    auto t2 = std::chrono::high_resolution_clock::now();
+    double timeSec = std::chrono::duration<double>(t2-t1).count();
+    std::cout << "Done! Time Elapsed: " << timeSec << "s" << std::endl;
 }
 
 

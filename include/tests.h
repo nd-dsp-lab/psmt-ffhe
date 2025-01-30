@@ -12,6 +12,7 @@ void testVAFs();
 void testNPC();
 void testBasicOPs();
 void testProbNPC(int k);
+void testAgg(int numParties);
 
 void testAllBackends();
 

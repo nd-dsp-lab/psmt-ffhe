@@ -164,11 +164,11 @@ std::vector<Ciphertext<DCRTPoly>> extractCtxts (
 ) {
 
     int32_t numMasks = masks.size();
-    std::vector<Ciphertext<DCRTPoly>> ret;
+    std::vector<Ciphertext<DCRTPoly>> ret(kVal);
 
     // No need for extraction
     if (numPack == kVal) {
-        ret.push_back(queryCtxt);
+        ret[0] = queryCtxt;
         return ret;
     }
 
@@ -176,17 +176,34 @@ std::vector<Ciphertext<DCRTPoly>> extractCtxts (
     Ciphertext<DCRTPoly> _tmp, __tmp;
 
     // Extraction goes here
-    for (int32_t i = 0; i < numMasks; i++) {
-        // Multiply Mask
-        _tmp = bfv.mult(queryCtxt, masks[i]);
+    // Parallelization
+    if (kVal >= 16) {
+        #pragma omp parallel for private(_tmp, __tmp)
+        for (int32_t i = 0; i < numMasks; i++) {
+            // Multiply Mask
+            _tmp = bfv.mult(queryCtxt, masks[i]);
 
-        // Rotate and Add to fill them up.
-        for (int32_t j = numPack; j < kVal; j *= 2) {
-            __tmp = bfv.rotate(_tmp, j);
-            _tmp = bfv.add(_tmp, __tmp);
+            // Rotate and Add to fill them up.
+            for (int32_t j = numPack; j < kVal; j *= 2) {
+                __tmp = bfv.rotate(_tmp, j);
+                _tmp = bfv.add(_tmp, __tmp);
+            }
+            ret[i] = _tmp;
         }
-        ret.push_back(_tmp);
+    } else {
+        for (int32_t i = 0; i < numMasks; i++) {
+            // Multiply Mask
+            _tmp = bfv.mult(queryCtxt, masks[i]);
+
+            // Rotate and Add to fill them up.
+            for (int32_t j = numPack; j < kVal; j *= 2) {
+                __tmp = bfv.rotate(_tmp, j);
+                _tmp = bfv.add(_tmp, __tmp);
+            }
+            ret[i] = _tmp;
+        }
     }
+    
     return ret;
 }
 
@@ -285,7 +302,7 @@ Ciphertext<DCRTPoly> compProbInter (
     }
     
     // TODO: Make it this as a parameter
-    int numRand = 128 / (int)(std::log2(bfv.prime));
+    int numRand = 128 / (int)(std::log2(bfv.prime)) + (128 % (int)(std::log2(bfv.prime)) != 0);
 
     // Run NPC
     Ciphertext<DCRTPoly> ret = compProbNPC(
@@ -318,18 +335,19 @@ Ciphertext<DCRTPoly> compInterDB (
         bfv, queryCtxt, DB.numPack, DB.kVal, DB.masks
     );
 
-    std::vector<Ciphertext<DCRTPoly>> chunkIntRes;
-    Ciphertext<DCRTPoly> chunkRet;
+    std::vector<Ciphertext<DCRTPoly>> chunkIntRes(DB.numChunks);
 
-    #pragma omp parallel for
-    for (int32_t i = 0; i < DB.numChunks; i++) {
-        // TODO: Parallelization
-        chunkRet = compInter(
-            bfv, DB.chunks[i], extCtxts,
-            DB.ptAlpha, DB.ptOne
-        );
-        chunkIntRes.push_back(chunkRet);
+    if (DB.numChunks >= 4) {
+        #pragma omp parallel for schedule(dynamic)
+        for (int32_t i = 0; i < DB.numChunks; i++) {
+            chunkIntRes[i] = compInter(bfv, DB.chunks[i], extCtxts, DB.ptAlpha, DB.ptOne);
+        }
+    } else {
+        for (int32_t i = 0; i < DB.numChunks; i++) {
+            chunkIntRes[i] = compInter(bfv, DB.chunks[i], extCtxts, DB.ptAlpha, DB.ptOne);
+        }
     }
+
 
     // Aggregation
     // Additive Aggregation
@@ -355,17 +373,19 @@ Ciphertext<DCRTPoly> compInterDBHybrid (
         bfv, queryCtxt, DB.numPack, DB.kVal, DB.masks
     );
 
-    std::vector<Ciphertext<DCRTPoly>> chunkIntRes;
+    std::vector<Ciphertext<DCRTPoly>> chunkIntRes(DB.numChunks);
 
-    #pragma omp parallel for
-    for (int32_t i = 0; i < DB.numChunks; i++) {
-        // TODO: Parallelization
-        chunkIntRes.push_back(
-            compInterNoVAF(
-                bfv, DB.chunks[i], extCtxts, DB.ptAlpha
-            )
-        );
+    if (DB.numChunks >= 4) {
+        #pragma omp parallel for schedule(dynamic)
+        for (int32_t i = 0; i < DB.numChunks; i++) {
+            chunkIntRes[i] = compInterNoVAF(bfv, DB.chunks[i], extCtxts, DB.ptAlpha);
+        }
+    } else {
+        for (int32_t i = 0; i < DB.numChunks; i++) {
+            chunkIntRes[i] = compInterNoVAF(bfv, DB.chunks[i], extCtxts, DB.ptAlpha);
+        }
     }
+
 
     // Aggregation
     // Multiplicative Aggr
@@ -392,17 +412,18 @@ Ciphertext<DCRTPoly> compProbInterDB (
         bfv, queryCtxt, DB.numPack, DB.kVal, DB.masks
     );
 
-    std::vector<Ciphertext<DCRTPoly>> chunkIntRes;
-    Ciphertext<DCRTPoly> chunkRet;
+    std::vector<Ciphertext<DCRTPoly>> chunkIntRes(DB.numChunks);
 
-    #pragma omp parallel for
-    for (int32_t i = 0; i < DB.numChunks; i++) {
-        // TODO: Parallelization
-        chunkRet = compProbInter(
-            bfv, DB.chunks[i], extCtxts,
-            DB.ptAlpha, DB.ptOne
-        );
-        chunkIntRes.push_back(chunkRet);
+
+    if (DB.numChunks >= 4) {
+        #pragma omp parallel for schedule(dynamic)
+        for (int32_t i = 0; i < DB.numChunks; i++) {
+            chunkIntRes[i] = compProbInter(bfv, DB.chunks[i], extCtxts, DB.ptAlpha, DB.ptOne);
+        }
+    } else {
+        for (int32_t i = 0; i < DB.numChunks; i++) {
+            chunkIntRes[i] = compProbInter(bfv, DB.chunks[i], extCtxts, DB.ptAlpha, DB.ptOne);
+        }
     }
 
     // Aggregation
