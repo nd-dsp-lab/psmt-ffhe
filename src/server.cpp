@@ -39,13 +39,13 @@ std::vector<Plaintext> compMasks (
 
 // Number 2: Data Encoding
 std::vector<std::vector<int64_t>> encodeData (
-    const std::vector<std::vector<int64_t>> &dataVec,
+    const std::vector<std::vector<uint32_t>> &dataVec,
     int64_t prime
 ) {
     // Some useful Values
     int32_t logp = (int)(std::log2(prime));
     int32_t lenData = dataVec[0].size();
-    int32_t expRate = 64 / logp + (64 & logp != 0);
+    int32_t expRate = 32 / logp + (32 & logp != 0);
     int64_t numItems = dataVec.size();
     int64_t mask = (1<<logp) - 1;
 
@@ -58,9 +58,8 @@ std::vector<std::vector<int64_t>> encodeData (
         int32_t lkupIdx = i % expRate;
 
         for (int32_t j = 0; j < numItems; j++) {
-            uint64_t currVal = dataVec[j][itemIdx];
-            uint64_t currMask = mask << (logp * lkupIdx);
-            _tmp.push_back((currVal & currMask) >> (logp * lkupIdx));
+            uint32_t currVal = dataVec[j][itemIdx] >> (logp * lkupIdx);
+            _tmp.push_back((currVal & mask));
         }
         ret.push_back(_tmp);
     }
@@ -71,9 +70,10 @@ std::vector<std::vector<int64_t>> encodeData (
 // Main Construction Function
 EncryptedDB constructEncDB (
     HE &bfv,
-    const std::vector<std::vector<int64_t>> &dataVec,
+    const std::vector<std::vector<uint32_t>> &dataVec,
     int32_t numPack,
-    int32_t alpha
+    int32_t alpha,
+    int32_t numAgg
 ) {
     int32_t ringDim = bfv.ringDim;
     int64_t prime = bfv.prime;
@@ -150,7 +150,8 @@ EncryptedDB constructEncDB (
     return EncryptedDB {
         ringDim, numChunks, numPack,
         kVal, prime, chunks,
-        masks, ptAlpha, ptOne, finalMask
+        masks, ptAlpha, ptOne, finalMask,
+        numAgg
     };
 }
 
@@ -164,7 +165,7 @@ std::vector<Ciphertext<DCRTPoly>> extractCtxts (
 ) {
 
     int32_t numMasks = masks.size();
-    std::vector<Ciphertext<DCRTPoly>> ret(kVal);
+    std::vector<Ciphertext<DCRTPoly>> ret(kVal/numPack);
 
     // No need for extraction
     if (numPack == kVal) {
@@ -221,7 +222,11 @@ Ciphertext<DCRTPoly> compInter (
     // Differences
     std::vector<Ciphertext<DCRTPoly>> diffCtxts;
 
-    // TODO: throw an error when sizes do not match
+    // Throw an error when sizes do not match
+    if (extCtxts.size() != chunk.payload.size()) {
+        throw std::runtime_error("Size Mismatch on Computing Diff");
+    }
+
     for (int32_t i = 0; i < numCtxts; i++) {
         diffCtxts.push_back(
             bfv.sub(chunk.payload[i], extCtxts[i])
@@ -259,7 +264,11 @@ Ciphertext<DCRTPoly> compInterNoVAF (
     // Differences
     std::vector<Ciphertext<DCRTPoly>> diffCtxts;
 
-    // TODO: throw an error when sizes do not match
+    // Throw an error when sizes do not match
+    if (extCtxts.size() != chunk.payload.size()) {
+        throw std::runtime_error("Size Mismatch on Computing Diff");
+    }
+
     for (int32_t i = 0; i < numCtxts; i++) {
         diffCtxts.push_back(
             bfv.sub(chunk.payload[i], extCtxts[i])
@@ -282,6 +291,7 @@ Ciphertext<DCRTPoly> compInterNoVAF (
     }
 }
 
+
 Ciphertext<DCRTPoly> compProbInter (
     HE &bfv,
     const EncryptedChunk &chunk,
@@ -294,7 +304,11 @@ Ciphertext<DCRTPoly> compProbInter (
     // Differences
     std::vector<Ciphertext<DCRTPoly>> diffCtxts;
 
-    // TODO: throw an error when sizes do not match
+    // Throw an error when sizes do not match
+    if (extCtxts.size() != chunk.payload.size()) {
+        throw std::runtime_error("Size Mismatch on Computing Diff");
+    }
+
     for (int32_t i = 0; i < numCtxts; i++) {
         diffCtxts.push_back(
             bfv.sub(chunk.payload[i], extCtxts[i])
@@ -318,6 +332,48 @@ Ciphertext<DCRTPoly> compProbInter (
     } else {
         ret = compRotMult(
             bfv, ret, chunk.numPack
+        );
+        return ret;
+    }
+}
+
+// Do Intersection without running VAFs
+Ciphertext<DCRTPoly> compProbInterNoVAF (
+    HE &bfv,
+    const EncryptedChunk &chunk,
+    const std::vector<Ciphertext<DCRTPoly>> &extCtxts,
+    Plaintext ptAlpha
+) {
+    // Compute Difference
+    int32_t numCtxts = extCtxts.size();
+    // Differences
+    std::vector<Ciphertext<DCRTPoly>> diffCtxts;
+
+    // Throw an error when sizes do not match
+    if (extCtxts.size() != chunk.payload.size()) {
+        throw std::runtime_error("Size Mismatch on Computing Diff");
+    }
+
+    for (int32_t i = 0; i < numCtxts; i++) {
+        diffCtxts.push_back(
+            bfv.sub(chunk.payload[i], extCtxts[i])
+        );
+    }
+
+    // TODO: Make it this as a parameter
+    int numRand = 128 / (int)(std::log2(bfv.prime)) + (128 % (int)(std::log2(bfv.prime)) != 0);
+
+    // Run NPC
+    Ciphertext<DCRTPoly> ret = compProbNPC(
+        bfv, diffCtxts, ptAlpha, numRand
+    );
+
+    // Aggregation (Optional)
+    if (chunk.numPack == 1) {
+        return ret;
+    } else {
+        ret = compRotNPC(
+            bfv, ret, chunk.numPack, ptAlpha
         );
         return ret;
     }
@@ -347,7 +403,6 @@ Ciphertext<DCRTPoly> compInterDB (
             chunkIntRes[i] = compInter(bfv, DB.chunks[i], extCtxts, DB.ptAlpha, DB.ptOne);
         }
     }
-
 
     // Aggregation
     // Additive Aggregation
@@ -388,9 +443,41 @@ Ciphertext<DCRTPoly> compInterDBHybrid (
 
 
     // Aggregation
-    // Multiplicative Aggr
-    Ciphertext<DCRTPoly> ret = bfv.multmany(chunkIntRes);
-    ret = compVAF(bfv, ret, DB.prime, DB.ptOne);
+    // Two-Step Aggregation
+    int32_t numFinalSegs = DB.numChunks / DB.numAgg;
+
+    Ciphertext<DCRTPoly> ret;
+    std::vector<Ciphertext<DCRTPoly>> retVec(numFinalSegs);
+
+    if (numFinalSegs >= 8) {
+        #pragma omp parallel for schedule(dynamic)
+        for (int i = 0; i < numFinalSegs; i++) {
+            std::vector<Ciphertext<DCRTPoly>> tmpVec;
+            Ciphertext<DCRTPoly> _tmp;            
+
+            for (int j = 0; j < DB.numAgg; j++) {
+                tmpVec.push_back(chunkIntRes[DB.numAgg * i  + j]);
+            }          
+            _tmp = bfv.multmany(tmpVec);                
+            _tmp = compVAF(bfv, _tmp, DB.prime, DB.ptOne);
+            retVec[i] = _tmp;
+        }
+    } else {
+        for (int i = 0; i < numFinalSegs; i++) {
+            std::vector<Ciphertext<DCRTPoly>> tmpVec;
+            Ciphertext<DCRTPoly> _tmp;            
+
+            for (int j = 0; j < DB.numAgg; j++) {    
+                tmpVec.push_back(chunkIntRes[DB.numAgg * i  + j]);
+            }          
+            
+            _tmp = bfv.multmany(tmpVec);                
+            _tmp = compVAF(bfv, _tmp, DB.prime, DB.ptOne);
+            retVec[i] = _tmp;
+        }
+    }
+    // Finalization
+    ret = bfv.addmany(retVec);
 
     // Final Masking
     if (DB.numPack == 1) {
@@ -437,4 +524,74 @@ Ciphertext<DCRTPoly> compProbInterDB (
         ret = bfv.mult(ret, DB.finalMask);
         return ret;
     }
+}
+
+// Main Intersection Function with Prob & Hybrid Aggregation
+Ciphertext<DCRTPoly> compProbInterDBHybrid (
+    HE &bfv,
+    const EncryptedDB &DB,
+    Ciphertext<DCRTPoly> queryCtxt
+) {
+    // Extract Query Ciphertext
+    std::vector<Ciphertext<DCRTPoly>> extCtxts = extractCtxts(
+        bfv, queryCtxt, DB.numPack, DB.kVal, DB.masks
+    );
+
+    std::vector<Ciphertext<DCRTPoly>> chunkIntRes(DB.numChunks);
+
+    if (DB.numChunks >= 4) {
+        #pragma omp parallel for schedule(dynamic)
+        for (int32_t i = 0; i < DB.numChunks; i++) {
+            chunkIntRes[i] = compProbInterNoVAF(bfv, DB.chunks[i], extCtxts, DB.ptAlpha);
+        }
+    } else {
+        for (int32_t i = 0; i < DB.numChunks; i++) {
+            chunkIntRes[i] = compProbInterNoVAF(bfv, DB.chunks[i], extCtxts, DB.ptAlpha);
+        }
+    }
+
+    // Aggregation
+    // Two-Step Aggregation
+    int32_t numFinalSegs = DB.numChunks / DB.numAgg;
+
+    Ciphertext<DCRTPoly> ret;
+    std::vector<Ciphertext<DCRTPoly>> retVec(numFinalSegs);
+
+    if (numFinalSegs >= 8) {
+        #pragma omp parallel for schedule(dynamic)
+        for (int i = 0; i < numFinalSegs; i++) {
+            std::vector<Ciphertext<DCRTPoly>> tmpVec;
+            Ciphertext<DCRTPoly> _tmp;            
+
+            for (int j = 0; j < DB.numAgg; j++) {
+                tmpVec.push_back(chunkIntRes[DB.numAgg * i  + j]);
+            }          
+            _tmp = bfv.multmany(tmpVec);                
+            _tmp = compVAF(bfv, _tmp, DB.prime, DB.ptOne);
+            retVec[i] = _tmp;
+        }
+    } else {
+        for (int i = 0; i < numFinalSegs; i++) {
+            std::vector<Ciphertext<DCRTPoly>> tmpVec;
+            Ciphertext<DCRTPoly> _tmp;            
+
+            for (int j = 0; j < DB.numAgg; j++) {    
+                tmpVec.push_back(chunkIntRes[DB.numAgg * i  + j]);
+            }          
+            
+            _tmp = bfv.multmany(tmpVec);                
+            _tmp = compVAF(bfv, _tmp, DB.prime, DB.ptOne);
+            retVec[i] = _tmp;
+        }
+    }
+    // Finalization
+    ret = bfv.addmany(retVec);
+
+    // Final Masking
+    if (DB.numPack == 1) {
+        return ret;
+    } else {
+        ret = bfv.mult(ret, DB.finalMask);
+        return ret;
+    }    
 }

@@ -5,7 +5,14 @@ int main() {
     // testBasicOPs();
     // testProbNPC(512);
     // testAgg(512);
-    testFullProtocol();
+    testFullProtocol(
+        20,         // numItem
+        8,          // lenData  
+        1,          // numPack
+        8,          // numAgg
+        3,          // alpha
+        "CPI"       // interType
+    );
     return 0;
 }
 

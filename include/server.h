@@ -31,6 +31,8 @@ typedef struct _EncryptedDB {
     Plaintext ptAlpha; Plaintext ptOne;
     // Mask for the Final Process
     Plaintext finalMask;
+    // Aggregation Segments
+    int32_t numAgg;
 } EncryptedDB;
 
 // Precomputing Masks
@@ -43,16 +45,17 @@ std::vector<Plaintext> compMasks (
 
 // Data Encoding Method
 std::vector<std::vector<int64_t>> encodeData (
-    const std::vector<std::vector<int64_t>> &dataVec,
+    const std::vector<std::vector<uint32_t>> &dataVec,
     int64_t prime
 );
 
 // Construct an Encrypted Database
 EncryptedDB constructEncDB (
     HE &bfv,
-    const std::vector<std::vector<int64_t>> &dataVec,
+    const std::vector<std::vector<uint32_t>> &dataVec,
     int32_t numPack,
-    int32_t alpha
+    int32_t alpha,
+    int32_t numAgg
 );
 
 // Ciphertext Extraction
@@ -88,6 +91,13 @@ Ciphertext<DCRTPoly> compProbInter (
     Plaintext ptOne
 );
 
+Ciphertext<DCRTPoly> compProbInterNoVAF (
+    HE &bfv,
+    const EncryptedChunk &chunk,
+    const std::vector<Ciphertext<DCRTPoly>> &extCtxts,
+    Plaintext ptAlpha
+);
+
 // Main Functions
 Ciphertext<DCRTPoly> compInterDB (
     HE &bfv,
@@ -102,6 +112,12 @@ Ciphertext<DCRTPoly> compInterDBHybrid (
 );
 
 Ciphertext<DCRTPoly> compProbInterDB (
+    HE &bfv,
+    const EncryptedDB &DB,
+    Ciphertext<DCRTPoly> queryCtxt
+);
+
+Ciphertext<DCRTPoly> compProbInterDBHybrid (
     HE &bfv,
     const EncryptedDB &DB,
     Ciphertext<DCRTPoly> queryCtxt

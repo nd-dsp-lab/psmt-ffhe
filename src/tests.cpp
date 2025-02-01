@@ -2,21 +2,21 @@
 #include "tests.h"
 
 using namespace lbcrypto;
-#define theAnswer 0x002A002A002A002A
+#define theAnswer 0x002A002A
 #include <chrono>
 
 // Helper for Simulation
-std::vector<std::vector<int64_t>> genData(
+std::vector<std::vector<uint32_t>> genData(
     int32_t numItem,
     int32_t lenData
 ) {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int64_t> dist(0, (1 << 16) - 1);
+    std::uniform_int_distribution<uint32_t> dist(0, (1 << 16) - 1);
 
-    std::vector<std::vector<int64_t>> ret;
+    std::vector<std::vector<uint32_t>> ret;
     for (int32_t i = 0; i < numItem; i++) {
-        std::vector<int64_t> _tmp;
+        std::vector<uint32_t> _tmp;
         for (int32_t i = 0; i < lenData; i++) {
             _tmp.push_back(dist(gen));
         }
@@ -46,28 +46,62 @@ size_t ctxtSize(Ciphertext<DCRTPoly>& ctxt) {
 
 
 // Main Test Code
-void testFullProtocol() {
-    std::cout << "TEST START!" << std::endl;
+void testFullProtocol(
+    uint64_t numItem,
+    uint32_t lenData,
+    uint32_t numPack,
+    uint32_t numAgg,
+    int32_t alpha,
+    const std::string& interType    
+) {
+    std::cout << "TEST START! - Parameters" << std::endl;
+    std::cout << "numItem: \t" << numItem << std::endl;
+    std::cout << "lenData: \t" << lenData * 32 << std::endl;
+    std::cout << "numPack: \t" << numPack << std::endl;
+    std::cout << "numAgg: \t" << numAgg << std::endl;
+    std::cout << "alpha: \t\t" << alpha << std::endl;
+    std::cout << "Inter Type: \t" << interType << std::endl;
 
+    // Depth Calculator
+    // TODO: Support various primes
+    uint32_t depth = 16;
+    if (interType == "CIH" || interType == "CPIH") {
+        depth += (int)(std::log2(numAgg));
+    }    
+    if (interType == "CPI" || interType == "CPIH") {
+        depth += 3;
+    } else {
+        depth += (int)(std::log2(lenData)) + 1;
+    }
+
+    // Parameter Not Supported
+    if (depth > 23) {
+        throw std::runtime_error("Depth is TOO high...");
+    }
+
+    std::cout << "Depth: \t\t" << depth << std::endl;    
+
+    std::cout << "TEST START!" << std::endl;    
     std::cout << "Step 1-1: Setup FHE" << std::endl;
-    HE bfv("BFV", Prime16, 20);
+    HE bfv("BFV", Prime16, depth);
 
     std::cout << "Step 1-2: Setup Databases" << std::endl;
-    std::vector<int64_t> clientMsg = {theAnswer, theAnswer, theAnswer, theAnswer};
-    std::vector<std::vector<int64_t>> serverMsg = genData(
-        (1<<20),    // numItem
-        4          // lenData; total size = lenData * 64
+    std::vector<uint32_t> clientMsg(lenData, theAnswer);
+    std::vector<std::vector<uint32_t>> serverMsg = genData(
+        (1<<numItem),    // numItem
+        lenData          // lenData; total size = lenData * 32
     );  
 
     // Inject Server's MSG
-    serverMsg[42] = {theAnswer, theAnswer, theAnswer, theAnswer};
+    serverMsg[42] = std::vector<uint32_t>(lenData, theAnswer);
 
     std::cout << "Step 1-3: Server Side Preprocessing" << std::endl;
     EncryptedDB serverDB = constructEncDB(
         bfv,
         serverMsg,  // dataVec
-        1,          // numPack
-        3           // alpha
+        numPack,    // numPack
+        alpha,          // alpha
+        numAgg      // numAgg 
     );
 
     std::cout << "Step 2: Client Side Computation" << std::endl;
@@ -82,14 +116,32 @@ void testFullProtocol() {
     size_t querySize = ctxtSize(queryCtxt);
 
     std::cout << "Step 4: Do Intersection" << std::endl;
+
+    Ciphertext<DCRTPoly> interResCtxt;
+
     auto t1 = std::chrono::high_resolution_clock::now();
-    auto interResCtxt = compProbInterDB(
-        bfv, serverDB, queryCtxt
-    );
+    if (interType == "CI") {        
+        interResCtxt = compInterDB(
+            bfv, serverDB, queryCtxt
+        );        
+    } else if (interType == "CPI") {
+        interResCtxt = compProbInterDB(
+            bfv, serverDB, queryCtxt
+        );
+    } else if (interType == "CIH") {
+        interResCtxt = compInterDBHybrid(
+            bfv, serverDB, queryCtxt
+        );
+    } else if (interType == "CPIH") {
+        interResCtxt = compProbInterDBHybrid(
+            bfv, serverDB, queryCtxt
+        );
+    } else {
+        throw std::runtime_error("Invalid Inter Type: " + interType);
+    }
     auto t2 = std::chrono::high_resolution_clock::now();
     double timeSec = std::chrono::duration<double>(t2 - t1).count();
     std::cout << "Intersection Done! Time Elapsed: " << timeSec << "s" << std::endl;
-
 
     std::cout << "Step 5: Receive Result" << std::endl;
     auto ret = checkIntResult(bfv, interResCtxt);
@@ -99,35 +151,36 @@ void testFullProtocol() {
 }
 
 // Helper Functions for pack integers
-std::vector<int64_t> intPacking(std::vector<uint64_t> shortVec) {
-    std::vector<int64_t> ret;
-    uint64_t _tmp;
-    uint32_t numShorts = shortVec.size();
+// std::vector<uint32_t> intPacking(std::vector<uint64_t> shortVec) {
+//     std::vector<int64_t> ret;
+//     uint64_t _tmp;
+//     uint32_t numShorts = shortVec.size();
 
-    for (uint32_t i = 0; i < numShorts / 4; i++) {
-        _tmp = 0;
-        // Read 16 Bits and Pack into a 64-bit integer.
-        for (uint32_t j = 0; j < 4; j++) {
-            _tmp += (int64_t)(shortVec[4*i + j] & 0xffff) << ((16 * j));
-        }
-        ret.push_back(_tmp);
-    }
-    return ret;
-}
+//     for (uint32_t i = 0; i < numShorts / 4; i++) {
+//         _tmp = 0;
+//         // Read 16 Bits and Pack into a 64-bit integer.
+//         for (uint32_t j = 0; j < 4; j++) {
+//             _tmp += (int32_t)(shortVec[4*i + j] & 0xffff) << ((16 * j));
+//         }
+//         ret.push_back(_tmp);
+//     }
+//     return ret;
+// }
 
 // Test Code for Encoding
 void testEncoding() {
-    std::vector<std::vector<int64_t>> serverMsg;
+    std::vector<std::vector<uint32_t>> serverMsg;
 
     std::cout << "<<< Test Code for Encoding >>>" << std::endl;
     
     for (int i = 0; i < 4; i++) {
-        serverMsg.push_back(intPacking({
+        std::vector<uint32_t> tmp = {
             90,12,29,37,
             42,53,68,71,
             80,95,10,11,
             122,143,147,1590
-        }));        
+        };
+        serverMsg.push_back(tmp);        
     }
 
     std::cout << "Sever Message: " << serverMsg[0] << std::endl;

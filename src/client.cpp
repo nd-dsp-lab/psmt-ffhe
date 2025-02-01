@@ -7,21 +7,20 @@ using namespace lbcrypto;
 
 // Encodes single ciphertext
 std::vector<int64_t> encodeDataClient (
-    const std::vector<int64_t> &dataVec,
+    const std::vector<uint32_t> &dataVec,
     int64_t prime
 ) {
     int32_t logp = (int)(std::log2(prime));
     int32_t lenData = dataVec.size();
-    int32_t expRate = 64 / logp + (64 & logp != 0);
+    int32_t expRate = 32 / logp + (32 & logp != 0);
     int64_t mask = (1<<logp) - 1;
 
     std::vector<int64_t> ret;
     for (int32_t i = 0; i < expRate * lenData; i++) {
         uint32_t itemIdx = i / expRate;
         uint32_t lkupIdx = i % expRate;
-        uint64_t currVal = dataVec[itemIdx];
-        uint64_t currMask = mask << (logp * lkupIdx);
-        ret.push_back((currVal & currMask) >> (logp * lkupIdx));
+        uint32_t currVal = dataVec[itemIdx] >> (logp * lkupIdx);
+        ret.push_back((currVal & mask));
     }
     return ret;
 }

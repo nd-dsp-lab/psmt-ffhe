@@ -2,7 +2,7 @@
 #define CLIENT_H
 
 std::vector<int64_t> encodeDataClient (
-    const std::vector<int64_t> &dataVec,
+    const std::vector<uint32_t> &dataVec,
     int64_t prime
 );
 
