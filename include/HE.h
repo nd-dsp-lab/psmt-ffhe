@@ -40,6 +40,7 @@ public:
         cc->EvalMultKeyGen(keyPair.secretKey);
         cc->EvalRotateKeyGen(keyPair.secretKey, {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192});
 
+
         // Print some approximate stats (optional)
         // Note: in BFV/BGV, GetPlaintextModulus() is not the same as ciphertext modulus,
         // but we replicate the Python code's approximate logging.

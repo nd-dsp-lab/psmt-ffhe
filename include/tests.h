@@ -19,9 +19,10 @@ void testEncoding();
 void testVAFs();
 void testNPC();
 void testBasicOPs();
+void testRotAdd();
 void testProbNPC(int k);
 void testAgg(int numParties);
 
-void testAllBackends();
+void testAllBackends(int k, int numParties);
 
 #endif

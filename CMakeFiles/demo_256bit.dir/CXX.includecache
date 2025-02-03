@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+/home/spaik2/psmt-ffhe/src/client.cpp
+openfhe.h
+-
+HE.h
+/home/spaik2/psmt-ffhe/src/HE.h
+core.h
+/home/spaik2/psmt-ffhe/src/core.h
+client.h
+/home/spaik2/psmt-ffhe/src/client.h
+
+/home/spaik2/psmt-ffhe/src/core.cpp
+core.h
+/home/spaik2/psmt-ffhe/src/core.h
+HE.h
+/home/spaik2/psmt-ffhe/src/HE.h
+openfhe.h
+-
+
 /home/spaik2/psmt-ffhe/src/server.cpp
 openfhe.h
 -
@@ -17,6 +35,14 @@ HE.h
 /home/spaik2/psmt-ffhe/src/HE.h
 core.h
 /home/spaik2/psmt-ffhe/src/core.h
+
+/home/spaik2/psmt-ffhe/src/tests.cpp
+openfhe.h
+-
+tests.h
+/home/spaik2/psmt-ffhe/src/tests.h
+chrono
+-
 
 /usr/local/include/openfhe/binfhe/binfhe-base-params.h
 lattice/lat-hal.h
@@ -3148,6 +3174,8 @@ include/HE.h
 openfhe.h
 -
 
+include/client.h
+
 include/core.h
 HE.h
 include/HE.h
@@ -3161,4 +3189,12 @@ openfhe.h
 -
 core.h
 include/core.h
+
+include/tests.h
+HE.h
+include/HE.h
+server.h
+include/server.h
+client.h
+include/client.h
 

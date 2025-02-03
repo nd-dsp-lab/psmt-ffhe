@@ -466,34 +466,34 @@ void testProbNPC(int k) {
     HE bfv("BFV", 65537, 20);  
 
     // Test 1
-    // {
-    //     std::cout << "Test 1: Compute Exact NPC" << std::endl;        
-    //     std::vector<Ciphertext<DCRTPoly>> ctxts;
-    //     Plaintext _tmpPtxt; Ciphertext<DCRTPoly> _tmpCtxt;        
-    //     std::vector<int64_t> msgAlpha(1<<15, 3);
-    //     Plaintext ptAlpha = bfv.packing(msgAlpha);
+    {
+        std::cout << "Test 1: Compute Exact NPC" << std::endl;        
+        std::vector<Ciphertext<DCRTPoly>> ctxts;
+        Plaintext _tmpPtxt; Ciphertext<DCRTPoly> _tmpCtxt;        
+        std::vector<int64_t> msgAlpha(1<<15, 3);
+        Plaintext ptAlpha = bfv.packing(msgAlpha);
 
-    //     for (int i = 0; i < k; i++) {
-    //         std::vector<int64_t> msgVec(1<<15, 42);
-    //         msgVec[3] = 0;
-    //         _tmpPtxt = bfv.packing(msgVec);
-    //         _tmpCtxt = bfv.encrypt(_tmpPtxt);
-    //         ctxts.push_back(_tmpCtxt);
-    //     }
+        for (int i = 0; i < k; i++) {
+            std::vector<int64_t> msgVec(1<<15, 42);
+            msgVec[3] = 0;
+            _tmpPtxt = bfv.packing(msgVec);
+            _tmpCtxt = bfv.encrypt(_tmpPtxt);
+            ctxts.push_back(_tmpCtxt);
+        }
 
-    //     // Run NPCs
-    //     auto t1 = std::chrono::high_resolution_clock::now();
-    //     auto ret = compNPC(bfv, ctxts, ptAlpha);
-    //     auto t2 = std::chrono::high_resolution_clock::now();
-    //     double timeSec = std::chrono::duration<double>(t2 - t1).count();        
-    //     std::cout << "Done! Time Elapsed: " << timeSec << "s" << std::endl;
-    //     std::cout << "<<< 4th Result Should be 0 >>>" << std::endl;        
-    //     auto retVec = bfv.decrypt(ret)->GetPackedValue();
-    //     for (int i = 0; i < 10; i++) {
-    //         std::cout << retVec[i] << " ";
-    //     }
-    //     std::cout << std::endl;
-    // }   
+        // Run NPCs
+        auto t1 = std::chrono::high_resolution_clock::now();
+        auto ret = compNPC(bfv, ctxts, ptAlpha);
+        auto t2 = std::chrono::high_resolution_clock::now();
+        double timeSec = std::chrono::duration<double>(t2 - t1).count();        
+        std::cout << "Done! Time Elapsed: " << timeSec << "s" << std::endl;
+        std::cout << "<<< 4th Result Should be 0 >>>" << std::endl;        
+        auto retVec = bfv.decrypt(ret)->GetPackedValue();
+        for (int i = 0; i < 10; i++) {
+            std::cout << retVec[i] << " ";
+        }
+        std::cout << std::endl;
+    }   
 
     // Test 2
     {
@@ -553,11 +553,13 @@ void testAgg(int numParties) {
 
 
 // Test code for all backends
-void testAllBackends() {
+void testAllBackends(int k, int numParties) {
     // More test functions will be added.
-    // testEncoding();
-    // testVAFs();
-    // testNPC();
-    // testRotAdd();
-    // testBasicOPs();
+    testEncoding();
+    testVAFs();
+    testNPC();
+    testRotAdd();
+    testBasicOPs();
+    testProbNPC(k);
+    testAgg(numParties);
 }

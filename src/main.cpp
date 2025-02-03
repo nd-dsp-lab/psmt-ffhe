@@ -6,12 +6,12 @@ int main() {
     // testProbNPC(512);
     // testAgg(512);
     testFullProtocol(
-        20,         // numItem
-        8,          // lenData  
+        23,         // numItem
+        1,          // lenData  
         1,          // numPack
         8,          // numAgg
         3,          // alpha
-        "CPI"       // interType
+        "CI"       // interType
     );
     return 0;
 }
