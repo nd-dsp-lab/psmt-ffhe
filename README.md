@@ -11,15 +11,15 @@ This is a collaborative project between University of Notre Dame, USA, and Hanya
 
 You can compile the code by using the `cmake` file in the repository. More precisely, just simply run
 
-'''
+```
 make
-'''
+```
 
 By building the project, you obtain the executable file `main`. You can run the code by 
 
-'''
+```
 ./main
-'''
+```
 
 ### Parameters of the code
 
