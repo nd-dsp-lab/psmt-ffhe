@@ -69,7 +69,7 @@ void testFullProtocol(
         depth += (int)(std::log2(numAgg));
     }    
     if (interType == "CPI" || interType == "CPIH") {
-        depth += 3;
+        depth += 3 + 1;
     } else {
         depth += (int)(std::log2(lenData)) + 1;
     }
