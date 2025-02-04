@@ -23,10 +23,10 @@ By building the project, you obtain the executable file `main`. You can run the 
 ./main
 ```
 
-There are some default values for numItem, lenData, numPack, numAgg, alpha and interType declared in the `/src/main.cpp`. You can pass cmdline arguments during runtime to change these presets. For instance, to run the program with numItem = 22, lenData = 2, numPack = 1, numAgg = 32, alpha = 3 and interType = "CI", run:
+There are some default values for numItem, lenData, numPack, numAgg, alpha and interType declared in the `/src/main.cpp`. You can pass cmdline arguments during runtime to change these presets. For instance, to run the program with numItem = 23, lenData = 2, numPack = 1, numAgg = 32, alpha = 3 and interType = "CI", run:
 
 ```
-./main 20 2 1 32 3 CI
+./main 23 2 1 32 3 CI
 ```
 
 ### Parameters of the code
