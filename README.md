@@ -9,7 +9,7 @@ This is a collaborative project between University of Notre Dame, USA, and Hanya
 
 ### How to compile and run the code
 
-You can compile the code by using the following commands:
+You can compile the code by using the following commands below. Optionally, you can pass a flag `-j` followed by the number of threads you want to speed up the make step. For instance, run `make -j16` to speedup with 16 threads.
 
 ```
 mkdir build && cd build
