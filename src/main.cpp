@@ -1,8 +1,9 @@
 #include <iostream>
 #include <cstdlib>  // for std::atoi
 #include <string>
-#include <cctype>   // for std::isdigit
-#include "tests.h"
+#include <map>
+#include <tests.h>
+
 
 // Helper function to check if a string is a valid positive integer
 bool isValidNumber(const std::string& str) {
@@ -13,71 +14,106 @@ bool isValidNumber(const std::string& str) {
     return true;
 }
 
+// Function to print usage instructions
+void printUsage() {
+    std::cerr << "\nUsage: ./main"
+              << " -numItem <int>"
+              << " -lenData <int>"
+              << " -numPack <int>"
+              << " -numAgg <int>"
+              << " -alpha <int>"
+              << " -interType <string>\n\n"
+              << "Example:\n"
+              << "  ./main -numItem 30 -lenData 2 -numPack 4 -numAgg 10 -alpha 5 -interType (CI or CPI or CIH or CPIH)\n\n";
+}
+
 int main(int argc, char* argv[]) {
-    // Default values
-    int numItem = 23;
-    int lenData = 1;
-    int numPack = 1;
-    int numAgg = 8;
-    int alpha = 3;
-    std::string interType = "CI";
+    // We want ALL flags to be supplied. List them here:
 
-    // Validate and parse command-line arguments
-    if (argc > 1) {
-        if (!isValidNumber(argv[1])) {
-            std::cerr << "Error: numItem must be a positive integer.\n";
-            return 1;
-        }
-        numItem = std::atoi(argv[1]);
-    }
 
-    if (argc > 2) {
-        if (!isValidNumber(argv[2])) {
-            std::cerr << "Error: lenData must be a positive integer.\n";
-            return 1;
-        }
-        lenData = std::atoi(argv[2]);
-    }
+    const std::string REQUIRED_FLAGS[] = {
+        "-numItem", "-lenData", "-numPack", "-numAgg", "-alpha", "-interType"
+    };
 
-    if (argc > 3) {
-        if (!isValidNumber(argv[3])) {
-            std::cerr << "Error: numPack must be a positive integer.\n";
-            return 1;
-        }
-        numPack = std::atoi(argv[3]);
-    }
+    // Store all key-value pairs in a map
+    std::map<std::string, std::string> args;
+    for (int i = 1; i < argc - 1; i += 2) {
+        std::string key = argv[i];
+        std::string value = argv[i + 1];
 
-    if (argc > 4) {
-        if (!isValidNumber(argv[4])) {
-            std::cerr << "Error: numAgg must be a positive integer.\n";
-            return 1;
-        }
-        numAgg = std::atoi(argv[4]);
-    }
-
-    if (argc > 5) {
-        if (!isValidNumber(argv[5])) {
-            std::cerr << "Error: alpha must be a positive integer.\n";
-            return 1;
-        }
-        alpha = std::atoi(argv[5]);
-    }
-
-    if (argc > 6) {
-        interType = argv[6];
-        if (interType.empty()) {
-            std::cerr << "Error: interType must be a non-empty string.\n";
+        // Check for flags that start with "-"
+        if (key.size() > 1 && key[0] == '-') {
+            args[key] = value;
+        } else {
+            std::cerr << "Error: Invalid flag '" << key << "'.\n";
+            printUsage();
             return 1;
         }
     }
 
-    std::cout << "Running testFullProtocol with:\n";
-    std::cout << "numItem = " << numItem << "\n";
-    std::cout << "lenData = " << lenData << "\n";
-    std::cout << "numPack = " << numPack << "\n";
-    std::cout << "numAgg = " << numAgg << "\n";
-    std::cout << "alpha = " << alpha << "\n";
-    std::cout << "interType = " << interType << "\n";
+    // 1. Check if all required flags are present
+    for (const auto& flag : REQUIRED_FLAGS) {
+        if (args.find(flag) == args.end()) {
+            std::cerr << "Error: Missing required flag '" << flag << "'.\n";
+            printUsage();
+            return 1;
+        }
+    }
+
+    // 2. Now parse and validate each argument
+    //    (We know they exist, but we must ensure they are valid.)
+
+    // Parse numItem
+    if (!isValidNumber(args["-numItem"])) {
+        std::cerr << "Error: numItem must be a positive integer.\n";
+        return 1;
+    }
+    int numItem = std::atoi(args["-numItem"].c_str());
+
+    // Parse lenData
+    if (!isValidNumber(args["-lenData"])) {
+        std::cerr << "Error: lenData must be a positive integer.\n";
+        return 1;
+    }
+    int lenData = std::atoi(args["-lenData"].c_str());
+
+    // Parse numPack
+    if (!isValidNumber(args["-numPack"])) {
+        std::cerr << "Error: numPack must be a positive integer.\n";
+        return 1;
+    }
+    int numPack = std::atoi(args["-numPack"].c_str());
+
+    // Parse numAgg
+    if (!isValidNumber(args["-numAgg"])) {
+        std::cerr << "Error: numAgg must be a positive integer.\n";
+        return 1;
+    }
+    int numAgg = std::atoi(args["-numAgg"].c_str());
+
+    // Parse alpha
+    if (!isValidNumber(args["-alpha"])) {
+        std::cerr << "Error: alpha must be a positive integer.\n";
+        return 1;
+    }
+    int alpha = std::atoi(args["-alpha"].c_str());
+
+    // Parse interType
+    std::string interType = args["-interType"];
+    if (interType.empty()) {
+        std::cerr << "Error: interType must be a non-empty string.\n";
+        return 1;
+    }
+
+    // 3. Print final values
+    std::cout << "Running testFullProtocol with:\n"
+              << "  numItem   = " << numItem << "\n"
+              << "  lenData   = " << lenData << "\n"
+              << "  numPack   = " << numPack << "\n"
+              << "  numAgg    = " << numAgg << "\n"
+              << "  alpha     = " << alpha << "\n"
+              << "  interType = " << interType << "\n";
+
 
     // testAllBackends();
     // testBasicOPs();
