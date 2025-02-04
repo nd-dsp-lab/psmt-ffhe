@@ -6,6 +6,11 @@ std::vector<int64_t> encodeDataClient (
     int64_t prime
 );
 
+Ciphertext<DCRTPoly> encryptQuery(
+    HE &bfv,
+    std::vector<int64_t> dataPrepared
+);
+
 bool checkIntResult (
     HE &bfv,
     Ciphertext<DCRTPoly> resCtxt

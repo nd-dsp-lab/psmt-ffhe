@@ -12,8 +12,8 @@ std::vector<int64_t> encodeDataClient (
 ) {
     int32_t logp = (int)(std::log2(prime));
     int32_t lenData = dataVec.size();
-    int32_t expRate = 32 / logp + (32 & logp != 0);
-    int64_t mask = (1<<logp) - 1;
+    int32_t expRate = 32 / logp + ((32 % logp) != 0);
+    int64_t mask = (int64_t(1)<<logp) - 1;
 
     std::vector<int64_t> ret;
     for (int32_t i = 0; i < expRate * lenData; i++) {
@@ -25,6 +25,20 @@ std::vector<int64_t> encodeDataClient (
     return ret;
 }
 
+Ciphertext<DCRTPoly> encryptQuery(
+    HE &bfv,
+    std::vector<int64_t> dataPrepared
+) {
+    uint32_t lenData = dataPrepared.size();
+    std::vector<int64_t> payload(bfv.ringDim, 0);
+
+    for (uint32_t i = 0; i < bfv.ringDim; i++) {
+        payload[i] = dataPrepared[ i % lenData];
+    }
+    Plaintext tmp = bfv.packing(payload);
+    return bfv.encrypt(tmp);
+}
+
 bool checkIntResult (
     HE &bfv,
     Ciphertext<DCRTPoly> resCtxt
@@ -34,8 +48,8 @@ bool checkIntResult (
     // Check whether there is "1" in the received vector.
     for (int32_t i = 0; i < bfv.ringDim; i++) {
         if (retVec[i] == 1) {
-            return true;
+            return 1;
         }
     }
-    return false;
+    return 0;
 }

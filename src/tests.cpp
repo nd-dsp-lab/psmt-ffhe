@@ -2,7 +2,7 @@
 #include "tests.h"
 
 using namespace lbcrypto;
-#define theAnswer 0x002A002A
+#define theAnswer 0x0
 #include <chrono>
 
 // Helper for Simulation
@@ -12,7 +12,7 @@ std::vector<std::vector<uint32_t>> genData(
 ) {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<uint32_t> dist(0, (1 << 16) - 1);
+    std::uniform_int_distribution<uint32_t> dist(1, (1 << 16) - 1);
 
     std::vector<std::vector<uint32_t>> ret;
     for (int32_t i = 0; i < numItem; i++) {
@@ -69,9 +69,9 @@ void testFullProtocol(
         depth += (int)(std::log2(numAgg));
     }    
     if (interType == "CPI" || interType == "CPIH") {
-        depth += 3 + 1;
+        depth += 3;
     } else {
-        depth += (int)(std::log2(lenData)) + 1;
+        depth += (int)(std::log2(lenData));
     }
 
     // Parameter Not Supported
@@ -93,7 +93,7 @@ void testFullProtocol(
     );  
 
     // Inject Server's MSG
-    serverMsg[42] = std::vector<uint32_t>(lenData, theAnswer);
+    // serverMsg[42] = std::vector<uint32_t>(lenData, theAnswer);
 
     std::cout << "Step 1-3: Server Side Preprocessing" << std::endl;
     EncryptedDB serverDB = constructEncDB(
@@ -111,8 +111,7 @@ void testFullProtocol(
     );
 
     std::cout << "Step 3: Query Encryption" << std::endl;
-    auto queryCtxt = bfv.encrypt(bfv.packing(clientPrepMsg));
-
+    auto queryCtxt = encryptQuery(bfv, clientPrepMsg);
     size_t querySize = ctxtSize(queryCtxt);
 
     std::cout << "Step 4: Do Intersection" << std::endl;

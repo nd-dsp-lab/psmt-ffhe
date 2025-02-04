@@ -4,6 +4,8 @@
 #include "server.h"
 #include "HE.h"
 #include "core.h"
+#include "params.h"
+
 
 using namespace lbcrypto;
 
@@ -19,7 +21,11 @@ std::vector<Plaintext> compMasks (
 
     // Number of Mask = kVal / numPack
     int32_t numMasks = kVal / numPack;
+
     // TODO: throw an error when it is not divisible.
+    if (kVal % numPack != 0) {
+        throw std::runtime_error("Invalid Parameter: kVal is NOT divisible by numPack");
+    }
 
     // Copmute Mask
     for (int32_t i = 0; i < numMasks; i++) {
@@ -45,9 +51,9 @@ std::vector<std::vector<int64_t>> encodeData (
     // Some useful Values
     int32_t logp = (int)(std::log2(prime));
     int32_t lenData = dataVec[0].size();
-    int32_t expRate = 32 / logp + (32 & logp != 0);
+    int32_t expRate = (SINGLE_ELT_BIT / logp) + ((SINGLE_ELT_BIT % logp) != 0);
     int64_t numItems = dataVec.size();
-    int64_t mask = (1<<logp) - 1;
+    int64_t mask = (int64_t(1)<<logp) - 1;
 
     // Encoding Procedure
     std::vector<std::vector<int64_t>> ret;
@@ -90,7 +96,7 @@ EncryptedDB constructEncDB (
     // Step 2. Construct each Chunks
     int64_t numItems = dataVec.size();
     int64_t capacity = ringDim / numPack;
-    int32_t numChunks = numItems / capacity + (numItems % capacity != 0);
+    int32_t numChunks = numItems / capacity + ((numItems % capacity) != 0);
     
     std::vector<EncryptedChunk> chunks;
     Plaintext _ptxt;
@@ -316,7 +322,7 @@ Ciphertext<DCRTPoly> compProbInter (
     }
     
     // TODO: Make it this as a parameter
-    int numRand = 128 / (int)(std::log2(bfv.prime)) + (128 % (int)(std::log2(bfv.prime)) != 0);
+    int numRand = FAIL_PROB_BIT / (int)(std::log2(bfv.prime)) + ((FAIL_PROB_BIT % (int)(std::log2(bfv.prime))) != 0);
 
     // Run NPC
     Ciphertext<DCRTPoly> ret = compProbNPC(
@@ -361,7 +367,7 @@ Ciphertext<DCRTPoly> compProbInterNoVAF (
     }
 
     // TODO: Make it this as a parameter
-    int numRand = 128 / (int)(std::log2(bfv.prime)) + (128 % (int)(std::log2(bfv.prime)) != 0);
+    int numRand = FAIL_PROB_BIT / (int)(std::log2(bfv.prime)) + (FAIL_PROB_BIT % (int)(std::log2(bfv.prime)) != 0);
 
     // Run NPC
     Ciphertext<DCRTPoly> ret = compProbNPC(
