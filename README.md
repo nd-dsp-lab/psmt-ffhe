@@ -23,10 +23,10 @@ By building the project, you obtain the executable file `main`. You can run the 
 ./main
 ```
 
-You can pass cmdline arguments during runtime to change presets while running the program. For instance, to run the program with numItem = 23, lenData = 2, numPack = 1, numAgg = 32, alpha = 3 and interType = "CI", run:
+You can pass cmdline arguments during runtime to change presets while running the program. For instance, to run the program with numItem = 23, lenData = 2, numPack = 1, numAgg = 32, alpha = 3, interType = "CI" and allowIntersection = `true or false`, run:
 
 ```
-./main -numItem 23 -lenData 2 -numPack 1 -numAgg 32 -alpha 3 -interType CI
+./main -numItem 23 -lenData 2 -numPack 1 -numAgg 32 -alpha 3 -interType CI -allowIntersection 1
 ```
 
 ### Parameters of the code

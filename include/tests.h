@@ -12,7 +12,8 @@ void testFullProtocol(
     uint32_t numPack,
     uint32_t numAgg,
     int32_t alpha,
-    const std::string& interType    
+    const std::string& interType,
+    bool allowIntersection    
 );
 
 void testEncoding();
