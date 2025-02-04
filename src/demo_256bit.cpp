@@ -207,13 +207,46 @@ Ciphertext<DCRTPoly> zeromap_compose(
     }
 }
 
+/*
+Optimized zeromap_compose
+This avoids function-level recursion.
+*/
+Ciphertext<DCRTPoly> zeromap_compose_v2(
+    HE& bfv,
+    std::vector<Ciphertext<DCRTPoly>> &ctxts,
+    Plaintext pt3) 
+{
+    int nctxts = ctxts.size();
+
+    while (nctxts > 1) {
+        // Square the ctxts
+        for (int i = 0; i < nctxts; i++) {
+            ctxts[i] = bfv.square(ctxts[i]);
+        }
+
+        // Multiply by 3
+        for (int i = 0; i < nctxts; i += 2 ) {
+            ctxts[i] = bfv.mult(ctxts[i], pt3);
+        }
+
+        // Merge by subtraction
+        for (int i = 0; i < nctxts/2; i++) {
+            ctxts[i] = bfv.sub(ctxts[2*i], ctxts[2*i + 1]);
+        }
+
+        // Update index
+        nctxts>>=1;
+    }
+    return ctxts[0];
+}
+
 //-----------------------------------------
 // Replicate the Python logic in a single function
 //-----------------------------------------
 
 void runDemo() {
     // Equivalent to: bfv = HE(mode="BFV", modulus=65537, depth=20)
-    HE bfv("BFV", 65537, 20);
+    HE bfv("BFV", 65537, 21);
 
     // y = encode_val(42, 1<<15)
     auto yvec   = encode_val(42, 1ULL << 15);
@@ -248,7 +281,7 @@ void runDemo() {
     }
 
     // ret = zeromap_compose(bfv, diffs, pt3)
-    auto ret = zeromap_compose(bfv, diffs, pt3);
+    auto ret = zeromap_compose_v2(bfv, diffs, pt3);
 
     // for i in range(16): ret = bfv.square(ret)
     for (int i = 0; i < 16; i++) {
