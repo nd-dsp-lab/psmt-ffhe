@@ -2,7 +2,6 @@
 #include "tests.h"
 
 using namespace lbcrypto;
-#define theAnswer 0x0
 #include <chrono>
 
 // Helper for Simulation
@@ -12,7 +11,7 @@ std::vector<std::vector<uint32_t>> genData(
 ) {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<uint32_t> dist(1, (1 << 16) - 1);
+    std::uniform_int_distribution<uint32_t> dist(3, (1 << 16) - 1);
 
     std::vector<std::vector<uint32_t>> ret;
     for (int32_t i = 0; i < numItem; i++) {
@@ -52,7 +51,8 @@ void testFullProtocol(
     uint32_t numPack,
     uint32_t numAgg,
     int32_t alpha,
-    const std::string& interType    
+    const std::string& interType,
+    bool allowIntersection    
 ) {
     std::cout << "TEST START! - Parameters" << std::endl;
     std::cout << "numItem: \t" << numItem << std::endl;
@@ -61,6 +61,7 @@ void testFullProtocol(
     std::cout << "numAgg: \t" << numAgg << std::endl;
     std::cout << "alpha: \t\t" << alpha << std::endl;
     std::cout << "Inter Type: \t" << interType << std::endl;
+    std::cout << "Allow Intersection: \t" << allowIntersection << std::endl;
 
     // Depth Calculator
     // TODO: Support various primes
@@ -71,7 +72,7 @@ void testFullProtocol(
     if (interType == "CPI" || interType == "CPIH") {
         depth += 3;
     } else {
-        depth += (int)(std::log2(lenData));
+        depth += (int)(std::log2(lenData)) + 1;
     }
 
     // Parameter Not Supported
@@ -86,14 +87,27 @@ void testFullProtocol(
     HE bfv("BFV", Prime16, depth);
 
     std::cout << "Step 1-2: Setup Databases" << std::endl;
+
+    int64_t theAnswer;
+    if (allowIntersection) {
+        theAnswer = 42;
+    } else {
+        theAnswer = 2;
+    }
+
+    std::cout << "The answer client " << theAnswer << std::endl;
     std::vector<uint32_t> clientMsg(lenData, theAnswer);
+
     std::vector<std::vector<uint32_t>> serverMsg = genData(
         (1<<numItem),    // numItem
         lenData          // lenData; total size = lenData * 32
     );  
 
     // Inject Server's MSG
-    // serverMsg[42] = std::vector<uint32_t>(lenData, theAnswer);
+    if (allowIntersection){
+        std::cout << "The answer server " << theAnswer << std::endl;
+        serverMsg[42] = std::vector<uint32_t>(lenData, theAnswer);
+    }
 
     std::cout << "Step 1-3: Server Side Preprocessing" << std::endl;
     EncryptedDB serverDB = constructEncDB(

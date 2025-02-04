@@ -4,7 +4,6 @@
 #include <map>
 #include <tests.h>
 
-
 // Helper function to check if a string is a valid positive integer
 bool isValidNumber(const std::string& str) {
     if (str.empty()) return false;
@@ -22,17 +21,16 @@ void printUsage() {
               << " -numPack <int>"
               << " -numAgg <int>"
               << " -alpha <int>"
-              << " -interType <string>\n\n"
+              << " -interType <string>"
+              << " -allowIntersection <0 or 1>\n\n"
               << "Example:\n"
-              << "  ./main -numItem 30 -lenData 2 -numPack 4 -numAgg 10 -alpha 5 -interType (CI or CPI or CIH or CPIH)\n\n";
+              << "  ./main -numItem 30 -lenData 2 -numPack 4 -numAgg 10 -alpha 5 -interType (CI or CPI or CIH or CPIH) -allowIntersection 1 \n\n";
 }
 
 int main(int argc, char* argv[]) {
     // We want ALL flags to be supplied. List them here:
-
-
     const std::string REQUIRED_FLAGS[] = {
-        "-numItem", "-lenData", "-numPack", "-numAgg", "-alpha", "-interType"
+        "-numItem", "-lenData", "-numPack", "-numAgg", "-alpha", "-interType", "-allowIntersection"
     };
 
     // Store all key-value pairs in a map
@@ -105,6 +103,13 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
+    // Parse allowIntersection (should be 0 or 1)
+    if (args["-allowIntersection"] != "0" && args["-allowIntersection"] != "1") {
+        std::cerr << "Error: allowIntersection must be either 0 (false) or 1 (true).\n";
+        return 1;
+    }
+    bool allowIntersection = (args["-allowIntersection"] == "1");
+
     // 3. Print final values
     std::cout << "Running testFullProtocol with:\n"
               << "  numItem   = " << numItem << "\n"
@@ -112,15 +117,15 @@ int main(int argc, char* argv[]) {
               << "  numPack   = " << numPack << "\n"
               << "  numAgg    = " << numAgg << "\n"
               << "  alpha     = " << alpha << "\n"
-              << "  interType = " << interType << "\n";
-
+              << "  interType = " << interType << "\n"
+              << "  allowIntersection = " << (allowIntersection ? "true" : "false") << "\n";
 
     // testAllBackends();
     // testBasicOPs();
     // testProbNPC(512);
     // testAgg(512);
 
-    testFullProtocol(numItem, lenData, numPack, numAgg, alpha, interType);
+    testFullProtocol(numItem, lenData, numPack, numAgg, alpha, interType, allowIntersection);
 
     return 0;
 }
