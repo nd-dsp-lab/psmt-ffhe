@@ -14,6 +14,7 @@ You can compile the code by using the following commands:
 ```
 mkdir build && cd build
 cmake -S .. -B .
+make 
 ```
 
 By building the project, you obtain the executable file `main`. You can run the code by 
