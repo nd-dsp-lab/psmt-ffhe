@@ -9,23 +9,19 @@ default_target: all
 # Allow only one "make -f Makefile2" at a time, but pass parallelism.
 .NOTPARALLEL:
 
-
 #=============================================================================
 # Special targets provided by cmake.
 
 # Disable implicit rules so canonical targets will work.
 .SUFFIXES:
 
-
 # Remove some rules from gmake that .SUFFIXES does not remove.
 SUFFIXES =
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
-
 
 # A target that is always out of date.
 cmake_force:
@@ -48,10 +44,12 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/spaik2/psmt-ffhe
+# (Replace hard-coded path with the current directory.)
+CMAKE_SOURCE_DIR = $(CURDIR)
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/spaik2/psmt-ffhe
+# (Replace hard-coded path with the current directory.)
+CMAKE_BINARY_DIR = $(CURDIR)
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -62,9 +60,7 @@ rebuild_cache:
 	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
-# Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
-
 .PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
@@ -73,16 +69,14 @@ edit_cache:
 	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
-# Special rule for the target edit_cache
 edit_cache/fast: edit_cache
-
 .PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/spaik2/psmt-ffhe/CMakeFiles /home/spaik2/psmt-ffhe/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start $(CMAKE_BINARY_DIR)/CMakeFiles $(CMAKE_BINARY_DIR)/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/spaik2/psmt-ffhe/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start $(CMAKE_BINARY_DIR)/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -90,9 +84,7 @@ clean:
 	$(MAKE) -f CMakeFiles/Makefile2 clean
 .PHONY : clean
 
-# The main clean target
 clean/fast: clean
-
 .PHONY : clean/fast
 
 # Prepare targets for installation.
@@ -100,7 +92,6 @@ preinstall: all
 	$(MAKE) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall
 
-# Prepare targets for installation.
 preinstall/fast:
 	$(MAKE) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall/fast
@@ -113,12 +104,10 @@ depend:
 #=============================================================================
 # Target rules for targets named main
 
-# Build rule for target.
 main: cmake_check_build_system
 	$(MAKE) -f CMakeFiles/Makefile2 main
 .PHONY : main
 
-# fast build rule for target.
 main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
@@ -126,201 +115,157 @@ main/fast:
 #=============================================================================
 # Target rules for targets named demo_256bit
 
-# Build rule for target.
 demo_256bit: cmake_check_build_system
 	$(MAKE) -f CMakeFiles/Makefile2 demo_256bit
 .PHONY : demo_256bit
 
-# fast build rule for target.
 demo_256bit/fast:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/build
 .PHONY : demo_256bit/fast
 
 src/client.o: src/client.cpp.o
-
 .PHONY : src/client.o
 
-# target to build an object file
 src/client.cpp.o:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/client.cpp.o
 .PHONY : src/client.cpp.o
 
 src/client.i: src/client.cpp.i
-
 .PHONY : src/client.i
 
-# target to preprocess a source file
 src/client.cpp.i:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/client.cpp.i
 .PHONY : src/client.cpp.i
 
 src/client.s: src/client.cpp.s
-
 .PHONY : src/client.s
 
-# target to generate assembly for a file
 src/client.cpp.s:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/client.cpp.s
 .PHONY : src/client.cpp.s
 
 src/core.o: src/core.cpp.o
-
 .PHONY : src/core.o
 
-# target to build an object file
 src/core.cpp.o:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/core.cpp.o
 .PHONY : src/core.cpp.o
 
 src/core.i: src/core.cpp.i
-
 .PHONY : src/core.i
 
-# target to preprocess a source file
 src/core.cpp.i:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/core.cpp.i
 .PHONY : src/core.cpp.i
 
 src/core.s: src/core.cpp.s
-
 .PHONY : src/core.s
 
-# target to generate assembly for a file
 src/core.cpp.s:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/core.cpp.s
 .PHONY : src/core.cpp.s
 
 src/demo_256bit.o: src/demo_256bit.cpp.o
-
 .PHONY : src/demo_256bit.o
 
-# target to build an object file
 src/demo_256bit.cpp.o:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/demo_256bit.cpp.o
 .PHONY : src/demo_256bit.cpp.o
 
 src/demo_256bit.i: src/demo_256bit.cpp.i
-
 .PHONY : src/demo_256bit.i
 
-# target to preprocess a source file
 src/demo_256bit.cpp.i:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/demo_256bit.cpp.i
 .PHONY : src/demo_256bit.cpp.i
 
 src/demo_256bit.s: src/demo_256bit.cpp.s
-
 .PHONY : src/demo_256bit.s
 
-# target to generate assembly for a file
 src/demo_256bit.cpp.s:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/demo_256bit.cpp.s
 .PHONY : src/demo_256bit.cpp.s
 
 src/demo_comp.o: src/demo_comp.cpp.o
-
 .PHONY : src/demo_comp.o
 
-# target to build an object file
 src/demo_comp.cpp.o:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/demo_comp.cpp.o
 .PHONY : src/demo_comp.cpp.o
 
 src/demo_comp.i: src/demo_comp.cpp.i
-
 .PHONY : src/demo_comp.i
 
-# target to preprocess a source file
 src/demo_comp.cpp.i:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/demo_comp.cpp.i
 .PHONY : src/demo_comp.cpp.i
 
 src/demo_comp.s: src/demo_comp.cpp.s
-
 .PHONY : src/demo_comp.s
 
-# target to generate assembly for a file
 src/demo_comp.cpp.s:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/demo_comp.cpp.s
 .PHONY : src/demo_comp.cpp.s
 
 src/main.o: src/main.cpp.o
-
 .PHONY : src/main.o
 
-# target to build an object file
 src/main.cpp.o:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
-
 .PHONY : src/main.i
 
-# target to preprocess a source file
 src/main.cpp.i:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
-
 .PHONY : src/main.s
 
-# target to generate assembly for a file
 src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/server.o: src/server.cpp.o
-
 .PHONY : src/server.o
 
-# target to build an object file
 src/server.cpp.o:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/server.cpp.o
 .PHONY : src/server.cpp.o
 
 src/server.i: src/server.cpp.i
-
 .PHONY : src/server.i
 
-# target to preprocess a source file
 src/server.cpp.i:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/server.cpp.i
 .PHONY : src/server.cpp.i
 
 src/server.s: src/server.cpp.s
-
 .PHONY : src/server.s
 
-# target to generate assembly for a file
 src/server.cpp.s:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/server.cpp.s
 .PHONY : src/server.cpp.s
 
 src/tests.o: src/tests.cpp.o
-
 .PHONY : src/tests.o
 
-# target to build an object file
 src/tests.cpp.o:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/tests.cpp.o
 .PHONY : src/tests.cpp.o
 
 src/tests.i: src/tests.cpp.i
-
 .PHONY : src/tests.i
 
-# target to preprocess a source file
 src/tests.cpp.i:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/tests.cpp.i
 .PHONY : src/tests.cpp.i
 
 src/tests.s: src/tests.cpp.s
-
 .PHONY : src/tests.s
 
-# target to generate assembly for a file
 src/tests.cpp.s:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/src/tests.cpp.s
 .PHONY : src/tests.cpp.s
@@ -358,15 +303,8 @@ help:
 	@echo "... src/tests.s"
 .PHONY : help
 
-
-
 #=============================================================================
-# Special targets to cleanup operation of make.
-
 # Special rule to run CMake to check the build system integrity.
-# No rule that depends on this can have commands that come from listfiles
-# because they might be regenerated.
 cmake_check_build_system:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
-

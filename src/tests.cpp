@@ -25,7 +25,7 @@ std::vector<std::vector<uint32_t>> genData(
     return ret;
 }
 
-// Useful Promes
+// Useful Primes
 # define Prime16 65537
 # define Prime19 786433
 # define Prime23 8519681
@@ -147,7 +147,7 @@ void testFullProtocol(
     auto ret = checkIntResult(bfv, interResCtxt);
 
     std::cout << "Inter Result: " << ret << std::endl;
-    std::cout << "Query Size: " << (double)(querySize) / 1000000 << "Mb" << std::endl;
+    std::cout << "OpenFHE Query Size: " << (double)(querySize) / 1000000 << "MB" << std::endl;
 }
 
 // Helper Functions for pack integers

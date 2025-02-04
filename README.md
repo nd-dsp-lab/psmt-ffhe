@@ -9,16 +9,23 @@ This is a collaborative project between University of Notre Dame, USA, and Hanya
 
 ### How to compile and run the code
 
-You can compile the code by using the `cmake` file in the repository. More precisely, just simply run
+You can compile the code by using the following commands:
 
 ```
-make
+mkdir build && cd build
+cmake -S .. -B .
 ```
 
 By building the project, you obtain the executable file `main`. You can run the code by 
 
 ```
 ./main
+```
+
+There are some default values for numItem, lenData, numPack, numAgg, alpha and interType declared in the `/src/main.cpp`. You can pass cmdline arguments during runtime to change these presets. For instance, to run the program with numItem = 22, lenData = 32, numPack = 1, numAgg = 8, alpha = 3 and interType = "CI", run:
+
+```
+./main 20 64 1 16 3 CI
 ```
 
 ### Parameters of the code
