@@ -1,5 +1,6 @@
 #include <openfhe.h>
 #include "tests.h"
+#include "params.h"
 
 using namespace lbcrypto;
 #include <chrono>
@@ -70,14 +71,14 @@ void testFullProtocol(
         depth += (int)(std::log2(numAgg));
     }    
     if (interType == "CPI" || interType == "CPIH") {
-        depth += 3;
+        depth += (int)(std::log2(FAIL_PROB_BIT / 16));
     } else {
         depth += (int)(std::log2(lenData)) + 1;
     }
 
     // Parameter Not Supported
     if (depth > 23) {
-        throw std::runtime_error("Depth is TOO high...");
+        throw std::runtime_error("Depth is TOO high... :"  + std::to_string(depth));
     }
 
     std::cout << "Depth: \t\t" << depth << std::endl;    
