@@ -1,0 +1,4 @@
+Test One:
+Parameters:
+numItem=17, lenData=4, numPack=1, numAgg=32, alpha=3, interType=CPI, allowIntersection=1
+7.70465s,1
