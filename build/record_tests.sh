@@ -6,6 +6,9 @@ testNum=0
 
 #Intersection 1
 #CI is in common for these
+
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -24,6 +27,8 @@ for n in {15..23}; do
     
 done
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -41,6 +46,8 @@ for n in {15..23}; do
     done
     
 done
+
+echo $testNum
 
 for n in {15..23}; do
     ((testNum++))
@@ -63,6 +70,8 @@ done
 #CPI is in common for these
 interType=CPI
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -81,6 +90,8 @@ for n in {15..23}; do
     
 done
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -98,6 +109,8 @@ for n in {15..23}; do
     done
     
 done
+
+echo $testNum
 
 for n in {15..23}; do
     ((testNum++))
@@ -122,6 +135,8 @@ done
 #CIH is in common for these
 interType=CIH
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -140,6 +155,8 @@ for n in {15..23}; do
     
 done
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -157,6 +174,8 @@ for n in {15..23}; do
     done
     
 done
+
+echo $testNum
 
 for n in {15..23}; do
     ((testNum++))
@@ -179,6 +198,8 @@ done
 #CPIH is in common for these
 interType=CPIH
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -197,6 +218,8 @@ for n in {15..23}; do
     
 done
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -214,6 +237,8 @@ for n in {15..23}; do
     done
     
 done
+
+echo $testNum
 
 for n in {15..23}; do
     ((testNum++))
@@ -237,6 +262,9 @@ done
 #CI is in common for these
 
 allowIntersection=0
+
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -255,6 +283,8 @@ for n in {15..23}; do
     
 done
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -272,6 +302,8 @@ for n in {15..23}; do
     done
     
 done
+
+echo $testNum
 
 for n in {15..23}; do
     ((testNum++))
@@ -294,6 +326,8 @@ done
 #CPI is in common for these
 interType=CPI
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -312,6 +346,8 @@ for n in {15..23}; do
     
 done
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -329,6 +365,8 @@ for n in {15..23}; do
     done
     
 done
+
+echo $testNum
 
 for n in {15..23}; do
     ((testNum++))
@@ -353,6 +391,8 @@ done
 #CIH is in common for these
 interType=CIH
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -371,6 +411,8 @@ for n in {15..23}; do
     
 done
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -388,6 +430,8 @@ for n in {15..23}; do
     done
     
 done
+
+echo $testNum
 
 for n in {15..23}; do
     ((testNum++))
@@ -410,6 +454,8 @@ done
 #CPIH is in common for these
 interType=CPIH
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -427,6 +473,8 @@ for n in {15..23}; do
     done
     
 done
+
+echo $testNum
 
 for n in {15..23}; do
     ((testNum++))
@@ -446,6 +494,8 @@ for n in {15..23}; do
     
 done
 
+echo $testNum
+
 for n in {15..23}; do
     ((testNum++))
     numItem=$n
@@ -464,3 +514,4 @@ for n in {15..23}; do
     
 done
 
+echo COMPLETED
