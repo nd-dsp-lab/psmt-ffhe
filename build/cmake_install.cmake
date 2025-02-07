@@ -1,4 +1,4 @@
-# Install script for directory: /home/spaik2/test/psmt-ffhe
+# Install script for directory: /home/jnero/psmt-ffhe
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/spaik2/test/psmt-ffhe/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/jnero/psmt-ffhe/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

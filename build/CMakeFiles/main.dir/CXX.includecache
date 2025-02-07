@@ -34,7 +34,7 @@ server.h
 client.h
 ../include/client.h
 
-/home/spaik2/test/psmt-ffhe/src/main.cpp
+/home/jnero/psmt-ffhe/src/main.cpp
 iostream
 -
 cstdlib
