@@ -1,0 +1,15 @@
+numItem=22, lenData=4, numPack=1, numAgg=16, alpha=3, interType=CPI, allowIntersection=1
+46.2076s,1
+46.1273s,1
+46.08s,1
+46.194s,1
+46.2508s,1
+46.126s,1
+46.2872s,1
+46.2356s,1
+46.127s,1
+46.5406s,1
+46.369s,1
+46.2348s,1
+46.4829s,1
+46.5391s,1
