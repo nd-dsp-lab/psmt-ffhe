@@ -3,3 +3,4 @@ Parameters:
 numItem=23, lenData=4, numPack=1, numAgg=32, alpha=3, interType=CPI, allowIntersection=1
 93.1475s,1
 91.9807s,1
+93.1837s,1
