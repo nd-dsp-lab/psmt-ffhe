@@ -1,2 +1,16 @@
 numItem=18, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CPIH, allowIntersection=1
 8.1904s,1
+7.88118s,1
+8.3414s,1
+8.269s,1
+7.78294s,1
+7.80505s,1
+7.85452s,1
+7.93117s,1
+7.77973s,1
+7.94497s,1
+7.88004s,1
+8.30985s,1
+7.80769s,1
+8.02296s,1
+8.38127s,1
