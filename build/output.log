@@ -5,3 +5,14 @@ nohup: ignoring input
 27
 36
 45
+54
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
