@@ -7,3 +7,8 @@ numItem=17, lenData=4, numPack=1, numAgg=16, alpha=3, interType=CI, allowInterse
 10.0338s,0
 9.96789s,0
 9.94809s,0
+9.97249s,0
+9.96768s,0
+10.8564s,0
+9.91192s,0
+9.95506s,0
