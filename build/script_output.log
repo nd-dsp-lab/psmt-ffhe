@@ -179,3 +179,16 @@ Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
 To https://github.com/n7koirala/psmt-ffhe.git
    2616404..a34525c  experiments -> experiments
 Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
+[experiments 9f5039c] RUNNING TESTS: update #35
+ 4 files changed, 72 insertions(+)
+ create mode 100644 build/test_results/test49.txt
+ create mode 100644 build/test_results/test50.txt
+Missing or invalid credentials.
+Error: read ECONNRESET
+    at Pipe.onStreamRead (node:internal/stream_base_commons:218:20) {
+  errno: -104,
+  code: 'ECONNRESET',
+  syscall: 'read'
+}
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
