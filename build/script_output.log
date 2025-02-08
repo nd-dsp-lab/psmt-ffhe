@@ -192,3 +192,24 @@ Error: read ECONNRESET
 }
 remote: Repository not found.
 fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
+[experiments 5686f31] RUNNING TESTS: update #36
+ 3 files changed, 35 insertions(+)
+ create mode 100644 build/test_results/test51.txt
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
