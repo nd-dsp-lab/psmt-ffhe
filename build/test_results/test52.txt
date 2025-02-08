@@ -1,3 +1,5 @@
 Test One:
 Parameters:
 numItem=21, lenData=4, numPack=1, numAgg=32, alpha=3, interType=CPI, allowIntersection=1
+23.8646s,1
+23.9197s,1
