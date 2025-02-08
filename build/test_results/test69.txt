@@ -13,3 +13,5 @@ numItem=20, lenData=4, numPack=1, numAgg=16, alpha=3, interType=CIH, allowInters
 20.2359s,1
 20.119s,1
 20.2007s,1
+20.3008s,1
+20.4064s,1
