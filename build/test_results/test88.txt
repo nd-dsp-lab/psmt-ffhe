@@ -8,3 +8,7 @@ numItem=21, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CPIH, allowInters
 21.4385s,1
 21.2677s,1
 21.3472s,1
+21.2706s,1
+21.2029s,1
+21.152s,1
+21.3957s,1
