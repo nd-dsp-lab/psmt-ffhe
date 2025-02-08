@@ -23,3 +23,4 @@ numItem=21, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CPIH, allowInters
 21.2671s,1
 21.3213s,1
 21.1339s,1
+21.3474s,1
