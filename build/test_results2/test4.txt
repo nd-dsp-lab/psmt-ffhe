@@ -20,3 +20,7 @@ numItem=18, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CI, allowIntersec
 10.9189s,0
 10.1976s,0
 10.1786s,0
+10.1715s,0
+10.8141s,0
+10.8238s,0
+10.7809s,0
