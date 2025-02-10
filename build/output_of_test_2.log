@@ -6948,3 +6948,15 @@ Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
 To https://github.com/n7koirala/psmt-ffhe.git
    da04bda..bbcc1bd  experiments -> experiments
 Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
+[experiments 5ec0d0e] RUNNING TESTS SECOND ROUND: update #530
+ 2 files changed, 6 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNRESET /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -104,
+  code: 'ECONNRESET',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
