@@ -8275,3 +8275,8 @@ Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
 To https://github.com/n7koirala/psmt-ffhe.git
    906e053..2d36026  experiments -> experiments
 Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
+[experiments 97e3715] RUNNING TESTS SECOND ROUND: update #602
+ 2 files changed, 6 insertions(+)
+To https://github.com/n7koirala/psmt-ffhe.git
+   2d36026..97e3715  experiments -> experiments
+Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
