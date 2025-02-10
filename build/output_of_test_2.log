@@ -13,27 +13,19 @@ terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
   what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
 terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
   what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
- 2 files changed, 9 insertions(+)
-To https://github.com/n7koirala/psmt-ffhe.git
-   131d141..f141456  experiments -> experiments
-Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
-[experiments 34bc817] RUNNING TESTS SECOND ROUND: update #3
- 2 files changed, 8 insertions(+)
-To https://github.com/n7koirala/psmt-ffhe.git
-   f141456..34bc817  experiments -> experiments
-Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
-[experiments 359f5ed] RUNNING TESTS SECOND ROUND: update #4
- 3 files changed, 10 insertions(+)
- create mode 100644 build/test_results2/test3.txt
-To https://github.com/n7koirala/psmt-ffhe.git
-   34bc817..359f5ed  experiments -> experiments
-Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
-[experiments 4d5e6f5] RUNNING TESTS SECOND ROUND: update #5
- 2 files changed, 8 insertions(+)
-To https://github.com/n7koirala/psmt-ffhe.git
-   359f5ed..4d5e6f5  experiments -> experiments
-Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
-[experiments 5d2c2d6] RUNNING TESTS SECOND ROUND: update #6
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+ate #6
  2 files changed, 15 insertions(+)
 To https://github.com/n7koirala/psmt-ffhe.git
    4d5e6f5..5d2c2d6  experiments -> experiments
@@ -12717,6 +12709,27 @@ remote: Repository not found.
 fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
 [experiments 3070613] RUNNING TESTS SECOND ROUND: update #880
  1 file changed, 20 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
+[experiments 9657a98] RUNNING TESTS SECOND ROUND: update #881
+ 3 files changed, 31 insertions(+), 14 deletions(-)
+ create mode 100644 build/test_results2/test55.txt
 Missing or invalid credentials.
 Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
     at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
