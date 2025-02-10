@@ -276,16 +276,11 @@ terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
   what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
 terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
   what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
-invalid credentials.
-Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
-    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
-  errno: -111,
-  code: 'ECONNREFUSED',
-  syscall: 'connect',
-  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
-}
-remote: Repository not found.
-fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+oirala/psmt-ffhe.git/'
 [experiments 1e8689d] RUNNING TESTS SECOND ROUND: update #65
  2 files changed, 21 insertions(+)
 Missing or invalid credentials.
@@ -20745,6 +20740,26 @@ remote: Repository not found.
 fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
 [experiments 0824880] RUNNING TESTS SECOND ROUND: update #1294
  1 file changed, 25 insertions(+), 13 deletions(-)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
+[experiments 5bfe1b2] RUNNING TESTS SECOND ROUND: update #1295
+ 1 file changed, 27 insertions(+), 15 deletions(-)
 Missing or invalid credentials.
 Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
     at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
