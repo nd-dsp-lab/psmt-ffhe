@@ -1,3 +1,4 @@
 numItem=23, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CIH, allowIntersection=0
 117.083s,0
 117.251s,0
+116.735s,0
