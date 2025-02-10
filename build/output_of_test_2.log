@@ -3,7 +3,8 @@ nohup: ignoring input
 18
 27
 36
-44d9447] RUNNING TESTS SECOND ROUND: update #0
+45
+9447] RUNNING TESTS SECOND ROUND: update #0
  6 files changed, 105 insertions(+), 64 deletions(-)
  create mode 100644 build/output_of_test_2.log
  create mode 100644 build/test_results2/test1.txt
@@ -8910,6 +8911,26 @@ Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
 remote: Repository not found.
 fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
 [experiments dd1dc69] RUNNING TESTS SECOND ROUND: update #667
+ 1 file changed, 20 insertions(+)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
+[experiments cba66de] RUNNING TESTS SECOND ROUND: update #668
  1 file changed, 20 insertions(+)
 Missing or invalid credentials.
 Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
