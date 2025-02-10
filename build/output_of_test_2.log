@@ -45,23 +45,17 @@ terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
   what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
 terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
   what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
-'experiments' set up to track remote branch 'experiments' from 'origin'.
-[experiments 160bd9b] RUNNING TESTS SECOND ROUND: update #13
- 2 files changed, 11 insertions(+)
-To https://github.com/n7koirala/psmt-ffhe.git
-   5702198..160bd9b  experiments -> experiments
-Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
-[experiments 724ac11] RUNNING TESTS SECOND ROUND: update #14
- 2 files changed, 12 insertions(+)
-To https://github.com/n7koirala/psmt-ffhe.git
-   160bd9b..724ac11  experiments -> experiments
-Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
-[experiments 1393a4c] RUNNING TESTS SECOND ROUND: update #15
- 3 files changed, 10 insertions(+)
- create mode 100644 build/test_results2/test6.txt
-To https://github.com/n7koirala/psmt-ffhe.git
-   724ac11..1393a4c  experiments -> experiments
-Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+'.
 [experiments 0e6302b] RUNNING TESTS SECOND ROUND: update #16
  2 files changed, 10 insertions(+)
 To https://github.com/n7koirala/psmt-ffhe.git
@@ -12753,6 +12747,26 @@ Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
 remote: Repository not found.
 fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
 [experiments 95d7889] RUNNING TESTS SECOND ROUND: update #883
+ 1 file changed, 31 insertions(+), 19 deletions(-)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
+[experiments f3880b8] RUNNING TESTS SECOND ROUND: update #884
  1 file changed, 31 insertions(+), 19 deletions(-)
 Missing or invalid credentials.
 Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
