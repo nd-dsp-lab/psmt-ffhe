@@ -5,3 +5,4 @@ numItem=19, lenData=4, numPack=1, numAgg=32, alpha=3, interType=CPI, allowInters
 8.86167s,0
 8.74199s,0
 8.57024s,0
+9.36602s,0
