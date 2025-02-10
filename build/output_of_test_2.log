@@ -137,18 +137,13 @@ terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
   what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
 terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
   what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
-origin'.
-[experiments 2c9bf6c] RUNNING TESTS SECOND ROUND: update #44
- 3 files changed, 13 insertions(+)
- create mode 100644 build/test_results2/test9.txt
-To https://github.com/n7koirala/psmt-ffhe.git
-   df9b5d3..2c9bf6c  experiments -> experiments
-Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
-[experiments f7b39ba] RUNNING TESTS SECOND ROUND: update #45
- 1 file changed, 6 insertions(+)
-To https://github.com/n7koirala/psmt-ffhe.git
-   2c9bf6c..f7b39ba  experiments -> experiments
-Branch 'experiments' set up to track remote branch 'experiments' from 'origin'.
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+te branch 'experiments' from 'origin'.
 [experiments e6038b0] RUNNING TESTS SECOND ROUND: update #46
  2 files changed, 10 insertions(+)
 To https://github.com/n7koirala/psmt-ffhe.git
@@ -12990,6 +12985,26 @@ remote: Repository not found.
 fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
 [experiments 8166c35] RUNNING TESTS SECOND ROUND: update #898
  1 file changed, 25 insertions(+), 9 deletions(-)
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+Missing or invalid credentials.
+Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '/run/user/242671/vscode-git-b8d941b6c1.sock'
+}
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/n7koirala/psmt-ffhe.git/'
+[experiments 295d367] RUNNING TESTS SECOND ROUND: update #899
+ 1 file changed, 25 insertions(+), 7 deletions(-)
 Missing or invalid credentials.
 Error: connect ECONNREFUSED /run/user/242671/vscode-git-b8d941b6c1.sock
     at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
