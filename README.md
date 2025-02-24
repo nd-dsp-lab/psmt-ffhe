@@ -31,18 +31,18 @@ You can pass cmdline arguments during runtime to change presets while running th
 
 ### Parameters of the code
 
-There are several parameters of the code, which is described in the `main.cpp` file. All the details of each codes are as follows. Note that the plaintext modulus is fixed to $p = 2^{16} + 1$. In addition, the consumed depth is automatically calculated according to the parameter setup.
+There are several parameters of the code, which are described in the `main.cpp` file. All the details of each code are as follows. Note that the plaintext modulus is fixed to $p = 2^{16} + 1$. In addition, the consumed depth is automatically calculated according to the parameter setup.
 
 - `numItem`: A number of items (in logarithm of base 2) held by a single data owner.
 - `lenData`: A parameter to set the length of the data. The total size would be `(32 * lenData)`
-- `numPack`: A parameter to control the number of "sequentially" packed ciphertexts. This is for the `Handling Various Sizes of Datasets at Once` in Section 6.3. `1` is default implementation of ours. Note that the setting `numPack = 2 * lenData` is equivalent to the `[KLLW16]` paper.
+- `numPack`: A parameter to control the number of "sequentially" packed ciphertexts. This is for the `Handling Various Sizes of Datasets at Once` in Section 6.3. `1` is the default implementation of ours. Note that the setting `numPack = 2 * lenData` is equivalent to the `[KLLW16]` paper.
 - `numAgg`: A parameter to set the number of elements multiplicatively aggregated. This is for implementing the hybrid aggregation in `Hybrid Aggregation for Huge Datasets`, Section 6.2.
-- `alpha`: A parameter that is non-quadratic residue over the finite field of plaintext modulus. `3` is the smallest non-quadratic residue for the fixed plaintext modulus.
-- `interType`: A parameter for specifying the type to compute the intersection. Currently, there are four types are implemented.
+- `alpha`: A parameter that is a non-quadratic residue over the finite field of plaintext modulus. `3` is the smallest non-quadratic residue for the fixed plaintext modulus.
+- `interType`: A parameter for specifying the type to compute the intersection. Currently, four types are being implemented.
     - `CI`: It runs `CompInter`, which is a basic intersection protocol.
-    - `CPI`: It runs `CompProbInter`, which is a code with the probabilistic reduction technique in `Section 4.3.`. Note that this code gives a slower result when the size of set is $<256$.
-    - `CIH`: It runs `CompInterHybrid`, which is a basic intersection protocol with a hybrid aggregation. This is effective when we need to deal huge-scale datasets, e.g., $2^{20}$ or more.
-    - `CPIH`: It runs `CompProbInterHybrid`, which is the combination of probabilistic reduction and the hybrid aggregation. This is effective for extremely large-scale datasets, e.g., $2^{20}$ or more set elements represented by at least $256$-bits.
+    - `CPI`: It runs `CompProbInter`, which is a code with the probabilistic reduction technique in `Section 4.3.`. Note that this code gives a slower result when the size of the set is $**<128**$.
+    - `CIH`: It runs `CompInterHybrid`, which is a basic intersection protocol with a hybrid aggregation. This is effective when we need to deal with huge-scale datasets, e.g., $2^{20}$ or more.
+    - `CPIH`: It runs `CompProbInterHybrid`, which is the combination of probabilistic reduction and hybrid aggregation. This is effective for extremely large-scale datasets, e.g., $2^{20}$ or more set elements represented by at least $256$-bits.
 
 ### More stuffs
 
