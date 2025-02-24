@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jnero/psmt-ffhe
+CMAKE_SOURCE_DIR = /home/spaik2/psmt-ffhe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jnero/psmt-ffhe/build
+CMAKE_BINARY_DIR = /home/spaik2/psmt-ffhe/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jnero/psmt-ffhe/build/CMakeFiles /home/jnero/psmt-ffhe/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/spaik2/psmt-ffhe/build/CMakeFiles /home/spaik2/psmt-ffhe/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jnero/psmt-ffhe/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/spaik2/psmt-ffhe/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named main_pepsi
+
+# Build rule for target.
+main_pepsi: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main_pepsi
+.PHONY : main_pepsi
+
+# fast build rule for target.
+main_pepsi/fast:
+	$(MAKE) -f CMakeFiles/main_pepsi.dir/build.make CMakeFiles/main_pepsi.dir/build
+.PHONY : main_pepsi/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -124,6 +137,19 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
+# Target rules for targets named PEPSI
+
+# Build rule for target.
+PEPSI: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PEPSI
+.PHONY : PEPSI
+
+# fast build rule for target.
+PEPSI/fast:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/build
+.PHONY : PEPSI/fast
+
+#=============================================================================
 # Target rules for targets named demo_256bit
 
 # Build rule for target.
@@ -135,6 +161,141 @@ demo_256bit: cmake_check_build_system
 demo_256bit/fast:
 	$(MAKE) -f CMakeFiles/demo_256bit.dir/build.make CMakeFiles/demo_256bit.dir/build
 .PHONY : demo_256bit/fast
+
+pepsi/client.o: pepsi/client.cpp.o
+
+.PHONY : pepsi/client.o
+
+# target to build an object file
+pepsi/client.cpp.o:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/client.cpp.o
+.PHONY : pepsi/client.cpp.o
+
+pepsi/client.i: pepsi/client.cpp.i
+
+.PHONY : pepsi/client.i
+
+# target to preprocess a source file
+pepsi/client.cpp.i:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/client.cpp.i
+.PHONY : pepsi/client.cpp.i
+
+pepsi/client.s: pepsi/client.cpp.s
+
+.PHONY : pepsi/client.s
+
+# target to generate assembly for a file
+pepsi/client.cpp.s:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/client.cpp.s
+.PHONY : pepsi/client.cpp.s
+
+pepsi/core.o: pepsi/core.cpp.o
+
+.PHONY : pepsi/core.o
+
+# target to build an object file
+pepsi/core.cpp.o:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/core.cpp.o
+.PHONY : pepsi/core.cpp.o
+
+pepsi/core.i: pepsi/core.cpp.i
+
+.PHONY : pepsi/core.i
+
+# target to preprocess a source file
+pepsi/core.cpp.i:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/core.cpp.i
+.PHONY : pepsi/core.cpp.i
+
+pepsi/core.s: pepsi/core.cpp.s
+
+.PHONY : pepsi/core.s
+
+# target to generate assembly for a file
+pepsi/core.cpp.s:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/core.cpp.s
+.PHONY : pepsi/core.cpp.s
+
+pepsi/main_pepsi.o: pepsi/main_pepsi.cpp.o
+
+.PHONY : pepsi/main_pepsi.o
+
+# target to build an object file
+pepsi/main_pepsi.cpp.o:
+	$(MAKE) -f CMakeFiles/main_pepsi.dir/build.make CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.o
+.PHONY : pepsi/main_pepsi.cpp.o
+
+pepsi/main_pepsi.i: pepsi/main_pepsi.cpp.i
+
+.PHONY : pepsi/main_pepsi.i
+
+# target to preprocess a source file
+pepsi/main_pepsi.cpp.i:
+	$(MAKE) -f CMakeFiles/main_pepsi.dir/build.make CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.i
+.PHONY : pepsi/main_pepsi.cpp.i
+
+pepsi/main_pepsi.s: pepsi/main_pepsi.cpp.s
+
+.PHONY : pepsi/main_pepsi.s
+
+# target to generate assembly for a file
+pepsi/main_pepsi.cpp.s:
+	$(MAKE) -f CMakeFiles/main_pepsi.dir/build.make CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.s
+.PHONY : pepsi/main_pepsi.cpp.s
+
+pepsi/server.o: pepsi/server.cpp.o
+
+.PHONY : pepsi/server.o
+
+# target to build an object file
+pepsi/server.cpp.o:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/server.cpp.o
+.PHONY : pepsi/server.cpp.o
+
+pepsi/server.i: pepsi/server.cpp.i
+
+.PHONY : pepsi/server.i
+
+# target to preprocess a source file
+pepsi/server.cpp.i:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/server.cpp.i
+.PHONY : pepsi/server.cpp.i
+
+pepsi/server.s: pepsi/server.cpp.s
+
+.PHONY : pepsi/server.s
+
+# target to generate assembly for a file
+pepsi/server.cpp.s:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/server.cpp.s
+.PHONY : pepsi/server.cpp.s
+
+pepsi/tests.o: pepsi/tests.cpp.o
+
+.PHONY : pepsi/tests.o
+
+# target to build an object file
+pepsi/tests.cpp.o:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o
+.PHONY : pepsi/tests.cpp.o
+
+pepsi/tests.i: pepsi/tests.cpp.i
+
+.PHONY : pepsi/tests.i
+
+# target to preprocess a source file
+pepsi/tests.cpp.i:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/tests.cpp.i
+.PHONY : pepsi/tests.cpp.i
+
+pepsi/tests.s: pepsi/tests.cpp.s
+
+.PHONY : pepsi/tests.s
+
+# target to generate assembly for a file
+pepsi/tests.cpp.s:
+	$(MAKE) -f CMakeFiles/PEPSI.dir/build.make CMakeFiles/PEPSI.dir/pepsi/tests.cpp.s
+.PHONY : pepsi/tests.cpp.s
 
 src/client.o: src/client.cpp.o
 
@@ -333,8 +494,25 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... main_pepsi"
 	@echo "... main"
+	@echo "... PEPSI"
 	@echo "... demo_256bit"
+	@echo "... pepsi/client.o"
+	@echo "... pepsi/client.i"
+	@echo "... pepsi/client.s"
+	@echo "... pepsi/core.o"
+	@echo "... pepsi/core.i"
+	@echo "... pepsi/core.s"
+	@echo "... pepsi/main_pepsi.o"
+	@echo "... pepsi/main_pepsi.i"
+	@echo "... pepsi/main_pepsi.s"
+	@echo "... pepsi/server.o"
+	@echo "... pepsi/server.i"
+	@echo "... pepsi/server.s"
+	@echo "... pepsi/tests.o"
+	@echo "... pepsi/tests.i"
+	@echo "... pepsi/tests.s"
 	@echo "... src/client.o"
 	@echo "... src/client.i"
 	@echo "... src/client.s"

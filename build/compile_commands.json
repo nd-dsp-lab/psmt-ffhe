@@ -1,0 +1,73 @@
+[
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include -I../pepsi   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.o -c /home/spaik2/psmt-ffhe/pepsi/main_pepsi.cpp",
+  "file": "/home/spaik2/psmt-ffhe/pepsi/main_pepsi.cpp"
+},
+
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/main.dir/src/main.cpp.o -c /home/spaik2/psmt-ffhe/src/main.cpp",
+  "file": "/home/spaik2/psmt-ffhe/src/main.cpp"
+},
+
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/PEPSI.dir/pepsi/client.cpp.o -c /home/spaik2/psmt-ffhe/pepsi/client.cpp",
+  "file": "/home/spaik2/psmt-ffhe/pepsi/client.cpp"
+},
+
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/PEPSI.dir/pepsi/server.cpp.o -c /home/spaik2/psmt-ffhe/pepsi/server.cpp",
+  "file": "/home/spaik2/psmt-ffhe/pepsi/server.cpp"
+},
+
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/PEPSI.dir/pepsi/core.cpp.o -c /home/spaik2/psmt-ffhe/pepsi/core.cpp",
+  "file": "/home/spaik2/psmt-ffhe/pepsi/core.cpp"
+},
+
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o -c /home/spaik2/psmt-ffhe/pepsi/tests.cpp",
+  "file": "/home/spaik2/psmt-ffhe/pepsi/tests.cpp"
+},
+
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/demo_256bit.dir/src/demo_256bit.cpp.o -c /home/spaik2/psmt-ffhe/src/demo_256bit.cpp",
+  "file": "/home/spaik2/psmt-ffhe/src/demo_256bit.cpp"
+},
+
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/demo_256bit.dir/src/demo_comp.cpp.o -c /home/spaik2/psmt-ffhe/src/demo_comp.cpp",
+  "file": "/home/spaik2/psmt-ffhe/src/demo_comp.cpp"
+},
+
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/demo_256bit.dir/src/core.cpp.o -c /home/spaik2/psmt-ffhe/src/core.cpp",
+  "file": "/home/spaik2/psmt-ffhe/src/core.cpp"
+},
+
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/demo_256bit.dir/src/server.cpp.o -c /home/spaik2/psmt-ffhe/src/server.cpp",
+  "file": "/home/spaik2/psmt-ffhe/src/server.cpp"
+},
+
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/demo_256bit.dir/src/client.cpp.o -c /home/spaik2/psmt-ffhe/src/client.cpp",
+  "file": "/home/spaik2/psmt-ffhe/src/client.cpp"
+},
+
+{
+  "directory": "/home/spaik2/psmt-ffhe/build",
+  "command": "/usr/bin/g++   -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include   -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17 -o CMakeFiles/demo_256bit.dir/src/tests.cpp.o -c /home/spaik2/psmt-ffhe/src/tests.cpp",
+  "file": "/home/spaik2/psmt-ffhe/src/tests.cpp"
+}
+]

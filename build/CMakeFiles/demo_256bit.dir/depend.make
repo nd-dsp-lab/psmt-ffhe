@@ -1220,6 +1220,7 @@ CMakeFiles/demo_256bit.dir/src/server.cpp.o: /usr/local/include/openfhe/pke/sche
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: ../include/HE.h
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: ../include/client.h
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: ../include/core.h
+CMakeFiles/demo_256bit.dir/src/tests.cpp.o: ../include/params.h
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: ../include/server.h
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: ../include/tests.h
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: ../src/tests.cpp
