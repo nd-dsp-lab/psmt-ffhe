@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHB
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I/home/spaik2/test/psmt-ffhe/include 
+CXX_INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I/home/jnero/psmt-ffhe/include 
 
