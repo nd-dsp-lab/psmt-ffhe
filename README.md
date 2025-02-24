@@ -40,7 +40,7 @@ There are several parameters of the code, which are described in the `main.cpp` 
 - `alpha`: A parameter that is a non-quadratic residue over the finite field of plaintext modulus. `3` is the smallest non-quadratic residue for the fixed plaintext modulus.
 - `interType`: A parameter for specifying the type to compute the intersection. Currently, four types are being implemented.
     - `CI`: It runs `CompInter`, which is a basic intersection protocol.
-    - `CPI`: It runs `CompProbInter`, which is a code with the probabilistic reduction technique in `Section 4.3.`. Note that this code gives a slower result when the size of the set is $**<128**$.
+    - `CPI`: It runs `CompProbInter`, which is a code with the probabilistic reduction technique in `Section 4.3.`. Note that this code gives a slower result when the size of the set is **<128**.
     - `CIH`: It runs `CompInterHybrid`, which is a basic intersection protocol with a hybrid aggregation. This is effective when we need to deal with huge-scale datasets, e.g., $2^{20}$ or more.
     - `CPIH`: It runs `CompProbInterHybrid`, which is the combination of probabilistic reduction and hybrid aggregation. This is effective for extremely large-scale datasets, e.g., $2^{20}$ or more set elements represented by at least $256$-bits.
 
