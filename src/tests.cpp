@@ -1,5 +1,6 @@
 #include <openfhe.h>
 #include "tests.h"
+#include "params.h"
 
 using namespace lbcrypto;
 #include <chrono>
@@ -70,14 +71,14 @@ void testFullProtocol(
         depth += (int)(std::log2(numAgg));
     }    
     if (interType == "CPI" || interType == "CPIH") {
-        depth += 3;
+        depth += (int)(std::log2(FAIL_PROB_BIT / 16)) + 1;
     } else {
         depth += (int)(std::log2(lenData)) + 1;
     }
 
     // Parameter Not Supported
     if (depth > 23) {
-        throw std::runtime_error("Depth is TOO high...");
+        throw std::runtime_error("Depth is TOO high... :"  + std::to_string(depth));
     }
 
     std::cout << "Depth: \t\t" << depth << std::endl;    
@@ -563,6 +564,53 @@ void testAgg(int numParties) {
     double timeSec = std::chrono::duration<double>(t2-t1).count();
     std::cout << "Done! Time Elapsed: " << timeSec << "s" << std::endl;
 }
+
+void testRotAgg(int numParties) {
+    std::cout << "<< Test Code for Measuring Aggregation Cost" << std::endl;
+    HE bfv("BFV", 65537, 19);  
+    Ciphertext<DCRTPoly> _tmp, __tmp, ret;
+    Plaintext _ptxt;
+    std::vector<int64_t> msgVec(bfv.ringDim, 1);
+
+    // Prepare Dataset    
+    std::vector<Ciphertext<DCRTPoly>> ctVec(numParties);
+    // #pragma omp parallel for
+    for (int i = 0; i < numParties; i++) {        
+        _ptxt = bfv.packing(msgVec);
+        _tmp = bfv.encrypt(_ptxt);
+        __tmp = bfv.compress(_tmp, 3);
+        ctVec[i] = __tmp;
+    }
+
+    // Do Aggregation
+    auto t1 = std::chrono::high_resolution_clock::now();
+
+    auto t1agg = std::chrono::high_resolution_clock::now();
+    ret = bfv.addmany(ctVec);
+    size_t querySize = ctxtSize(ret);
+    auto t2agg = std::chrono::high_resolution_clock::now();
+    auto timeAgg = std::chrono::duration<double>(t2agg - t1agg).count();
+    std::cout << "Time for Aggregation: " << timeAgg << "s" << std::endl;
+
+    // Rot&Add
+    auto t1rot = std::chrono::high_resolution_clock::now();
+    for (int i = 1; i < bfv.ringDim; i*=2) {
+        _tmp = bfv.rotate(ret, i);
+        ret = bfv.add(ret, _tmp);
+    }
+    auto t2rot = std::chrono::high_resolution_clock::now();
+    auto timeRot = std::chrono::duration<double>(t2rot - t1rot).count();
+    std::cout << "Time for Rotation & Addition: " << timeRot << "s" << std::endl;
+
+    auto t2 = std::chrono::high_resolution_clock::now();
+    double timeSec = std::chrono::duration<double>(t2-t1).count();
+    std::cout << "Done! Total Time Elapsed: " << timeSec << "s" << std::endl;
+    std::cout << "Size of Compressed Ctxt (MB): " << querySize / 1000000.0 << std::endl;
+    std::vector<int64_t> retVec = bfv.decrypt(ret)->GetPackedValue();
+    std::cout << "Output of first 20 Entries:" << std::endl;
+    std::cout << std::vector<int64_t>(retVec.begin(), retVec.begin() + 20) << std::endl;
+}
+
 
 
 // Test code for all backends

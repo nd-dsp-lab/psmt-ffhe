@@ -1,0 +1,9 @@
+Number of items needs to be checked (first flag): 15-23
+LenData: 4
+numPack: (how many slots a single element will occupy in the ciphertext) 1
+numAgg: (controls how many VAFs we will do) the larger the value the less VAFs  8, 16, 32
+alpha: 3
+interType: hybrid and nonhybrid two collumns but test all four
+25 each runs for each set of parameters, should be able to do in one night
+need statistics average, median, max, min, standard deviation
+query size should remain the same

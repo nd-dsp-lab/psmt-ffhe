@@ -1,0 +1,27 @@
+numItem=15, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CI, allowIntersection=1
+4.00425s,1
+4.35637s,1
+4.02131s,1
+4.33679s,1
+4.11564s,1
+4.42151s,1
+4.00042s,1
+4.05815s,1
+4.37926s,1
+4.25494s,1
+4.32579s,1
+4.01115s,1
+4.00105s,1
+4.05185s,1
+4.04852s,1
+3.99309s,1
+4.20035s,1
+4.03946s,1
+4.04196s,1
+4.03548s,1
+4.10699s,1
+4.0102s,1
+4.40009s,1
+4.06767s,1
+4.06646s,1
+numItem=15, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CI, allowIntersection=0

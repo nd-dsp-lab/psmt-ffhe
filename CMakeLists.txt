@@ -68,6 +68,26 @@ else()
     target_link_libraries(demo_256bit PRIVATE ${OpenFHE_SHARED_LIBRARIES})
 endif()
 
+add_library(PEPSI
+    ${PROJECT_SOURCE_DIR}/pepsi/client.cpp
+    ${PROJECT_SOURCE_DIR}/pepsi/server.cpp
+    ${PROJECT_SOURCE_DIR}/pepsi/core.cpp
+    ${PROJECT_SOURCE_DIR}/pepsi/tests.cpp
+    ${PROJECT_SOURCE_DIR}/include/HE.h
+)
+
+# Let the library see your include/ folder
+target_include_directories(PEPSI PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+# Link OpenFHE with demo_256bit
+if(BUILD_STATIC)
+    target_link_libraries(PEPSI PRIVATE ${OpenFHE_STATIC_LIBRARIES})
+else()
+    target_link_libraries(PEPSI PRIVATE ${OpenFHE_SHARED_LIBRARIES})
+endif()
+
 ##################################################
 # 2) Build the main executable from main.cpp
 ##################################################
@@ -85,3 +105,13 @@ target_include_directories(main PRIVATE
 # - OpenFHE, if you want to do so here as well
 target_link_libraries(main PRIVATE demo_256bit)
 
+add_executable(main_pepsi
+    ${PROJECT_SOURCE_DIR}/pepsi/main_pepsi.cpp
+)
+
+target_include_directories(main_pepsi PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+    ${PROJECT_SOURCE_DIR}/pepsi
+)
+
+target_link_libraries(main_pepsi PRIVATE PEPSI)

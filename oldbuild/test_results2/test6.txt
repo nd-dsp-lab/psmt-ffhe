@@ -1,0 +1,32 @@
+numItem=20, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CI, allowIntersection=0
+17.9883s,0
+18.1427s,0
+17.946s,0
+18.033s,0
+17.9768s,0
+18.0645s,0
+17.9677s,0
+17.8966s,0
+18.0259s,0
+18.0856s,0
+17.9463s,0
+17.9341s,0
+18.0384s,0
+18.1936s,0
+18.169s,0
+17.8476s,0
+18.1153s,0
+18.0659s,0
+18.0315s,0
+18.1531s,0
+17.9211s,0
+17.9396s,0
+18.0581s,0
+17.998s,0
+18.1023s,0
+numItem={LB..UB}, lenData=4, numPack=1, numAgg=4, alpha=3, interType=CIH, allowIntersection=0
+numItem={LB..UB}, lenData=4, numPack=1, numAgg=4, alpha=3, interType=CIH, allowIntersection=0
+numItem={20..23}, lenData=4, numPack=1, numAgg=4, alpha=3, interType=CIH, allowIntersection=0
+numItem={20..23}, lenData=4, numPack=1, numAgg=4, alpha=3, interType=CIH, allowIntersection=0
+numItem=20, lenData=4, numPack=1, numAgg=2, alpha=3, interType=CIH, allowIntersection=1
+17.5692s,1
