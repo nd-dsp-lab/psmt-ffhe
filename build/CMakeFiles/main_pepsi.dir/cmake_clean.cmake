@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.o"
-  "CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.o.d"
   "main_pepsi"
   "main_pepsi.pdb"
 )
