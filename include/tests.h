@@ -24,6 +24,7 @@ void testRotAdd();
 void testProbNPC(int k);
 void testAgg(int numParties);
 void testRotAgg(int numParties);
+void testSanityCheck(int numParties);
 
 void testAllBackends(int k, int numParties);
 

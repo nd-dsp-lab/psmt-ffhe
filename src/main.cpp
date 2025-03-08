@@ -123,7 +123,8 @@ int main(int argc, char* argv[]) {
     // testAllBackends();
     // testBasicOPs();
     // testProbNPC(512);
-    testRotAgg(1024);
+    // testRotAgg(1024);
+    testSanityCheck(1024);
     // testFullProtocol(numItem, lenData, numPack, numAgg, alpha, interType, allowIntersection);
 
     return 0;
