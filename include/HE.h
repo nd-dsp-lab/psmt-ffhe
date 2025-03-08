@@ -8,7 +8,7 @@ using namespace lbcrypto;
 class HE {
 public:
     int64_t ringDim;
-    int64_t prime;
+    int64_t prime;    
 
     // Constructor for BFV or BGV mode, but default here is BFV.
     HE(const std::string& mode    = "BFV",

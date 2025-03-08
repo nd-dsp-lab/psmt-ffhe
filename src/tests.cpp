@@ -611,6 +611,68 @@ void testRotAgg(int numParties) {
     std::cout << std::vector<int64_t>(retVec.begin(), retVec.begin() + 20) << std::endl;
 }
 
+void testSanityCheck(int numParties) {
+    std::cout << "<< Test Code for Measuring Aggregation Cost" << std::endl;
+    HE bfv("BFV", 65537, 19);  
+    Ciphertext<DCRTPoly> _tmp, __tmp, ret;
+    Plaintext _ptxt;
+    std::vector<int64_t> msgVec(bfv.ringDim, 0);
+    msgVec[0] = 1;
+
+    // Prepare Dataset    
+    std::vector<Ciphertext<DCRTPoly>> ctVec(numParties);
+    // #pragma omp parallel for
+    for (int i = 0; i < numParties; i++) {        
+        _ptxt = bfv.packing(msgVec);
+        _tmp = bfv.encrypt(_ptxt);
+        __tmp = bfv.compress(_tmp, 3);
+        ctVec[i] = __tmp;
+    }
+
+    // Do Aggregation
+    auto t1 = std::chrono::high_resolution_clock::now();
+
+    auto t1agg = std::chrono::high_resolution_clock::now();
+    ret = bfv.addmany(ctVec);
+    size_t querySize = ctxtSize(ret);
+    auto t2agg = std::chrono::high_resolution_clock::now();
+    auto timeAgg = std::chrono::duration<double>(t2agg - t1agg).count();
+    std::cout << "Time for Aggregation: " << timeAgg << "s" << std::endl;
+
+    // Rot&Add
+    auto t1rot = std::chrono::high_resolution_clock::now();
+    for (int i = 1; i < bfv.ringDim; i*=2) {
+        _tmp = bfv.rotate(ret, i);
+        ret = bfv.add(ret, _tmp);
+    }
+    auto t2rot = std::chrono::high_resolution_clock::now();
+    auto timeRot = std::chrono::duration<double>(t2rot - t1rot).count();
+    std::cout << "Time for Rotation & Addition: " << timeRot << "s" << std::endl;
+
+    // Multiply a Random Number 
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int64_t>dist(1, bfv.prime-1);
+    int64_t rand = dist(gen);
+    std::vector<DCRTPoly>& cv = ret->GetElements();
+    for (uint32_t i = 0; i < cv.size(); i++) {
+        cv[i] = cv[i].Times(rand);
+    }
+    auto t2 = std::chrono::high_resolution_clock::now();
+    double timeSec = std::chrono::duration<double>(t2-t1).count();
+
+    // Expected Output
+    int64_t expOut = ((rand * numParties + (bfv.prime / 2)) % (bfv.prime)) - (bfv.prime / 2);
+
+    std::cout << "Done! Total Time Elapsed: " << timeSec << "s" << std::endl;
+    std::cout << "Size of Compressed Ctxt (MB): " << querySize / 1000000.0 << std::endl;
+    std::vector<int64_t> retVec = bfv.decrypt(ret)->GetPackedValue();
+    std::cout << "Output of first 20 Entries:" << std::endl;
+    std::cout << std::vector<int64_t>(retVec.begin(), retVec.begin() + 20) << std::endl;
+    std::cout << "RandVal:" << rand << std::endl;
+    std::cout << "Expected Output:" << expOut << std::endl;
+}
+
 
 
 // Test code for all backends
