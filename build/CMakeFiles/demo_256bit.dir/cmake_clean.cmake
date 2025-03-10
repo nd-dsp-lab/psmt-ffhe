@@ -1,16 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/demo_256bit.dir/src/client.cpp.o"
-  "CMakeFiles/demo_256bit.dir/src/client.cpp.o.d"
   "CMakeFiles/demo_256bit.dir/src/core.cpp.o"
-  "CMakeFiles/demo_256bit.dir/src/core.cpp.o.d"
   "CMakeFiles/demo_256bit.dir/src/demo_256bit.cpp.o"
-  "CMakeFiles/demo_256bit.dir/src/demo_256bit.cpp.o.d"
   "CMakeFiles/demo_256bit.dir/src/demo_comp.cpp.o"
-  "CMakeFiles/demo_256bit.dir/src/demo_comp.cpp.o.d"
   "CMakeFiles/demo_256bit.dir/src/server.cpp.o"
-  "CMakeFiles/demo_256bit.dir/src/server.cpp.o.d"
   "CMakeFiles/demo_256bit.dir/src/tests.cpp.o"
-  "CMakeFiles/demo_256bit.dir/src/tests.cpp.o.d"
   "libdemo_256bit.a"
   "libdemo_256bit.pdb"
 )

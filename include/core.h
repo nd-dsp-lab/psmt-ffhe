@@ -54,4 +54,9 @@ Ciphertext<DCRTPoly> compProbNPC(
     uint32_t numRand
 );
 
+Ciphertext<DCRTPoly> randWSumInPlace(
+    HE &bfv,
+    const std::vector<Ciphertext<DCRTPoly>> ctxts
+);
+
 #endif

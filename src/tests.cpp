@@ -629,6 +629,8 @@ void testSanityCheck(int numParties) {
         ctVec[i] = __tmp;
     }
 
+    std::cout << "Yay!" << std::endl;
+
     // Do Aggregation
     auto t1 = std::chrono::high_resolution_clock::now();
 
