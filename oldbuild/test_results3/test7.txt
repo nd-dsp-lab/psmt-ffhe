@@ -1,0 +1,11 @@
+numItem=21, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CI, allowIntersection=0
+32.3701s,0
+32.2158s,0
+32.0789s,0
+32.2287s,0
+32.0702s,0
+32.2027s,0
+32.2108s,0
+32.2271s,0
+32.1993s,0
+32.1135s,0

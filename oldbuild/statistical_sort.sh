@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Input and output files
-input_file="statistical_results_newagg.txt"  # Update to your input file name
-output_file="output_newagg.csv"
+input_file="statistical_results_newagg-kevin.txt"  # Update to your input file name
+output_file="output_newagg-kevin.csv"
 
 # Write CSV header
 echo "numItem,lenData,numPack,numAgg,alpha,interType,allowIntersection,Average,Std Dev,Min,Max,Median" > "$output_file"

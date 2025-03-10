@@ -1,0 +1,1377 @@
+0
+./record_tests.sh: line 29: ./test_results3/test2.txt: No such file or directory
+./record_tests.sh: line 29: ./test_results3/test2.txt: No such file or directory
+./record_tests.sh: line 29: ./test_results3/test2.txt: No such file or directory
+./record_tests.sh: line 29: ./test_results3/test2.txt: No such file or directory
+0
+9
+18
+27
+36
+45
+54
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+63
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+72
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+81
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+90
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+99
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+108
+0
+9
+18
+27
+36
+45
+54
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+63
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+72
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+81
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+90
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+99
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Depth is TOO high...
+108
+117
+126
+135
+144
+153
+162
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector
+terminate called after throwing an instance of 'lbcrypto::OpenFHEException'
+  what():  /usr/local/include/openfhe/pke/cryptocontext.h:l.2432:EvalAddMany(): Empty input ciphertext vector

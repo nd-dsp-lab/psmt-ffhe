@@ -1,15 +1,19 @@
 #!/bin/bash
 
-output_file="statistical_results_newagg.txt"
+output_file="statistical_results_newagg-kevin.txt"
+
+#This is the directory our statistics generator processes
+input_dir="test_results4"
+
 
 # Clear the output file before starting
 echo "STATISTICS GENERATOR ----------------------------" > "$output_file"
 
-for i in {1..108}; do
+for i in {1..166}; do
     echo "-----------STATISTICS FOR TEST #$i-----------" >> "$output_file"
 
     # Extract the line containing 'numItems'
-    line_with_numItems=$(grep -m 1 'numItems*' "./test_changeAgg_new/test$i.txt")
+    line_with_numItems=$(grep -m 1 'numItems*' "./${input_dir}/test$i.txt")
 
     if [ -n "$line_with_numItems" ]; then
         echo "Parameters: $line_with_numItems" >> "$output_file"
@@ -17,7 +21,7 @@ for i in {1..108}; do
         echo "No line with 'numItems' found in test$i.txt" >> "$output_file"
     fi
 
-    results=$(grep -Eo '[0-9]+\.[0-9]+s' "./test_changeAgg_new/test$i.txt")
+    results=$(grep -Eo '[0-9]+\.[0-9]+s' "./${input_dir}/test$i.txt")
     sum=0
     numElements=0
     min=0
