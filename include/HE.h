@@ -8,7 +8,7 @@ using namespace lbcrypto;
 class HE {
 public:
     int64_t ringDim;
-    int64_t prime;
+    int64_t prime;    
 
     // Constructor for BFV or BGV mode, but default here is BFV.
     HE(const std::string& mode    = "BFV",
@@ -19,6 +19,8 @@ public:
             CCParams<CryptoContextBFVRNS> parameters;
             parameters.SetPlaintextModulus(modulus);
             parameters.SetMultiplicativeDepth(depth);
+            // This is for the noise flooding; 128-bit noise is added to the final ciphertext.
+            parameters.SetMultipartyMode(NOISE_FLOODING_MULTIPARTY);
             std::cout  << "Parameters: " << parameters << std::endl;
             cc = GenCryptoContext(parameters);
         } else if (mode == "BGV") {
@@ -38,7 +40,7 @@ public:
 
         keyPair = cc->KeyGen();
         cc->EvalMultKeyGen(keyPair.secretKey);
-        cc->EvalRotateKeyGen(keyPair.secretKey, {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192});
+        cc->EvalRotateKeyGen(keyPair.secretKey, {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384});
 
 
         // Print some approximate stats (optional)
@@ -46,8 +48,9 @@ public:
         // but we replicate the Python code's approximate logging.
         double logPtMod = std::log2(cc->GetCryptoParameters()->GetPlaintextModulus());
         double logRing  = std::log2(cc->GetRingDimension());
-        double sizeMB   = (static_cast<double>(1ULL << static_cast<size_t>(std::round(logRing))) 
-                         * logPtMod * 2.0) / (1ULL << 23);
+        // double sizeMB   = (double)cc->GetRingDimension() 
+        //                 * log2(cc->GetCryptoParameters()->GetElementParams()->GetModulus().ConvertToDouble())
+        //                 * 2.0 / 8.0 / 1000000.0;
 
         // BFV parameter
         ringDim = cc->GetRingDimension();
@@ -58,7 +61,7 @@ public:
               << std::endl;
         std::cout << "Plaintext Modulus, p (bit) approx: " << logPtMod << std::endl;
         std::cout << "Ring Dimension, N (log) approx:    " << logRing << std::endl;
-        std::cout << "CTXT Size in MB approx:         " << sizeMB << std::endl;
+        // std::cout << "CTXT Size in MB approx:         " << sizeMB << std::endl;
     }
 
 
@@ -126,9 +129,10 @@ public:
     }    
 
     Ciphertext<DCRTPoly> compress(
-        const Ciphertext<DCRTPoly> &ct
+        const Ciphertext<DCRTPoly> &ct,
+        uint32_t level=0
     ) {
-        return cc->Compress(ct);
+        return cc->Compress(ct, level);
     }
 
     // (Optional) Rescale or compress if needed – not shown here

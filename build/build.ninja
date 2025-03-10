@@ -63,7 +63,7 @@ build cmake_object_order_depends_target_main_pepsi: phony || cmake_object_order_
 
 build CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.o: CXX_COMPILER__main_pepsi ../pepsi/main_pepsi.cpp || cmake_object_order_depends_target_main_pepsi
   DEP_FILE = CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include -I../pepsi
   OBJECT_DIR = CMakeFiles/main_pepsi.dir
   OBJECT_FILE_DIR = CMakeFiles/main_pepsi.dir/pepsi
@@ -76,9 +76,9 @@ build CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.o: CXX_COMPILER__main_pepsi
 #############################################
 # Link the executable main_pepsi
 
-build main_pepsi: CXX_EXECUTABLE_LINKER__main_pepsi CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.o | libPEPSI.a /usr/local/lib/libOPENFHEpke.so.1.0.3 /usr/local/lib/libOPENFHEbinfhe.so.1.0.3 /usr/local/lib/libOPENFHEcore.so.1.0.3 || libPEPSI.a
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g
-  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  libPEPSI.a  /usr/local/lib/libOPENFHEpke.so.1.0.3  /usr/local/lib/libOPENFHEbinfhe.so.1.0.3  /usr/local/lib/libOPENFHEcore.so.1.0.3  -fopenmp
+build main_pepsi: CXX_EXECUTABLE_LINKER__main_pepsi CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.o | libPEPSI.a /usr/local/lib/libOPENFHEpke.so.1.2.3 /usr/local/lib/libOPENFHEbinfhe.so.1.2.3 /usr/local/lib/libOPENFHEcore.so.1.2.3 || libPEPSI.a
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g
+  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  libPEPSI.a  /usr/local/lib/libOPENFHEpke.so.1.2.3  /usr/local/lib/libOPENFHEbinfhe.so.1.2.3  /usr/local/lib/libOPENFHEcore.so.1.2.3  -ldl  -fopenmp
   LINK_PATH = -L/usr/local/lib
   OBJECT_DIR = CMakeFiles/main_pepsi.dir
   POST_BUILD = :
@@ -97,7 +97,7 @@ build cmake_object_order_depends_target_main: phony || cmake_object_order_depend
 
 build CMakeFiles/main.dir/src/main.cpp.o: CXX_COMPILER__main ../src/main.cpp || cmake_object_order_depends_target_main
   DEP_FILE = CMakeFiles/main.dir/src/main.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include
   OBJECT_DIR = CMakeFiles/main.dir
   OBJECT_FILE_DIR = CMakeFiles/main.dir/src
@@ -110,9 +110,9 @@ build CMakeFiles/main.dir/src/main.cpp.o: CXX_COMPILER__main ../src/main.cpp || 
 #############################################
 # Link the executable main
 
-build main: CXX_EXECUTABLE_LINKER__main CMakeFiles/main.dir/src/main.cpp.o | libdemo_256bit.a /usr/local/lib/libOPENFHEpke.so.1.0.3 /usr/local/lib/libOPENFHEbinfhe.so.1.0.3 /usr/local/lib/libOPENFHEcore.so.1.0.3 || libdemo_256bit.a
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g
-  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  libdemo_256bit.a  /usr/local/lib/libOPENFHEpke.so.1.0.3  /usr/local/lib/libOPENFHEbinfhe.so.1.0.3  /usr/local/lib/libOPENFHEcore.so.1.0.3  -fopenmp
+build main: CXX_EXECUTABLE_LINKER__main CMakeFiles/main.dir/src/main.cpp.o | libdemo_256bit.a /usr/local/lib/libOPENFHEpke.so.1.2.3 /usr/local/lib/libOPENFHEbinfhe.so.1.2.3 /usr/local/lib/libOPENFHEcore.so.1.2.3 || libdemo_256bit.a
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g
+  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  libdemo_256bit.a  /usr/local/lib/libOPENFHEpke.so.1.2.3  /usr/local/lib/libOPENFHEbinfhe.so.1.2.3  /usr/local/lib/libOPENFHEcore.so.1.2.3  -ldl  -fopenmp
   LINK_PATH = -L/usr/local/lib
   OBJECT_DIR = CMakeFiles/main.dir
   POST_BUILD = :
@@ -131,28 +131,28 @@ build cmake_object_order_depends_target_PEPSI: phony || CMakeFiles/PEPSI.dir
 
 build CMakeFiles/PEPSI.dir/pepsi/client.cpp.o: CXX_COMPILER__PEPSI ../pepsi/client.cpp || cmake_object_order_depends_target_PEPSI
   DEP_FILE = CMakeFiles/PEPSI.dir/pepsi/client.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include
   OBJECT_DIR = CMakeFiles/PEPSI.dir
   OBJECT_FILE_DIR = CMakeFiles/PEPSI.dir/pepsi
 
 build CMakeFiles/PEPSI.dir/pepsi/server.cpp.o: CXX_COMPILER__PEPSI ../pepsi/server.cpp || cmake_object_order_depends_target_PEPSI
   DEP_FILE = CMakeFiles/PEPSI.dir/pepsi/server.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include
   OBJECT_DIR = CMakeFiles/PEPSI.dir
   OBJECT_FILE_DIR = CMakeFiles/PEPSI.dir/pepsi
 
 build CMakeFiles/PEPSI.dir/pepsi/core.cpp.o: CXX_COMPILER__PEPSI ../pepsi/core.cpp || cmake_object_order_depends_target_PEPSI
   DEP_FILE = CMakeFiles/PEPSI.dir/pepsi/core.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include
   OBJECT_DIR = CMakeFiles/PEPSI.dir
   OBJECT_FILE_DIR = CMakeFiles/PEPSI.dir/pepsi
 
 build CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o: CXX_COMPILER__PEPSI ../pepsi/tests.cpp || cmake_object_order_depends_target_PEPSI
   DEP_FILE = CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include
   OBJECT_DIR = CMakeFiles/PEPSI.dir
   OBJECT_FILE_DIR = CMakeFiles/PEPSI.dir/pepsi
@@ -165,8 +165,8 @@ build CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o: CXX_COMPILER__PEPSI ../pepsi/tests
 #############################################
 # Link the static library libPEPSI.a
 
-build libPEPSI.a: CXX_STATIC_LIBRARY_LINKER__PEPSI CMakeFiles/PEPSI.dir/pepsi/client.cpp.o CMakeFiles/PEPSI.dir/pepsi/server.cpp.o CMakeFiles/PEPSI.dir/pepsi/core.cpp.o CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o || /usr/local/lib/libOPENFHEpke.so.1.0.3 /usr/local/lib/libOPENFHEbinfhe.so.1.0.3 /usr/local/lib/libOPENFHEcore.so.1.0.3
-  LANGUAGE_COMPILE_FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g
+build libPEPSI.a: CXX_STATIC_LIBRARY_LINKER__PEPSI CMakeFiles/PEPSI.dir/pepsi/client.cpp.o CMakeFiles/PEPSI.dir/pepsi/server.cpp.o CMakeFiles/PEPSI.dir/pepsi/core.cpp.o CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o || /usr/local/lib/libOPENFHEpke.so.1.2.3 /usr/local/lib/libOPENFHEbinfhe.so.1.2.3 /usr/local/lib/libOPENFHEcore.so.1.2.3
+  LANGUAGE_COMPILE_FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g
   OBJECT_DIR = CMakeFiles/PEPSI.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -184,42 +184,42 @@ build cmake_object_order_depends_target_demo_256bit: phony || CMakeFiles/demo_25
 
 build CMakeFiles/demo_256bit.dir/src/demo_256bit.cpp.o: CXX_COMPILER__demo_256bit ../src/demo_256bit.cpp || cmake_object_order_depends_target_demo_256bit
   DEP_FILE = CMakeFiles/demo_256bit.dir/src/demo_256bit.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include
   OBJECT_DIR = CMakeFiles/demo_256bit.dir
   OBJECT_FILE_DIR = CMakeFiles/demo_256bit.dir/src
 
 build CMakeFiles/demo_256bit.dir/src/demo_comp.cpp.o: CXX_COMPILER__demo_256bit ../src/demo_comp.cpp || cmake_object_order_depends_target_demo_256bit
   DEP_FILE = CMakeFiles/demo_256bit.dir/src/demo_comp.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include
   OBJECT_DIR = CMakeFiles/demo_256bit.dir
   OBJECT_FILE_DIR = CMakeFiles/demo_256bit.dir/src
 
 build CMakeFiles/demo_256bit.dir/src/core.cpp.o: CXX_COMPILER__demo_256bit ../src/core.cpp || cmake_object_order_depends_target_demo_256bit
   DEP_FILE = CMakeFiles/demo_256bit.dir/src/core.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include
   OBJECT_DIR = CMakeFiles/demo_256bit.dir
   OBJECT_FILE_DIR = CMakeFiles/demo_256bit.dir/src
 
 build CMakeFiles/demo_256bit.dir/src/server.cpp.o: CXX_COMPILER__demo_256bit ../src/server.cpp || cmake_object_order_depends_target_demo_256bit
   DEP_FILE = CMakeFiles/demo_256bit.dir/src/server.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include
   OBJECT_DIR = CMakeFiles/demo_256bit.dir
   OBJECT_FILE_DIR = CMakeFiles/demo_256bit.dir/src
 
 build CMakeFiles/demo_256bit.dir/src/client.cpp.o: CXX_COMPILER__demo_256bit ../src/client.cpp || cmake_object_order_depends_target_demo_256bit
   DEP_FILE = CMakeFiles/demo_256bit.dir/src/client.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include
   OBJECT_DIR = CMakeFiles/demo_256bit.dir
   OBJECT_FILE_DIR = CMakeFiles/demo_256bit.dir/src
 
 build CMakeFiles/demo_256bit.dir/src/tests.cpp.o: CXX_COMPILER__demo_256bit ../src/tests.cpp || cmake_object_order_depends_target_demo_256bit
   DEP_FILE = CMakeFiles/demo_256bit.dir/src/tests.cpp.o.d
-  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g   -std=gnu++17
+  FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g   -std=gnu++17
   INCLUDES = -I/usr/local/include/openfhe -I/usr/local/include/openfhe/third-party/include -I/usr/local/include/openfhe/core -I/usr/local/include/openfhe/pke -I/usr/local/include/openfhe/binfhe -I../include
   OBJECT_DIR = CMakeFiles/demo_256bit.dir
   OBJECT_FILE_DIR = CMakeFiles/demo_256bit.dir/src
@@ -232,8 +232,8 @@ build CMakeFiles/demo_256bit.dir/src/tests.cpp.o: CXX_COMPILER__demo_256bit ../s
 #############################################
 # Link the static library libdemo_256bit.a
 
-build libdemo_256bit.a: CXX_STATIC_LIBRARY_LINKER__demo_256bit CMakeFiles/demo_256bit.dir/src/demo_256bit.cpp.o CMakeFiles/demo_256bit.dir/src/demo_comp.cpp.o CMakeFiles/demo_256bit.dir/src/core.cpp.o CMakeFiles/demo_256bit.dir/src/server.cpp.o CMakeFiles/demo_256bit.dir/src/client.cpp.o CMakeFiles/demo_256bit.dir/src/tests.cpp.o || /usr/local/lib/libOPENFHEpke.so.1.0.3 /usr/local/lib/libOPENFHEbinfhe.so.1.0.3 /usr/local/lib/libOPENFHEcore.so.1.0.3
-  LANGUAGE_COMPILE_FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.0.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -fopenmp -g
+build libdemo_256bit.a: CXX_STATIC_LIBRARY_LINKER__demo_256bit CMakeFiles/demo_256bit.dir/src/demo_256bit.cpp.o CMakeFiles/demo_256bit.dir/src/demo_comp.cpp.o CMakeFiles/demo_256bit.dir/src/core.cpp.o CMakeFiles/demo_256bit.dir/src/server.cpp.o CMakeFiles/demo_256bit.dir/src/client.cpp.o CMakeFiles/demo_256bit.dir/src/tests.cpp.o || /usr/local/lib/libOPENFHEpke.so.1.2.3 /usr/local/lib/libOPENFHEbinfhe.so.1.2.3 /usr/local/lib/libOPENFHEcore.so.1.2.3
+  LANGUAGE_COMPILE_FLAGS = -Wall -Werror -O3  -DOPENFHE_VERSION=1.2.3 -Wno-parentheses -DMATHBACKEND=4 -fopenmp -g
   OBJECT_DIR = CMakeFiles/demo_256bit.dir
   POST_BUILD = :
   PRE_LINK = :

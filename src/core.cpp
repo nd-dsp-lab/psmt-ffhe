@@ -168,6 +168,46 @@ Ciphertext<DCRTPoly> randWSum (
     return ret;
 }
 
+// Unsafe but probably faster version of multiplying random element
+Ciphertext<DCRTPoly> randWSumInPlace(
+    HE &bfv,
+    const std::vector<Ciphertext<DCRTPoly>> ctxts
+) {
+    // Random Number Generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int64_t> dist(0, bfv.prime - 1);
+
+    // Setup for the return
+    Ciphertext<DCRTPoly> ret, _tmp; 
+    Plaintext _ptxt;
+    int64_t randNum;
+
+    // Parallel Computation
+    if (ctxts.size() >= 16) {
+        #pragma omp parallel for private(randNum, _ptxt)
+        for (uint32_t i = 0; i < ctxts.size(); i++) {
+            randNum = dist(gen);
+            std::vector<DCRTPoly> &cv = ctxts[i]->GetElements();
+            for (uint32_t j = 0; j < cv.size(); j++) {
+                cv[j] = cv[j].Times(randNum);
+            }
+        }
+    } else {
+        for (uint32_t i = 0; i < ctxts.size(); i++) {
+            randNum = dist(gen);
+            std::vector<DCRTPoly> &cv = ctxts[i]->GetElements();
+            for (uint32_t j = 0; j < cv.size(); j++) {
+                cv[j] = cv[j].Times(randNum);
+            }
+        }        
+    }    
+    ret = bfv.addmany(ctxts);
+    return ret;
+}
+
+
+
 // Probabilistic NPC
 Ciphertext<DCRTPoly> compProbNPC(
     HE &bfv,
@@ -179,16 +219,10 @@ Ciphertext<DCRTPoly> compProbNPC(
     std::vector<Ciphertext<DCRTPoly>> randVec(numRand);
     Ciphertext<DCRTPoly> ret, _tmp;
 
-    if (ctxts.size() >= 64) {
-        for (uint32_t i = 0; i < numRand; i++) {
-            randVec[i] = randWSum(bfv, ctxts);        
-        }
-    } else {
-        #pragma omp parallel for
-        for (uint32_t i = 0; i < numRand; i++) {
-            randVec[i] = randWSum(bfv, ctxts);        
-        }
+    for (uint32_t i = 0; i < numRand; i++) {
+        randVec[i] = randWSumInPlace(bfv, ctxts);        
     }
+
     // Second: Run Original NPC
     ret = compNPC(bfv, randVec, ptAlpha);
     return ret;
