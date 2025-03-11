@@ -1,6 +1,0 @@
-numItem=20, lenData=4, numPack=1, numAgg=2, alpha=3, interType=CIH, allowIntersection=1
-17.6964s,1
-18.0009s,1
-17.5452s,1
-17.957s,1
-17.6457s,1

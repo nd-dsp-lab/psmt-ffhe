@@ -1,12 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/PEPSI.dir/pepsi/client.cpp.o"
-  "CMakeFiles/PEPSI.dir/pepsi/client.cpp.o.d"
   "CMakeFiles/PEPSI.dir/pepsi/core.cpp.o"
-  "CMakeFiles/PEPSI.dir/pepsi/core.cpp.o.d"
   "CMakeFiles/PEPSI.dir/pepsi/server.cpp.o"
-  "CMakeFiles/PEPSI.dir/pepsi/server.cpp.o.d"
   "CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o"
-  "CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o.d"
   "libPEPSI.a"
   "libPEPSI.pdb"
 )

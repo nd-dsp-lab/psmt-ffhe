@@ -1,0 +1,536 @@
+#!/bin/bash
+# Usage: ./main -numItem <int> -lenData <int> -numPack <int> -numAgg <int> -alpha <int> -interType <string> -allowIntersection <0 or 1>
+
+
+#This is the directory where our results get recorded
+record_directory="test_results"
+
+mkdir ${record_directory}
+
+testNum=0
+
+#Intersection 1
+#CI is in common for these
+
+allowIntersection=0
+
+#This is a script to make sure our tests alternate
+#between allowing and not allowing intersection
+#it's just a parity flip whenever called
+flipAllowIntersection() {
+    if [ "$allowIntersection" -eq 0 ]; then
+        allowIntersection=1
+    else
+        allowIntersection=0
+    fi
+    echo "$allowIntersection"
+}
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+#CPI is in common for these
+interType=CPI
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo Test One: > ./test_results/test"$testNum".txt
+    echo Parameters: >> ./test_results/test"$testNum".txt
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+#CIH is in common for these
+interType=CIH
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+#CPIH is in common for these
+interType=CPIH
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+#Intersection 0
+#CI is in common for these
+
+allowIntersection=0
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+#CPI is in common for these
+interType=CPI
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo Test One: > ./test_results/test"$testNum".txt
+    echo Parameters: >> ./test_results/test"$testNum".txt
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+#CIH is in common for these
+interType=CIH
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+#CPIH is in common for these
+interType=CPIH
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo $testNum
+
+for n in {15..23}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha -interType $interType -allowIntersection $allowIntersection | grep -E "Time Elapsed|Inter Result" | awk -F': ' 'NR % 2 == 1 {time = $2} NR % 2 == 0 {print time "," $2}' >> ./${record_directory}/test"$testNum".txt
+    done
+    
+done
+
+echo COMPLETED
