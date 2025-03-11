@@ -1,0 +1,34 @@
+Note: script is in demo mode, output is minimal
+Note: this demo is only running one site online
+Building programs...
+	Finished building programs
+Generating 262154 fake emails...
+	Finished generating fake emails.
+Receiver query: myhbqc.c@icloud.com (global ID number 1)
+Senders' total set size: 262144
+Running client query encryption...
+Receiver's 12 receiver_windowed_vals ciphertexts size 20185088
+	 Finished running client query encryption
+Running query at the site(s)...
+	APSI query time (data at site not encrypted): 130ms
+	Finished running query at the site(s)
+Generating null results (for saving time during the demo)...
+	Finished generating null results.
+Aggregating results from all 16 sites...
+	Reading in per-site results from 16 users: 136ms
+	Aggregating: 2037ms
+	Finished aggregating results from all 16 sites.
+Starting distributed decryption for 2 key shares...
+	Finished partial decryption for key share 0, partition 0
+	Finished partial decryption for key share 1, partition 0
+	Finished distributed decryption for 2 key shares.
+Execution time for partial decryptions: 1 seconds
+Decoding result...
+	Result for partition 0 is 0
+Execution time for decoding: 0 seconds
+Query myhbqc.c@icloud.com NOT FOUND in database!
+All operations finished.
+
+real	5m53.856s
+user	130m30.248s
+sys	0m12.761s

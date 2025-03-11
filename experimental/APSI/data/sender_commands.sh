@@ -1,0 +1,1 @@
+bin/sender -t BFV -c data/context.bin -p data/publickey.bin -e data/evalkeys.bin -s 1 -s 4 -s 10 -s 11 -s 28 -s 33 -s 78 -s 118 -s 143 -s 311 -s 1555  -l 310 -m data/region_0/sender_0_0.ctext < data/query.ctext > data/result_0_0.ctext
