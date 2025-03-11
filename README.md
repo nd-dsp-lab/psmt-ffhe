@@ -12,6 +12,8 @@ This is a collaborative project between University of Notre Dame, USA, and Hanya
 You can compile the code by using the following commands below. Optionally, you can pass a flag `-j` followed by the number of threads you want to speed up the make step. For instance, run `make -j16` to speedup with 16 threads.
 
 ```
+make clean
+rm -r build
 mkdir build && cd build
 cmake -S .. -B .
 make 
