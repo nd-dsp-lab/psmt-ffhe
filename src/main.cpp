@@ -30,7 +30,7 @@ void printUsage() {
 int main(int argc, char* argv[]) {
     // We want ALL flags to be supplied. List them here:
     const std::string REQUIRED_FLAGS[] = {
-        "-numItem", "-lenData", "-numPack", "-numAgg", "-alpha", "-interType", "-allowIntersection"
+        "-numItem", "-lenData", "-numPack", "-numAgg", "-alpha", "-interType", "-allowIntersection", "-numParties"
     };
 
     // Store all key-value pairs in a map
@@ -96,6 +96,13 @@ int main(int argc, char* argv[]) {
     }
     int alpha = std::atoi(args["-alpha"].c_str());
 
+     // Parse alpha
+     if (!isValidNumber(args["-numParties"])) {
+        std::cerr << "Error: alpha must be a positive integer.\n";
+        return 1;
+    }
+    int numParties = std::atoi(args["-numParties"].c_str());
+
     // Parse interType
     std::string interType = args["-interType"];
     if (interType.empty()) {
@@ -118,14 +125,15 @@ int main(int argc, char* argv[]) {
               << "  numAgg    = " << numAgg << "\n"
               << "  alpha     = " << alpha << "\n"
               << "  interType = " << interType << "\n"
+              << "  numParties = " << numParties << "\n"
               << "  allowIntersection = " << (allowIntersection ? "true" : "false") << "\n";
 
-    // testAllBackends();
-    // testBasicOPs();
-    // testProbNPC(512);
-    // testRotAgg(1024);
-    // testSanityCheck(1024);
-    testFullProtocol(numItem, lenData, numPack, numAgg, alpha, interType, allowIntersection);
+    //testAllBackends();
+    //testBasicOPs();
+    //testProbNPC(512);
+    //testRotAgg(1024);
+    testSanityCheck(numParties);
+    //testFullProtocol(numItem, lenData, numPack, numAgg, alpha, interType, allowIntersection);
 
     return 0;
 }
