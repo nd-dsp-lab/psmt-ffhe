@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/spaik2/psmt-ffhe/pepsi/main_pepsi.cpp" "/home/spaik2/psmt-ffhe/build/CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.o"
+  "/home/kvuong/psmt-ffhe/pepsi/main_pepsi.cpp" "/home/kvuong/psmt-ffhe/build/CMakeFiles/main_pepsi.dir/pepsi/main_pepsi.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,7 +21,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/spaik2/psmt-ffhe/build/CMakeFiles/PEPSI.dir/DependInfo.cmake"
+  "/home/kvuong/psmt-ffhe/build/CMakeFiles/PEPSI.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

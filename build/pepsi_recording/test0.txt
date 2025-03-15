@@ -1,0 +1,3 @@
+numItem=16, bitlen=64, HW=8, isEncrypted=0,
+0.54376s,0
+0.51419s,0

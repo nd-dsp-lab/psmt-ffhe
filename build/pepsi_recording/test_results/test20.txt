@@ -1,0 +1,1 @@
+numItem=22, bitlen=221, HW=32, isEncrypted=0,

@@ -1,0 +1,162 @@
+STATISTICS GENERATOR ----------------------------
+-----------STATISTICS FOR TEST #1-----------
+Parameters: numItem=21, bitlen=64, HW=8, isEncrypted=1,
+AVERAGE (test1.txt): 42.44175
+STD DEV (test1.txt): .29180
+MIN (test1.txt): 42.053
+MAX (test1.txt): 43.1818
+MEDIAN (test1.txt): 42.44545
+
+-----------STATISTICS FOR TEST #2-----------
+Parameters: numItem=21, bitlen=36, HW=16, isEncrypted=0,
+AVERAGE (test2.txt): 10.25703
+STD DEV (test2.txt): .10663
+MIN (test2.txt): 10.059
+MAX (test2.txt): 10.4496
+MEDIAN (test2.txt): 10.27755
+
+-----------STATISTICS FOR TEST #3-----------
+Parameters: numItem=21, bitlen=36, HW=16, isEncrypted=1,
+AVERAGE (test3.txt): 30.59253
+STD DEV (test3.txt): .29981
+MIN (test3.txt): 30.2362
+MAX (test3.txt): 31.2945
+MEDIAN (test3.txt): 30.54920
+
+-----------STATISTICS FOR TEST #4-----------
+Parameters: numItem=21, bitlen=117, HW=16, isEncrypted=0,
+AVERAGE (test4.txt): 11.71875
+STD DEV (test4.txt): .06488
+MIN (test4.txt): 11.5984
+MAX (test4.txt): 11.831
+MEDIAN (test4.txt): 11.71595
+
+-----------STATISTICS FOR TEST #5-----------
+Parameters: numItem=21, bitlen=117, HW=16, isEncrypted=1,
+AVERAGE (test5.txt): 78.64120
+STD DEV (test5.txt): .44116
+MIN (test5.txt): 78.1138
+MAX (test5.txt): 79.5871
+MEDIAN (test5.txt): 78.40920
+
+-----------STATISTICS FOR TEST #6-----------
+Parameters: numItem=21, bitlen=68, HW=32, isEncrypted=0,
+AVERAGE (test6.txt): 20.78931
+STD DEV (test6.txt): .24867
+MIN (test6.txt): 20.4547
+MAX (test6.txt): 21.3844
+MEDIAN (test6.txt): 20.74725
+
+-----------STATISTICS FOR TEST #7-----------
+Parameters: numItem=21, bitlen=68, HW=32, isEncrypted=1,
+AVERAGE (test7.txt): 73.09049
+STD DEV (test7.txt): .51374
+MIN (test7.txt): 72.526
+MAX (test7.txt): 74.0472
+MEDIAN (test7.txt): 72.89520
+
+-----------STATISTICS FOR TEST #8-----------
+Parameters: numItem=21, bitlen=221, HW=32, isEncrypted=0,
+AVERAGE (test8.txt): 23.65477
+STD DEV (test8.txt): .25895
+MIN (test8.txt): 23.3549
+MAX (test8.txt): 24.1468
+MEDIAN (test8.txt): 23.58475
+
+-----------STATISTICS FOR TEST #9-----------
+Parameters: numItem=21, bitlen=221, HW=32, isEncrypted=1,
+AVERAGE (test9.txt): 184.86220
+STD DEV (test9.txt): 1.38260
+MIN (test9.txt): 183.037
+MAX (test9.txt): 188.301
+MEDIAN (test9.txt): 184.63600
+
+-----------STATISTICS FOR TEST #10-----------
+Parameters: numItem=21, bitlen=132, HW=64, isEncrypted=0,
+AVERAGE (test10.txt): 50.85948
+STD DEV (test10.txt): .39788
+MIN (test10.txt): 50.356
+MAX (test10.txt): 51.6992
+MEDIAN (test10.txt): 50.72050
+
+-----------STATISTICS FOR TEST #11-----------
+Parameters: numItem=21, bitlen=132, HW=64, isEncrypted=1,
+AVERAGE (test11.txt): 143.42480
+STD DEV (test11.txt): .59744
+MIN (test11.txt): 142.204
+MAX (test11.txt): 144.277
+MEDIAN (test11.txt): 143.43900
+
+-----------STATISTICS FOR TEST #12-----------
+Parameters: numItem=22, bitlen=64, HW=8, isEncrypted=0,
+AVERAGE (test12.txt): 8.86896
+STD DEV (test12.txt): .14649
+MIN (test12.txt): 8.67529
+MAX (test12.txt): 9.1743
+MEDIAN (test12.txt): 8.85287
+
+-----------STATISTICS FOR TEST #13-----------
+Parameters: numItem=22, bitlen=64, HW=8, isEncrypted=1,
+AVERAGE (test13.txt): 83.97816
+STD DEV (test13.txt): .36173
+MIN (test13.txt): 83.4055
+MAX (test13.txt): 84.7227
+MEDIAN (test13.txt): 84.01115
+
+-----------STATISTICS FOR TEST #14-----------
+Parameters: numItem=22, bitlen=36, HW=16, isEncrypted=0,
+AVERAGE (test14.txt): 20.23191
+STD DEV (test14.txt): .21241
+MIN (test14.txt): 19.9418
+MAX (test14.txt): 20.6234
+MEDIAN (test14.txt): 20.23200
+
+-----------STATISTICS FOR TEST #15-----------
+Parameters: numItem=22, bitlen=36, HW=16, isEncrypted=1,
+AVERAGE (test15.txt): 60.91255
+STD DEV (test15.txt): .26378
+MIN (test15.txt): 60.4783
+MAX (test15.txt): 61.2086
+MEDIAN (test15.txt): 60.93730
+
+-----------STATISTICS FOR TEST #16-----------
+Parameters: numItem=22, bitlen=117, HW=16, isEncrypted=0,
+AVERAGE (test16.txt): 22.95342
+STD DEV (test16.txt): .14501
+MIN (test16.txt): 22.7662
+MAX (test16.txt): 23.2787
+MEDIAN (test16.txt): 22.94595
+
+-----------STATISTICS FOR TEST #17-----------
+Parameters: numItem=22, bitlen=117, HW=16, isEncrypted=1,
+AVERAGE (test17.txt): 156.37640
+STD DEV (test17.txt): .55976
+MIN (test17.txt): 155.609
+MAX (test17.txt): 157.222
+MEDIAN (test17.txt): 156.25250
+
+-----------STATISTICS FOR TEST #18-----------
+Parameters: numItem=22, bitlen=68, HW=32, isEncrypted=0,
+AVERAGE (test18.txt): 40.59111
+STD DEV (test18.txt): .21524
+MIN (test18.txt): 40.3113
+MAX (test18.txt): 41.0362
+MEDIAN (test18.txt): 40.50850
+
+-----------STATISTICS FOR TEST #19-----------
+Parameters: numItem=22, bitlen=68, HW=32, isEncrypted=1,
+AVERAGE (test19.txt): 145.42840
+STD DEV (test19.txt): .53239
+MIN (test19.txt): 144.604
+MAX (test19.txt): 146.372
+MEDIAN (test19.txt): 145.53950
+
+-----------STATISTICS FOR TEST #20-----------
+Parameters: numItem=22, bitlen=221, HW=32, isEncrypted=0,
+test 20 does not have results
+AVERAGE (test20.txt): 0
+STD DEV (test20.txt): 0
+MIN (test20.txt): N/A
+MAX (test20.txt): N/A
+MEDIAN (test20.txt): N/A
+

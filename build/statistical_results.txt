@@ -1,0 +1,113 @@
+STATISTICS GENERATOR ----------------------------
+-----------STATISTICS FOR TEST #1-----------
+Parameters: numItem=21, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CI, allowIntersection=1
+AVERAGE (test1.txt): 49.77576
+STD DEV (test1.txt): .43977
+MIN (test1.txt): 49.2856
+MAX (test1.txt): 50.7458
+MEDIAN (test1.txt): 49.64545
+
+-----------STATISTICS FOR TEST #2-----------
+Parameters: numItem=22, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CI, allowIntersection=0
+AVERAGE (test2.txt): 96.27689
+STD DEV (test2.txt): .21255
+MIN (test2.txt): 95.9908
+MAX (test2.txt): 96.6687
+MEDIAN (test2.txt): 96.23585
+
+-----------STATISTICS FOR TEST #3-----------
+Parameters: numItem=23, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CI, allowIntersection=1
+AVERAGE (test3.txt): 195.74910
+STD DEV (test3.txt): 1.58044
+MIN (test3.txt): 193.266
+MAX (test3.txt): 198.624
+MEDIAN (test3.txt): 195.91600
+
+-----------STATISTICS FOR TEST #4-----------
+Parameters: numItem=24, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CI, allowIntersection=0
+AVERAGE (test4.txt): 382.60670
+STD DEV (test4.txt): .96304
+MIN (test4.txt): 380.538
+MAX (test4.txt): 383.92
+MEDIAN (test4.txt): 382.86500
+
+-----------STATISTICS FOR TEST #5-----------
+Parameters: numItem=21, lenData=4, numPack=1, numAgg=16, alpha=3, interType=CI, allowIntersection=1
+AVERAGE (test5.txt): 49.96375
+STD DEV (test5.txt): .57476
+MIN (test5.txt): 49.5286
+MAX (test5.txt): 51.533
+MEDIAN (test5.txt): 49.66730
+
+-----------STATISTICS FOR TEST #6-----------
+Parameters: numItem=22, lenData=4, numPack=1, numAgg=16, alpha=3, interType=CI, allowIntersection=0
+AVERAGE (test6.txt): 96.20301
+STD DEV (test6.txt): .32448
+MIN (test6.txt): 95.594
+MAX (test6.txt): 96.8014
+MEDIAN (test6.txt): 96.29870
+
+-----------STATISTICS FOR TEST #7-----------
+Parameters: numItem=23, lenData=4, numPack=1, numAgg=16, alpha=3, interType=CI, allowIntersection=1
+AVERAGE (test7.txt): 196.19580
+STD DEV (test7.txt): .95460
+MIN (test7.txt): 195.003
+MAX (test7.txt): 197.848
+MEDIAN (test7.txt): 196.36050
+
+-----------STATISTICS FOR TEST #8-----------
+Parameters: numItem=24, lenData=4, numPack=1, numAgg=16, alpha=3, interType=CI, allowIntersection=0
+AVERAGE (test8.txt): 382.93330
+STD DEV (test8.txt): 1.63694
+MIN (test8.txt): 379.331
+MAX (test8.txt): 384.949
+MEDIAN (test8.txt): 382.92850
+
+-----------STATISTICS FOR TEST #9-----------
+Parameters: numItem=21, lenData=4, numPack=1, numAgg=32, alpha=3, interType=CI, allowIntersection=1
+AVERAGE (test9.txt): 50.06095
+STD DEV (test9.txt): .29529
+MIN (test9.txt): 49.7148
+MAX (test9.txt): 50.8387
+MEDIAN (test9.txt): 50.01600
+
+-----------STATISTICS FOR TEST #10-----------
+Parameters: numItem=22, lenData=4, numPack=1, numAgg=32, alpha=3, interType=CI, allowIntersection=0
+AVERAGE (test10.txt): 96.44541
+STD DEV (test10.txt): .49996
+MIN (test10.txt): 95.7384
+MAX (test10.txt): 97.3289
+MEDIAN (test10.txt): 96.44480
+
+-----------STATISTICS FOR TEST #11-----------
+Parameters: numItem=23, lenData=4, numPack=1, numAgg=32, alpha=3, interType=CI, allowIntersection=1
+AVERAGE (test11.txt): 195.23580
+STD DEV (test11.txt): .62392
+MIN (test11.txt): 194.504
+MAX (test11.txt): 196.745
+MEDIAN (test11.txt): 195.19250
+
+-----------STATISTICS FOR TEST #12-----------
+Parameters: numItem=24, lenData=4, numPack=1, numAgg=32, alpha=3, interType=CI, allowIntersection=0
+AVERAGE (test12.txt): 382.55170
+STD DEV (test12.txt): .86186
+MIN (test12.txt): 381.261
+MAX (test12.txt): 384.242
+MEDIAN (test12.txt): 382.44700
+
+-----------STATISTICS FOR TEST #13-----------
+Parameters: numItem=21, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CPI, allowIntersection=1
+AVERAGE (test13.txt): 35.84321
+STD DEV (test13.txt): .40595
+MIN (test13.txt): 35.1495
+MAX (test13.txt): 36.5827
+MEDIAN (test13.txt): 35.83055
+
+-----------STATISTICS FOR TEST #14-----------
+Parameters: numItem=22, lenData=4, numPack=1, numAgg=8, alpha=3, interType=CPI, allowIntersection=0
+AVERAGE (test14.txt): 67.81159
+STD DEV (test14.txt): .66025
+MIN (test14.txt): 67.0906
+MAX (test14.txt): 69.2656
+MEDIAN (test14.txt): 67.67400
+
