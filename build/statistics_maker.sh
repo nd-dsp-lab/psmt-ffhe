@@ -5,7 +5,11 @@ output_file="statistical_results.txt"
 # Clear the output file before starting
 echo "STATISTICS GENERATOR ----------------------------" > "$output_file"
 
+<<<<<<< HEAD
 for i in {1..14}; do
+=======
+for i in {1..108}; do
+>>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     echo "-----------STATISTICS FOR TEST #$i-----------" >> "$output_file"
 
     # Extract the line containing 'numItems'

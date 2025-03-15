@@ -28,11 +28,7 @@ flipAllowIntersection() {
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -52,11 +48,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -76,11 +68,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -103,11 +91,7 @@ interType=CPI
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -127,11 +111,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -151,11 +131,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -180,11 +156,7 @@ interType=CIH
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -204,11 +176,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -228,11 +196,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -255,11 +219,7 @@ interType=CPIH
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -279,11 +239,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -303,11 +259,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -332,11 +284,7 @@ allowIntersection=0
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -356,11 +304,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -380,11 +324,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -407,11 +347,7 @@ interType=CPI
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -431,11 +367,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -455,11 +387,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -484,11 +412,7 @@ interType=CIH
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -508,11 +432,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -532,11 +452,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -559,11 +475,7 @@ interType=CPIH
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -583,11 +495,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4
@@ -607,11 +515,7 @@ done
 
 echo $testNum
 
-<<<<<<< HEAD
-for n in {21..24}; do
-=======
 for n in {15..23}; do
->>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
     ((testNum++))
     numItem=$n
     lenData=4

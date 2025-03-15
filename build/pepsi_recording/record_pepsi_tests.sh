@@ -9,6 +9,7 @@ mkdir ${record_directory}
 
 testNum=0
 
+<<<<<<< HEAD
 #number of rounds to run for pepsi
 numRounds=10
 
@@ -112,5 +113,530 @@ done
 
 
 
+=======
+#Intersection 1
+#CI is in common for these
+
+allowIntersection=0
+
+#This is a script to make sure our tests alternate
+#between allowing and not allowing intersection
+#it's just a parity flip whenever called
+flipAllowIntersection() {
+    if [ "$allowIntersection" -eq 0 ]; then
+        allowIntersection=1
+    else
+        allowIntersection=0
+    fi
+    echo "$allowIntersection"
+}
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+#CPI is in common for these
+interType=CPI
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo Test One: > ./test_results/test"$testNum".txt
+    echo Parameters: >> ./test_results/test"$testNum".txt
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+#CIH is in common for these
+interType=CIH
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+#CPIH is in common for these
+interType=CPIH
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+#Intersection 0
+#CI is in common for these
+
+allowIntersection=0
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+#CPI is in common for these
+interType=CPI
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo Test One: > ./test_results/test"$testNum".txt
+    echo Parameters: >> ./test_results/test"$testNum".txt
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+#CIH is in common for these
+interType=CIH
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+#CPIH is in common for these
+interType=CPIH
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=8  #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=16 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+
+echo $testNum
+
+for n in {21..24}; do
+    ((testNum++))
+    numItem=$n
+    lenData=4
+    numPack=1
+    numAgg=32 #changing value
+    alpha=3
+    #interType=CI
+    allowIntersection=$(flipAllowIntersection)
+
+    echo numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection >> ./${record_directory}/test"$testNum".txt
+
+    for n in {1..10}; do
+        ../main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+    done
+    
+done
+>>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
 
 echo COMPLETED

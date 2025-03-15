@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 numItem=21, bitlen=117, HW=16, isEncrypted=1,
 78.3398s,0
 78.3887s,0
@@ -9,3 +10,6 @@ numItem=21, bitlen=117, HW=16, isEncrypted=1,
 78.1138s,0
 79.0456s,0
 78.8531s,0
+=======
+numItem=21, lenData=4, numPack=1, numAgg=16, alpha=3, interType=CI, allowIntersection=1
+>>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2

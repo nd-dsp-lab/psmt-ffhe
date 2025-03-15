@@ -1,4 +1,5 @@
 numItem=24, lenData=4, numPack=1, numAgg=32, alpha=3, interType=CI, allowIntersection=0
+<<<<<<< HEAD
 382.74s,0
 382.341s,0
 381.913s,0
@@ -9,3 +10,5 @@ numItem=24, lenData=4, numPack=1, numAgg=32, alpha=3, interType=CI, allowInterse
 382.195s,0
 383.668s,0
 384.242s,0
+=======
+>>>>>>> 498c1fb7b1a212c9dc9e9603051b82ef43bb27f2
