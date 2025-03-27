@@ -190,6 +190,9 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 OpenFHE_DIR:PATH=/usr/local/lib/OpenFHE
 
 //Dependencies for the target
+PEPSI_LIB_DEPENDS:STATIC=general;OPENFHEcore;general;OPENFHEpke;general;OPENFHEbinfhe;general;-fopenmp;
+
+//Dependencies for the target
 demo_256bit_LIB_DEPENDS:STATIC=general;OPENFHEcore;general;OPENFHEpke;general;OPENFHEbinfhe;general;-fopenmp;
 
 //Value Computed by CMake

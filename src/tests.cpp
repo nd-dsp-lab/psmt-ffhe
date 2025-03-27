@@ -160,9 +160,11 @@ void testFullProtocol(
     std::cout << "Step 5: Receive Result" << std::endl;
     auto ret = checkIntResult(bfv, interResCtxt.isInter);
 
+    size_t responseSize = ctxtSize(interResCtxt.isInter) + ctxtSize(interResCtxt.maskVal);
+
     std::cout << "Inter Result: " << ret << std::endl;
     std::cout << "OpenFHE Query Size: " << (double)(querySize) / 1000000 << "MB" << std::endl;
-
+    std::cout << "OpenFHE Response Size: " << (double)(responseSize) / 1000000 << "MB" << std::endl;
 
     // Decrypted Value 
 }

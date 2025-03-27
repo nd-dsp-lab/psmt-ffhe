@@ -1,4 +1,6 @@
 /home/spaik2/psmt-ffhe/CMakeFiles/rebuild_cache.dir
 /home/spaik2/psmt-ffhe/CMakeFiles/edit_cache.dir
+/home/spaik2/psmt-ffhe/CMakeFiles/main_pepsi.dir
 /home/spaik2/psmt-ffhe/CMakeFiles/main.dir
+/home/spaik2/psmt-ffhe/CMakeFiles/PEPSI.dir
 /home/spaik2/psmt-ffhe/CMakeFiles/demo_256bit.dir
