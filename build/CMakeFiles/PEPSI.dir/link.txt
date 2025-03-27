@@ -1,2 +1,0 @@
-/usr/bin/ar qc libPEPSI.a  CMakeFiles/PEPSI.dir/pepsi/client.cpp.o CMakeFiles/PEPSI.dir/pepsi/server.cpp.o CMakeFiles/PEPSI.dir/pepsi/core.cpp.o CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o
-/usr/bin/ranlib libPEPSI.a

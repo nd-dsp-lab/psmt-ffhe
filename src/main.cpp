@@ -124,7 +124,9 @@ int main(int argc, char* argv[]) {
     // testBasicOPs();
     // testProbNPC(512);
     // testRotAgg(1024);
-    // testSanityCheck(1024);
+    // testSanityCheck(32);
+
+    testAggCheck(1024);
     testFullProtocol(numItem, lenData, numPack, numAgg, alpha, interType, allowIntersection);
 
     return 0;

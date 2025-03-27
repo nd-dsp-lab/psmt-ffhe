@@ -35,6 +35,12 @@ typedef struct _EncryptedDB {
     int32_t numAgg;
 } EncryptedDB;
 
+// Response Function
+typedef struct _ResponseServer {
+    Ciphertext<DCRTPoly> isInter;
+    Ciphertext<DCRTPoly> maskVal;
+} ResponseServer;
+
 // Precomputing Masks
 std::vector<Plaintext> compMasks (
     HE &bfv,
@@ -99,28 +105,38 @@ Ciphertext<DCRTPoly> compProbInterNoVAF (
 );
 
 // Main Functions
-Ciphertext<DCRTPoly> compInterDB (
+ResponseServer compInterDB (
     HE &bfv,
     const EncryptedDB &DB,
     Ciphertext<DCRTPoly> queryCtxt
 );
 
-Ciphertext<DCRTPoly> compInterDBHybrid (
+ResponseServer compInterDBHybrid (
     HE &bfv,
     const EncryptedDB &DB,
     Ciphertext<DCRTPoly> queryCtxt
 );
 
-Ciphertext<DCRTPoly> compProbInterDB (
+ResponseServer compProbInterDB (
     HE &bfv,
     const EncryptedDB &DB,
     Ciphertext<DCRTPoly> queryCtxt
 );
 
-Ciphertext<DCRTPoly> compProbInterDBHybrid (
+ResponseServer compProbInterDBHybrid (
     HE &bfv,
     const EncryptedDB &DB,
     Ciphertext<DCRTPoly> queryCtxt
+);
+
+Ciphertext<DCRTPoly> compAggResponses(
+    HE &bfv,
+    std::vector<ResponseServer> responses
+);
+
+Ciphertext<DCRTPoly> sumOverSlots(
+    HE &bfv,
+    Ciphertext<DCRTPoly> ctxt
 );
 
 #endif

@@ -77,7 +77,7 @@ void testFullProtocol(
     }
 
     // Parameter Not Supported
-    if (depth > 23) {
+    if (depth > 19) {
         throw std::runtime_error("Depth is TOO high... :"  + std::to_string(depth));
     }
 
@@ -131,7 +131,7 @@ void testFullProtocol(
 
     std::cout << "Step 4: Do Intersection" << std::endl;
 
-    Ciphertext<DCRTPoly> interResCtxt;
+    ResponseServer interResCtxt;
 
     auto t1 = std::chrono::high_resolution_clock::now();
     if (interType == "CI") {        
@@ -158,10 +158,13 @@ void testFullProtocol(
     std::cout << "Intersection Done! Time Elapsed: " << timeSec << "s" << std::endl;
 
     std::cout << "Step 5: Receive Result" << std::endl;
-    auto ret = checkIntResult(bfv, interResCtxt);
+    auto ret = checkIntResult(bfv, interResCtxt.isInter);
 
     std::cout << "Inter Result: " << ret << std::endl;
     std::cout << "OpenFHE Query Size: " << (double)(querySize) / 1000000 << "MB" << std::endl;
+
+
+    // Decrypted Value 
 }
 
 // Helper Functions for pack integers
@@ -673,6 +676,49 @@ void testSanityCheck(int numParties) {
     std::cout << std::vector<int64_t>(retVec.begin(), retVec.begin() + 20) << std::endl;
     std::cout << "RandVal:" << rand << std::endl;
     std::cout << "Expected Output:" << expOut << std::endl;
+}
+
+void testAggCheck(int numParties) {
+    std::cout << "<< Test Code for Measuring New Aggregation Cost" << std::endl;
+    HE bfv("BFV", 65537, 19);  
+
+    std::vector<ResponseServer> responses(numParties);
+    std::vector<int64_t> msgVec(bfv.ringDim, 1);
+    Plaintext ptxt = bfv.packing(msgVec);
+    Ciphertext<DCRTPoly> isInter = bfv.encrypt(ptxt);
+    Ciphertext<DCRTPoly> maskVal = genRandCiphertext(bfv, NUM_RAND_MASKS);
+    isInter = bfv.compress(isInter, 3);
+    maskVal = bfv.compress(maskVal, 3);
+
+    std::cout << "Simulating Ciphertexts..." << std::endl;
+    // #pragma omp parallel for
+    for (int i = 0; i < numParties; i++) {
+        responses[i] = ResponseServer {isInter->Clone(), maskVal->Clone()};
+    }
+
+    // Run the Protocol
+    std::cout << "Running the Protocol..." << std::endl;
+    auto t1 = std::chrono::high_resolution_clock::now();
+    auto ret = compAggResponses(bfv, responses);
+    auto t2 = std::chrono::high_resolution_clock::now();
+    double tdiff = std::chrono::duration<double>(t2-t1).count();
+    std::cout << "Done! Total Time Elapsed: " << tdiff << "s" << std::endl;
+
+    Plaintext retVec = bfv.decrypt(ret);
+    std::vector<int64_t> retMsg = retVec->GetPackedValue();
+
+    std::cout << "16 Values: " << std::endl;
+    std::cout << std::vector<int64_t>(retMsg.begin(), retMsg.begin() + 16) << std::endl;
+    std::cout << "Expected Values: " << std::endl;
+
+    std::vector<int64_t> maskMsg = bfv.decrypt(maskVal)->GetPackedValue();
+    std::vector<int64_t> expMaskMsg(16);
+
+    for (int i = 0; i < 16; i++) {
+        expMaskMsg[i] = (((maskMsg[i] * numParties * numParties) % 65537 + 65537) % 65537 + 32768) % 65537 - 32768;
+    }
+
+    std::cout << expMaskMsg << std::endl;
 }
 
 
