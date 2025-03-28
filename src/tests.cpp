@@ -723,6 +723,103 @@ void testAggCheck(int numParties) {
     std::cout << expMaskMsg << std::endl;
 }
 
+void testVAFandAggCheck(int numParties) {
+    std::cout << "<< Test Code for Measuring New Aggregation Cost" << std::endl;
+    HE bfv("BFV", 65537, 19);  
+    std::cout << "Step 1-2: Setup Databases" << std::endl;
+
+    int64_t theAnswer;
+    bool allowIntersection = false;
+    if (allowIntersection) {
+        theAnswer = 42;
+    } else {
+        theAnswer = 2;
+    }
+
+    std::cout << "The answer client " << theAnswer << std::endl;
+    std::vector<uint32_t> clientMsg(4, theAnswer);
+
+    std::vector<std::vector<uint32_t>> serverMsg = genData(
+        (1<<15),    // numItem
+        4         // lenData; total size = lenData * 32
+    );  
+
+    // Inject Server's MSG
+    if (allowIntersection){
+        std::cout << "The answer server " << theAnswer << std::endl;
+        serverMsg[42] = std::vector<uint32_t>(4, theAnswer);
+    }
+
+    std::cout << "Step 1-3: Server Side Preprocessing" << std::endl;
+    EncryptedDB serverDB = constructEncDB(
+        bfv,
+        serverMsg,  // dataVec
+        1,    // numPack
+        3,          // alpha
+        1      // numAgg 
+    );
+
+    std::cout << "Step 2: Client Side Computation" << std::endl;
+    // Client Prepares and Encrypts the database
+    auto clientPrepMsg  = encodeDataClient(
+        clientMsg, bfv.prime
+    );
+
+    std::cout << "Step 3: Query Encryption" << std::endl;
+    auto queryCtxt = encryptQuery(bfv, clientPrepMsg);
+    // size_t querySize = ctxtSize(queryCtxt);
+
+    std::cout << "Step 4: Do Intersection" << std::endl;
+
+    ResponseServer interResCtxt;    
+
+    interResCtxt = compProbInterDB(
+        bfv, serverDB, queryCtxt
+    );
+
+    std::vector<int64_t> plainIsInter = bfv.decrypt(interResCtxt.isInter)->GetPackedValue();
+    std::vector<int64_t> plainMask = bfv.decrypt(interResCtxt.maskVal)->GetPackedValue();
+    std::cout << std::vector<int64_t>(plainIsInter.begin(), plainIsInter.begin() + 20) << std::endl;
+    std::cout << std::vector<int64_t>(plainMask.begin(), plainMask.begin() + 20) << std::endl;
+
+
+    std::vector<ResponseServer> responses(numParties);
+    Ciphertext<DCRTPoly> isInter = interResCtxt.isInter;
+    Ciphertext<DCRTPoly> maskVal = interResCtxt.maskVal;
+
+
+    std::cout << "Simulating Ciphertexts..." << std::endl;
+    // #pragma omp parallel for
+    for (int i = 0; i < numParties; i++) {
+        responses[i] = ResponseServer {isInter->Clone(), maskVal->Clone()};
+    }
+
+    // Run the Protocol
+    std::cout << "Running the Protocol..." << std::endl;
+    auto t1 = std::chrono::high_resolution_clock::now();
+    auto ret = compAggResponses(bfv, responses);
+    auto t2 = std::chrono::high_resolution_clock::now();
+    double tdiff = std::chrono::duration<double>(t2-t1).count();
+    std::cout << "Done! Total Time Elapsed: " << tdiff << "s" << std::endl;
+
+    Plaintext retVec = bfv.decrypt(ret);
+    std::vector<int64_t> retMsg = retVec->GetPackedValue();
+
+    std::cout << "16 Values: " << std::endl;
+    std::cout << std::vector<int64_t>(retMsg.begin(), retMsg.begin() + 16) << std::endl;
+    std::cout << "Expected Values: " << std::endl;
+
+    std::vector<int64_t> maskMsg = bfv.decrypt(maskVal)->GetPackedValue();
+    std::vector<int64_t> expMaskMsg(16);
+
+    for (int i = 0; i < 16; i++) {
+        expMaskMsg[i] = (((maskMsg[i] * numParties * numParties) % 65537 + 65537) % 65537 + 32768) % 65537 - 32768;
+        expMaskMsg[i] *= allowIntersection;
+    }
+
+    std::cout << expMaskMsg << std::endl;
+}
+
 
 
 // Test code for all backends

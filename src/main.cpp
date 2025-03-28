@@ -125,8 +125,12 @@ int main(int argc, char* argv[]) {
     // testProbNPC(512);
     // testRotAgg(1024);
     // testSanityCheck(32);
+    // testVAFandAggCheck(1024);
 
+    // Main Function for Measuring Aggregation Time
     testAggCheck(1024);
+
+    // Main Protocol for the Single Server
     testFullProtocol(numItem, lenData, numPack, numAgg, alpha, interType, allowIntersection);
 
     return 0;

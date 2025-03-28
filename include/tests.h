@@ -26,6 +26,7 @@ void testAgg(int numParties);
 void testRotAgg(int numParties);
 void testSanityCheck(int numParties);
 void testAggCheck(int numParties);
+void testVAFandAggCheck(int numParties);
 
 void testAllBackends(int k, int numParties);
 

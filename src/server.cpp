@@ -548,7 +548,7 @@ ResponseServer compProbInterDB (
     Ciphertext<DCRTPoly> maskVal = genRandCiphertext(bfv, NUM_RAND_MASKS);
 
     ret = bfv.compress(ret, 3);
-    maskVal = bfv.compress(ret, 3);
+    maskVal = bfv.compress(maskVal, 3);
 
     // Summation over Slots
     ret = sumOverSlots(bfv, ret);
