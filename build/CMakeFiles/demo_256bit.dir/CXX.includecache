@@ -10,18 +10,40 @@
 openfhe.h
 -
 
+../include/client.h
+
 ../include/core.h
 HE.h
 ../include/HE.h
 openfhe.h
 ../include/openfhe.h
 
-/home/spaik2/psmt-ffhe/src/core.cpp
-core.h
-/home/spaik2/psmt-ffhe/src/core.h
+../include/params.h
+
+../include/server.h
 HE.h
-/home/spaik2/psmt-ffhe/src/HE.h
+../include/HE.h
 openfhe.h
+-
+core.h
+../include/core.h
+
+../include/tests.h
+HE.h
+../include/HE.h
+server.h
+../include/server.h
+client.h
+../include/client.h
+
+/home/jnero/psmt-ffhe/src/tests.cpp
+openfhe.h
+-
+tests.h
+/home/jnero/psmt-ffhe/src/tests.h
+params.h
+/home/jnero/psmt-ffhe/src/params.h
+chrono
 -
 
 /usr/local/include/openfhe/binfhe/binfhe-base-params.h

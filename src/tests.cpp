@@ -621,12 +621,15 @@ void testSanityCheck(int numParties) {
 
     // Prepare Dataset    
     std::vector<Ciphertext<DCRTPoly>> ctVec(numParties);
+    _ptxt = bfv.packing(msgVec);
+    _tmp = bfv.encrypt(_ptxt);
+    __tmp = bfv.compress(_tmp, 3);
+
+    
     // #pragma omp parallel for
     for (int i = 0; i < numParties; i++) {        
-        _ptxt = bfv.packing(msgVec);
-        _tmp = bfv.encrypt(_ptxt);
-        __tmp = bfv.compress(_tmp, 3);
-        ctVec[i] = __tmp;
+        ctVec[i] = __tmp->Clone();
+
     }
 
     std::cout << "Yay!" << std::endl;
