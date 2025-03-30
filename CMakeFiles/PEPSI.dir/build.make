@@ -46,7 +46,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/spaik2/psmt-ffhe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/spaik2/psmt-ffhe/build
+CMAKE_BINARY_DIR = /home/spaik2/psmt-ffhe
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PEPSI.dir/depend.make
@@ -58,8 +58,8 @@ include CMakeFiles/PEPSI.dir/progress.make
 include CMakeFiles/PEPSI.dir/flags.make
 
 CMakeFiles/PEPSI.dir/pepsi/client.cpp.o: CMakeFiles/PEPSI.dir/flags.make
-CMakeFiles/PEPSI.dir/pepsi/client.cpp.o: ../pepsi/client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spaik2/psmt-ffhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PEPSI.dir/pepsi/client.cpp.o"
+CMakeFiles/PEPSI.dir/pepsi/client.cpp.o: pepsi/client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spaik2/psmt-ffhe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PEPSI.dir/pepsi/client.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PEPSI.dir/pepsi/client.cpp.o -c /home/spaik2/psmt-ffhe/pepsi/client.cpp
 
 CMakeFiles/PEPSI.dir/pepsi/client.cpp.i: cmake_force
@@ -71,8 +71,8 @@ CMakeFiles/PEPSI.dir/pepsi/client.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spaik2/psmt-ffhe/pepsi/client.cpp -o CMakeFiles/PEPSI.dir/pepsi/client.cpp.s
 
 CMakeFiles/PEPSI.dir/pepsi/server.cpp.o: CMakeFiles/PEPSI.dir/flags.make
-CMakeFiles/PEPSI.dir/pepsi/server.cpp.o: ../pepsi/server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spaik2/psmt-ffhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PEPSI.dir/pepsi/server.cpp.o"
+CMakeFiles/PEPSI.dir/pepsi/server.cpp.o: pepsi/server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spaik2/psmt-ffhe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PEPSI.dir/pepsi/server.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PEPSI.dir/pepsi/server.cpp.o -c /home/spaik2/psmt-ffhe/pepsi/server.cpp
 
 CMakeFiles/PEPSI.dir/pepsi/server.cpp.i: cmake_force
@@ -84,8 +84,8 @@ CMakeFiles/PEPSI.dir/pepsi/server.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spaik2/psmt-ffhe/pepsi/server.cpp -o CMakeFiles/PEPSI.dir/pepsi/server.cpp.s
 
 CMakeFiles/PEPSI.dir/pepsi/core.cpp.o: CMakeFiles/PEPSI.dir/flags.make
-CMakeFiles/PEPSI.dir/pepsi/core.cpp.o: ../pepsi/core.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spaik2/psmt-ffhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PEPSI.dir/pepsi/core.cpp.o"
+CMakeFiles/PEPSI.dir/pepsi/core.cpp.o: pepsi/core.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spaik2/psmt-ffhe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PEPSI.dir/pepsi/core.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PEPSI.dir/pepsi/core.cpp.o -c /home/spaik2/psmt-ffhe/pepsi/core.cpp
 
 CMakeFiles/PEPSI.dir/pepsi/core.cpp.i: cmake_force
@@ -97,8 +97,8 @@ CMakeFiles/PEPSI.dir/pepsi/core.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/spaik2/psmt-ffhe/pepsi/core.cpp -o CMakeFiles/PEPSI.dir/pepsi/core.cpp.s
 
 CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o: CMakeFiles/PEPSI.dir/flags.make
-CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o: ../pepsi/tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spaik2/psmt-ffhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o"
+CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o: pepsi/tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/spaik2/psmt-ffhe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o -c /home/spaik2/psmt-ffhe/pepsi/tests.cpp
 
 CMakeFiles/PEPSI.dir/pepsi/tests.cpp.i: cmake_force
@@ -125,7 +125,7 @@ libPEPSI.a: CMakeFiles/PEPSI.dir/pepsi/core.cpp.o
 libPEPSI.a: CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o
 libPEPSI.a: CMakeFiles/PEPSI.dir/build.make
 libPEPSI.a: CMakeFiles/PEPSI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/spaik2/psmt-ffhe/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libPEPSI.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/spaik2/psmt-ffhe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libPEPSI.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/PEPSI.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PEPSI.dir/link.txt --verbose=$(VERBOSE)
 
@@ -139,6 +139,6 @@ CMakeFiles/PEPSI.dir/clean:
 .PHONY : CMakeFiles/PEPSI.dir/clean
 
 CMakeFiles/PEPSI.dir/depend:
-	cd /home/spaik2/psmt-ffhe/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/spaik2/psmt-ffhe /home/spaik2/psmt-ffhe /home/spaik2/psmt-ffhe/build /home/spaik2/psmt-ffhe/build /home/spaik2/psmt-ffhe/build/CMakeFiles/PEPSI.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/spaik2/psmt-ffhe && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/spaik2/psmt-ffhe /home/spaik2/psmt-ffhe /home/spaik2/psmt-ffhe /home/spaik2/psmt-ffhe /home/spaik2/psmt-ffhe/CMakeFiles/PEPSI.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PEPSI.dir/depend
 

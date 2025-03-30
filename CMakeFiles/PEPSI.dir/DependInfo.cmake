@@ -4,7 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/spaik2/psmt-ffhe/src/main.cpp" "/home/spaik2/psmt-ffhe/build/CMakeFiles/main.dir/src/main.cpp.o"
+  "/home/spaik2/psmt-ffhe/pepsi/client.cpp" "/home/spaik2/psmt-ffhe/CMakeFiles/PEPSI.dir/pepsi/client.cpp.o"
+  "/home/spaik2/psmt-ffhe/pepsi/core.cpp" "/home/spaik2/psmt-ffhe/CMakeFiles/PEPSI.dir/pepsi/core.cpp.o"
+  "/home/spaik2/psmt-ffhe/pepsi/server.cpp" "/home/spaik2/psmt-ffhe/CMakeFiles/PEPSI.dir/pepsi/server.cpp.o"
+  "/home/spaik2/psmt-ffhe/pepsi/tests.cpp" "/home/spaik2/psmt-ffhe/CMakeFiles/PEPSI.dir/pepsi/tests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,12 +18,11 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/local/include/openfhe/core"
   "/usr/local/include/openfhe/pke"
   "/usr/local/include/openfhe/binfhe"
-  "../include"
+  "include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/spaik2/psmt-ffhe/build/CMakeFiles/demo_256bit.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

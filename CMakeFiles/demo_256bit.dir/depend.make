@@ -244,6 +244,7 @@ CMakeFiles/demo_256bit.dir/src/client.cpp.o: /usr/local/include/openfhe/pke/sche
 CMakeFiles/demo_256bit.dir/src/client.cpp.o: include/HE.h
 CMakeFiles/demo_256bit.dir/src/client.cpp.o: include/client.h
 CMakeFiles/demo_256bit.dir/src/client.cpp.o: include/core.h
+CMakeFiles/demo_256bit.dir/src/client.cpp.o: include/params.h
 
 CMakeFiles/demo_256bit.dir/src/core.cpp.o: src/core.cpp
 CMakeFiles/demo_256bit.dir/src/core.cpp.o: /usr/local/include/openfhe/binfhe/binfhe-base-params.h
@@ -1214,6 +1215,7 @@ CMakeFiles/demo_256bit.dir/src/server.cpp.o: /usr/local/include/openfhe/pke/sche
 CMakeFiles/demo_256bit.dir/src/server.cpp.o: /usr/local/include/openfhe/pke/schemerns/rns-scheme.h
 CMakeFiles/demo_256bit.dir/src/server.cpp.o: include/HE.h
 CMakeFiles/demo_256bit.dir/src/server.cpp.o: include/core.h
+CMakeFiles/demo_256bit.dir/src/server.cpp.o: include/params.h
 CMakeFiles/demo_256bit.dir/src/server.cpp.o: include/server.h
 
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: src/tests.cpp
@@ -1459,6 +1461,7 @@ CMakeFiles/demo_256bit.dir/src/tests.cpp.o: /usr/local/include/openfhe/pke/schem
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: include/HE.h
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: include/client.h
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: include/core.h
+CMakeFiles/demo_256bit.dir/src/tests.cpp.o: include/params.h
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: include/server.h
 CMakeFiles/demo_256bit.dir/src/tests.cpp.o: include/tests.h
 

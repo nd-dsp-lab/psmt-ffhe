@@ -59,4 +59,9 @@ Ciphertext<DCRTPoly> randWSumInPlace(
     const std::vector<Ciphertext<DCRTPoly>> ctxts
 );
 
+Ciphertext<DCRTPoly> genRandCiphertext(
+    HE &bfv,
+    uint32_t numRand
+);
+
 #endif
