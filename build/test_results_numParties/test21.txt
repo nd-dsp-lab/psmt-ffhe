@@ -1,0 +1,16 @@
+2^7 = 128 CPI
+0.166432
+0.152977
+0.151029
+0.155156
+0.154242
+0.15137
+0.149137
+0.15624
+0.152169
+0.156766
+Calculating stats for test_results_numParties/test21.txt
+Mean: 0.154552
+Std Dev: 0.004576
+Median: 0.153610
+Range: 0.017295

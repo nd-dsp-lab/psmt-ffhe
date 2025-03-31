@@ -1,0 +1,16 @@
+2^6 = 64 CPI
+0.0992157
+0.100695
+0.106325
+0.104088
+0.0999803
+0.100188
+0.104135
+0.101666
+0.0999203
+0.0998808
+Calculating stats for test_results_numParties/test20.txt
+Mean: 0.101609
+Std Dev: 0.002277
+Median: 0.100442
+Range: 0.007109

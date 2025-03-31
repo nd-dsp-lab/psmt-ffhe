@@ -5,3 +5,11 @@
 14.1473
 14.1661
 14.0466
+14.1383
+14.2576
+14.0985
+Calculating stats for test_results_numParties/test14.txt
+Mean: 14.149444
+Std Dev: 0.058162
+Median: 14.1473
+Range: 0.211000

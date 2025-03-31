@@ -1,0 +1,13 @@
+2^4 = 16 CPI
+0.0941765
+0.0839066
+0.084722
+0.0813883
+0.0851155
+0.0841064
+0.0824305
+Calculating stats for test_results_numParties/test18.txt
+Mean: 0.085121
+Std Dev: 0.003888
+Median: 0.0841064
+Range: 0.012788

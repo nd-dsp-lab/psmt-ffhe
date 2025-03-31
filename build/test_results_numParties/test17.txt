@@ -1,0 +1,16 @@
+2^3 = 8 CPI
+0.0805592
+0.084316
+0.0819786
+0.083856
+0.0771372
+0.0800188
+0.0805264
+0.0908955
+0.0895611
+0.0857798
+Calculating stats for test_results_numParties/test17.txt
+Mean: 0.083463
+Std Dev: 0.004121
+Median: 0.082917
+Range: 0.013758

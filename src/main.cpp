@@ -103,6 +103,13 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
+    // Parse numParties
+    if (!isValidNumber(args["-numParties"])) {
+        std::cerr << "Error: alpha must be a positive integer.\n";
+        return 1;
+    }
+    int numParties = std::atoi(args["-numParties"].c_str());
+
     // Parse allowIntersection (should be 0 or 1)
     if (args["-allowIntersection"] != "0" && args["-allowIntersection"] != "1") {
         std::cerr << "Error: allowIntersection must be either 0 (false) or 1 (true).\n";
@@ -118,6 +125,7 @@ int main(int argc, char* argv[]) {
               << "  numAgg    = " << numAgg << "\n"
               << "  alpha     = " << alpha << "\n"
               << "  interType = " << interType << "\n"
+              << "  numParties = " << numParties << "\n"
               << "  allowIntersection = " << (allowIntersection ? "true" : "false") << "\n";
 
     // testAllBackends();
@@ -128,10 +136,10 @@ int main(int argc, char* argv[]) {
     // testVAFandAggCheck(1024);
 
     // Main Function for Measuring Aggregation Time
-    testAggCheck(1024);
+    testAggCheck(numParties);
 
     // Main Protocol for the Single Server
-    testFullProtocol(numItem, lenData, numPack, numAgg, alpha, interType, allowIntersection);
+    //testFullProtocol(numItem, lenData, numPack, numAgg, alpha, interType, allowIntersection);
 
     return 0;
 }

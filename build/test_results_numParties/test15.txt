@@ -1,0 +1,16 @@
+2^1 = 2 CPI
+0.077243
+0.0719814
+0.07117
+0.072735
+0.071632
+0.0716264
+0.0732318
+0.0705518
+0.0725346
+0.0718622
+Calculating stats for test_results_numParties/test15.txt
+Mean: 0.072457
+Std Dev: 0.001756
+Median: 0.071922
+Range: 0.006691
