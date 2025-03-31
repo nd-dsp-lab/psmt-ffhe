@@ -1,0 +1,8 @@
+numItem=22, lenData=4, numPack=1, numAgg=1, alpha=3, interType=CI, allowIntersection=0
+Time elapsed
+82.9066
+83.6377
+83.6403
+82.437
+82.5609
+82.4969

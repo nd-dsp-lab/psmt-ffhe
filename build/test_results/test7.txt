@@ -1,0 +1,16 @@
+numItem=21, lenData=4, numPack=1, numAgg=1, alpha=3, interType=CI, allowIntersection=0
+Time elapsed
+41.8568
+41.9681
+41.7886
+41.835
+41.7781
+42.3515
+42.2445
+41.9311
+42.6263
+41.8433
+Mean: 42.022300
+Std Dev: 0.272503
+Median: 41.893950
+Range: 0.848200

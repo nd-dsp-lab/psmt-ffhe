@@ -1,0 +1,12 @@
+Testing interType=CI
+Testing interType=CI
+./test-script.sh: line 74: syntax error near unexpected token `|'
+./test-script.sh: line 74: `        | grep "Intersection Done! Time Elapsed:" | grep -Eo "[0-9]+\.[0-9]+" >> "$outfile"'
+Testing interType=CI
+Calculating stats for ./test_results/test1.txt
+Calculating stats for ./test_results/test2.txt
+Calculating stats for ./test_results/test3.txt
+Calculating stats for ./test_results/test4.txt
+Calculating stats for ./test_results/test5.txt
+Calculating stats for ./test_results/test6.txt
+Calculating stats for ./test_results/test7.txt
