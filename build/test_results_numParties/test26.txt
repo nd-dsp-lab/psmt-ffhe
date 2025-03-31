@@ -5,3 +5,11 @@
 3.60771
 3.67103
 3.64518
+3.59422
+3.57343
+3.60569
+Calculating stats for test_results_numParties/test26.txt
+Mean: 3.608467
+Std Dev: 0.031602
+Median: 3.60771
+Range: 0.110370
