@@ -1,0 +1,16 @@
+2^6 = 64 CI
+0.100283
+0.098539
+0.109543
+0.106385
+0.0994221
+0.102458
+0.100824
+0.0994938
+0.0993753
+0.0988105
+Calculating stats for test_results_numParties/test6.txt
+Mean: 0.101513
+Std Dev: 0.003468
+Median: 0.099888
+Range: 0.011004

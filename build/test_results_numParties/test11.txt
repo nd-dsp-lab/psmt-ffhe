@@ -1,0 +1,16 @@
+2^11 = 2048 CI
+1.82505
+1.82236
+1.82733
+1.82932
+1.84234
+1.83532
+1.81471
+1.81449
+1.84764
+1.81133
+Calculating stats for test_results_numParties/test11.txt
+Mean: 1.826990
+Std Dev: 0.011465
+Median: 1.826190
+Range: 0.036310

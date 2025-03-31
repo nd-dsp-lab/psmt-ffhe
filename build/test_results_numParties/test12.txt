@@ -1,0 +1,16 @@
+2^12 = 4096 CI
+3.60631
+3.57652
+3.64466
+3.60498
+3.60583
+3.58853
+3.5951
+3.58535
+3.63283
+3.60661
+Calculating stats for test_results_numParties/test12.txt
+Mean: 3.604670
+Std Dev: 0.019794
+Median: 3.605405
+Range: 0.068140

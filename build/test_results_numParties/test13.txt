@@ -1,0 +1,16 @@
+2^13 = 8192 CI
+7.1348
+7.13993
+7.08002
+7.15848
+7.15859
+7.07612
+7.07935
+7.13813
+7.11118
+7.12684
+Calculating stats for test_results_numParties/test13.txt
+Mean: 7.120340
+Std Dev: 0.030355
+Median: 7.130820
+Range: 0.082470

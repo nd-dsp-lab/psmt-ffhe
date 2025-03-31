@@ -1,0 +1,16 @@
+2^7 = 128 CI
+0.152119
+0.151737
+0.150894
+0.156434
+0.151179
+0.151661
+0.152559
+0.15513
+0.150872
+0.151903
+Calculating stats for test_results_numParties/test7.txt
+Mean: 0.152449
+Std Dev: 0.001764
+Median: 0.151820
+Range: 0.005562

@@ -1,0 +1,16 @@
+2^10 = 1024 CI
+0.934214
+0.944671
+0.928748
+0.937827
+0.943528
+0.936052
+0.941348
+0.941737
+0.931468
+0.944775
+Calculating stats for test_results_numParties/test10.txt
+Mean: 0.938437
+Std Dev: 0.005391
+Median: 0.939588
+Range: 0.016027
