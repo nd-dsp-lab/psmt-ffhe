@@ -66,14 +66,14 @@ for exp in {15..24}; do
     ((testNum++))
     numItem=$((exp))
     outfile=./test_results/test"$testNum".txt
-    echo "numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection" > "$outfile"
-    echo "Time elapsed" >> "$outfile"
-    for i in {1..10}; do
-        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha \
-                -interType $interType -allowIntersection $allowIntersection \
-        | grep "Intersection Done! Time Elapsed:" | grep -Eo "[0-9]+\.[0-9]+" >> "$outfile"
-    done
-    calc_stats "$outfile"
+    #echo "numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection" > "$outfile"
+    #echo "Time elapsed" >> "$outfile"
+    #for i in {1..10}; do
+    #    ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha \
+    #            -interType $interType -allowIntersection $allowIntersection \
+    #    | grep "Intersection Done! Time Elapsed:" | grep -Eo "[0-9]+\.[0-9]+" >> "$outfile"
+    #done
+    #calc_stats "$outfile"
 done
 
 # Test for interType = CPI
@@ -87,7 +87,7 @@ for exp in {15..24}; do
     echo "Time elapsed" >> "$outfile"
     for i in {1..10}; do
         ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha \
-                -interType $interType -allowIntersection $allowIntersection
+                -interType $interType -allowIntersection $allowIntersection \
         | grep "Intersection Done! Time Elapsed:" | grep -Eo "[0-9]+\.[0-9]+" >> "$outfile"
     done
     calc_stats "$outfile"

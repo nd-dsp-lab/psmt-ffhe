@@ -1,0 +1,16 @@
+numItem=17, lenData=4, numPack=1, numAgg=1, alpha=3, interType=CPI, allowIntersection=0
+Time elapsed
+8.25519
+8.23862
+8.24322
+8.26279
+8.21667
+8.25411
+8.26285
+8.28004
+8.23044
+8.22812
+Mean: 8.247210
+Std Dev: 0.018288
+Median: 8.248665
+Range: 0.063370

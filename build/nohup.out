@@ -10,3 +10,66 @@ Calculating stats for ./test_results/test4.txt
 Calculating stats for ./test_results/test5.txt
 Calculating stats for ./test_results/test6.txt
 Calculating stats for ./test_results/test7.txt
+Calculating stats for ./test_results/test8.txt
+Calculating stats for ./test_results/test9.txt
+Calculating stats for ./test_results/test10.txt
+Testing interType=CPI
+./test-script.sh: line 91: syntax error near unexpected token `|'
+./test-script.sh: line 91: `        | grep "Intersection Done! Time Elapsed:" | grep -Eo "[0-9]+\.[0-9]+" >> "$outfile"'
+./test-script.sh: line 78: 
+# Test for interType = CI
+interType=CI
+echo "Testing interType=$interType"
+for exp in {15..24}; do
+    ((testNum++))
+    numItem=$((exp))
+    outfile=./test_results/test"$testNum".txt
+    echo "numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection" > "$outfile"
+    echo "Time elapsed" >> "$outfile"
+    for i in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha \
+                -interType $interType -allowIntersection $allowIntersection \
+        | grep "Intersection Done! Time Elapsed:" | grep -Eo "[0-9]+\.[0-9]+" >> "$outfile"
+    done
+    calc_stats "$outfile"
+done
+: No such file or directory
+Testing interType=CPI
+./test-script.sh: line 91: syntax error near unexpected token `|'
+./test-script.sh: line 91: `        | grep "Intersection Done! Time Elapsed:" | grep -Eo "[0-9]+\.[0-9]+" >> "$outfile"'
+./test-script.sh: line 78: 
+# Test for interType = CI
+interType=CI
+echo "Testing interType=$interType"
+for exp in {15..24}; do
+    ((testNum++))
+    numItem=$((exp))
+    outfile=./test_results/test"$testNum".txt
+    echo "numItem=$numItem, lenData=$lenData, numPack=$numPack, numAgg=$numAgg, alpha=$alpha, interType=$interType, allowIntersection=$allowIntersection" > "$outfile"
+    echo "Time elapsed" >> "$outfile"
+    for i in {1..10}; do
+        ./main -numItem $numItem -lenData $lenData -numPack $numPack -numAgg $numAgg -alpha $alpha \
+                -interType $interType -allowIntersection $allowIntersection \
+        | grep "Intersection Done! Time Elapsed:" | grep -Eo "[0-9]+\.[0-9]+" >> "$outfile"
+    done
+    calc_stats "$outfile"
+done
+: No such file or directory
+./test-script.sh: line 79: testNum: command not found
+Testing interType=CPI
+./test-script.sh: line 92: syntax error near unexpected token `|'
+./test-script.sh: line 92: `        | grep "Intersection Done! Time Elapsed:" | grep -Eo "[0-9]+\.[0-9]+" >> "$outfile"'
+Testing interType=CI
+./test-script.sh: line 79: testNum: command not found
+Testing interType=CPI
+./test-script.sh: line 92: syntax error near unexpected token `|'
+./test-script.sh: line 92: `        | grep "Intersection Done! Time Elapsed:" | grep -Eo "[0-9]+\.[0-9]+" >> "$outfile"'
+Testing interType=CI
+Testing interType=CPI
+Calculating stats for ./test_results/test11.txt
+Calculating stats for ./test_results/test12.txt
+Calculating stats for ./test_results/test13.txt
+Calculating stats for ./test_results/test14.txt
+Calculating stats for ./test_results/test15.txt
+Calculating stats for ./test_results/test16.txt
+Calculating stats for ./test_results/test17.txt
