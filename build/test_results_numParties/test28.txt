@@ -1,2 +1,17 @@
 2^14 = 16384 CPI
 14.1546
+14.1502
+14.112
+14.0579
+14.2166
+14.1144
+14.125
+14.2468
+14.1743
+13.9872
+Calculating stats for test_results_numParties/test28.txt
+Mean: 14.133900
+Std Dev: 0.070815
+Median: 14.137600
+Range: 0.259600
+
