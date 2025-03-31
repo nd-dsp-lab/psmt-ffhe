@@ -1,4 +1,4 @@
-2^3 = 8 CIw
+2^3 = 8 CI
 0.0857678
 0.0797364
 0.0783824
@@ -10,10 +10,6 @@
 0.0781096
 0.0799684
 Calculating stats for test_results_numParties/test3.txt
-Mean: 0.081672
-Std Dev: 0.003934
-Median: 0.079852
-Range: 0.010781
 Mean: 0.081672
 Std Dev: 0.003934
 Median: 0.079852

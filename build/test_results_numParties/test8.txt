@@ -14,7 +14,3 @@ Mean: 0.261139
 Std Dev: 0.004780
 Median: 0.260554
 Range: 0.015991
-Mean: 0.261139
-Std Dev: 0.004780
-Median: 0.260554
-Range: 0.015991
