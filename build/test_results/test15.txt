@@ -1,0 +1,15 @@
+numItem=524288, lenData=4, numPack=1, numAgg=1, alpha=3, interType=CPI, allowIntersection=0
+3.24194s,0
+3.24262s,0
+3.33933s,0
+3.24011s,0
+3.48033s,0
+3.40627s,0
+3.32305s,0
+3.40507s,0
+3.31725s,0
+3.26457s,0
+Mean: 3.326050
+Std Dev: 0.078705
+Median: 3.320150
+Range: 0.240220

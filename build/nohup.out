@@ -1,0 +1,23 @@
+Testing interType=CI
+Calculating stats for ./test_results/test1.txt
+Calculating stats for ./test_results/test2.txt
+Calculating stats for ./test_results/test3.txt
+Calculating stats for ./test_results/test4.txt
+Calculating stats for ./test_results/test5.txt
+Calculating stats for ./test_results/test6.txt
+Calculating stats for ./test_results/test7.txt
+Calculating stats for ./test_results/test8.txt
+Calculating stats for ./test_results/test9.txt
+Calculating stats for ./test_results/test10.txt
+Testing interType=CPI
+Calculating stats for ./test_results/test11.txt
+Calculating stats for ./test_results/test12.txt
+Calculating stats for ./test_results/test13.txt
+Calculating stats for ./test_results/test14.txt
+Calculating stats for ./test_results/test15.txt
+Calculating stats for ./test_results/test16.txt
+Calculating stats for ./test_results/test17.txt
+Calculating stats for ./test_results/test18.txt
+Calculating stats for ./test_results/test19.txt
+Calculating stats for ./test_results/test20.txt
+COMPLETED

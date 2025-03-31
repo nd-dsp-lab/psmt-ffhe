@@ -1,0 +1,15 @@
+numItem=32768, lenData=4, numPack=1, numAgg=1, alpha=3, interType=CI, allowIntersection=0
+4.27391s,0
+4.26086s,0
+4.30994s,0
+4.25601s,0
+4.18661s,0
+4.39863s,0
+4.34542s,0
+4.29618s,0
+4.02776s,0
+4.39493s,0
+Mean: 4.275030
+Std Dev: 0.102858
+Median: 4.285045
+Range: 0.370870
