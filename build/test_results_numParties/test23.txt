@@ -1,0 +1,16 @@
+2^9 = 512 CPI
+0.494846
+0.489134
+0.4919
+0.48891
+0.495714
+0.476119
+0.490226
+0.483851
+0.484048
+0.478851
+Calculating stats for test_results_numParties/test23.txt
+Mean: 0.487360
+Std Dev: 0.006183
+Median: 0.489022
+Range: 0.019595

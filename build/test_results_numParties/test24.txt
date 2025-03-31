@@ -1,0 +1,16 @@
+2^10 = 1024 CPI
+0.937633
+0.931607
+0.939786
+0.951492
+0.939533
+0.926432
+0.934727
+0.936919
+0.942062
+0.94426
+Calculating stats for test_results_numParties/test24.txt
+Mean: 0.938445
+Std Dev: 0.006542
+Median: 0.938583
+Range: 0.025060

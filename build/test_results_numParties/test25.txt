@@ -1,0 +1,16 @@
+2^11 = 2048 CPI
+1.8248
+1.8435
+1.82722
+1.84231
+1.84255
+1.84089
+1.83715
+1.83294
+1.81619
+1.82269
+Calculating stats for test_results_numParties/test25.txt
+Mean: 1.833020
+Std Dev: 0.009258
+Median: 1.835045
+Range: 0.027310

@@ -7,3 +7,9 @@
 0.268613
 0.269249
 0.26363
+0.276396
+Calculating stats for test_results_numParties/test22.txt
+Mean: 0.268596
+Std Dev: 0.004354
+Median: 0.268613
+Range: 0.015897
