@@ -166,3 +166,43 @@ Ciphertext<DCRTPoly> arithCWEQPtxt(
     // Done!
     return ret;
 }
+
+// Utility Function for Creating a Random Masking Vector
+Ciphertext<DCRTPoly> genRandCiphertext(
+    HE &bfv,
+    uint32_t numRand
+) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int64_t> dist(0, bfv.prime - 1);
+    
+    std::vector<int64_t> randVec(numRand);
+
+    for (uint32_t i = 0; i < numRand; i++) {
+        randVec[i] = dist(gen);
+    }
+
+    std::vector<int64_t> msgVec(bfv.ringDim, 0);
+
+    #pragma omp parallel for
+    for (uint32_t i = 0; i < bfv.ringDim; i++) {
+        msgVec[i] = randVec[i % numRand];        
+    }
+
+    Plaintext ptxt = bfv.packing(msgVec);
+    return bfv.encrypt(ptxt);
+}
+
+// Utility Function for Summing Across All the Slots
+Ciphertext<DCRTPoly> sumOverSlots(
+    HE &bfv,
+    Ciphertext<DCRTPoly> ctxt
+) {
+    Ciphertext<DCRTPoly> _tmp;
+    Ciphertext<DCRTPoly> ret = ctxt->Clone();
+    for (uint32_t i = 1; i < bfv.ringDim; i*=2) {
+        _tmp = bfv.rotate(ret, i);
+        ret = bfv.add(ret, _tmp);
+    }
+    return ret;
+}

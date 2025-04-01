@@ -422,8 +422,8 @@ ResponseServer compInterDB (
     // Make a Random Masking Ciphertext
     Ciphertext<DCRTPoly> maskVal = genRandCiphertext(bfv, NUM_RAND_MASKS);
 
-    ret = bfv.compress(ret);
-    maskVal = bfv.compress(ret);
+    ret = bfv.compress(ret, 3);
+    maskVal = bfv.compress(maskVal, 3);
 
     // Summation over Slots
     ret = sumOverSlots(bfv, ret);    
@@ -501,8 +501,8 @@ ResponseServer compInterDBHybrid (
     // Make a Random Masking Ciphertext
     Ciphertext<DCRTPoly> maskVal = genRandCiphertext(bfv, NUM_RAND_MASKS);
 
-    ret = bfv.compress(ret);
-    maskVal = bfv.compress(ret);
+    ret = bfv.compress(ret, 3);
+    maskVal = bfv.compress(maskVal, 3);
 
     // Summation over Slots
     ret = sumOverSlots(bfv, ret);    
@@ -625,8 +625,8 @@ ResponseServer compProbInterDBHybrid (
     // Make a Random Masking Ciphertext
     Ciphertext<DCRTPoly> maskVal = genRandCiphertext(bfv, NUM_RAND_MASKS);
 
-    ret = bfv.compress(ret);
-    maskVal = bfv.compress(ret);
+    ret = bfv.compress(ret, 3);
+    maskVal = bfv.compress(maskVal, 3);
 
     // Summation over Slots
     ret = sumOverSlots(bfv, ret);

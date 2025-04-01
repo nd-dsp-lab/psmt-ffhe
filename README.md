@@ -34,12 +34,14 @@ You can pass cmdline arguments during runtime to change presets while running th
 In addition, you can run the code for our implementation of PEPSI (USENIX'24). In this paper, we did not use the hashing technique because it degrades the efficiency for the membership test. We also not considered using the permutation-based hashing as well, which saves the size of the set element by a certain bits that depends on the number of bins of the hash table. You can find an executable file `main_pepsi`. To run the program, you can type the following command (parameter setup for handling 128-bit set elements.) Since We only implemented the logics for the server and client without checking the correctness, the result of the protocol will be inaccurate.
 
 ```
-./main -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
+./main_pepsi -numItem 20 -bitlen 221 -HW 32 -isEncrypted 0
 ```
 
 We provide several presets of parameters `(bitlen, HW)` as follows:
 
 - 128-bit items: (221, 32) / (132, 64)
+- 80-bit items: (89, 32)
+- 66-bit items (assuming phash is applied): (70, 32)
 - 64-bit items: (117, 16) / (68, 32)
 - 32-bit items: (64, 8) / (36, 16)
 
