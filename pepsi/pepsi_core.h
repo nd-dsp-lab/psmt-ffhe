@@ -4,6 +4,8 @@
 #include <openfhe.h>
 #include "HE.h"
 
+#define NUM_RAND_MASKS 16
+
 using namespace lbcrypto;
 
 std::vector<std::vector<uint64_t>> chooseTable(uint64_t n);
@@ -37,6 +39,16 @@ std::vector<int64_t> getCWTable(
     uint32_t numCtxt,
     uint32_t kVal,
     std::vector<std::vector<uint64_t>> table
+);
+
+Ciphertext<DCRTPoly> genRandCiphertext(
+    HE &bfv,
+    uint32_t numRand
+);
+
+Ciphertext<DCRTPoly> sumOverSlots(
+    HE &bfv,
+    Ciphertext<DCRTPoly> ctxt
 );
 
 #endif
