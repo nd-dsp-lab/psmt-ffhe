@@ -69,7 +69,7 @@ void testPEPSIProtocol(
     size_t querySize = ctxtSize(query.payload[0]) * query.numCtxt;
 
     std::cout << "Step 4: Do Intersection" << std::endl;
-    Ciphertext<DCRTPoly> interResCtxt;
+    ResponsePEPSIServer interResCtxt;
 
     auto t1 = std::chrono::high_resolution_clock::now();
     interResCtxt = compPEPSIInter(bfv, query, serverDB);
@@ -77,12 +77,7 @@ void testPEPSIProtocol(
     double timeSec = std::chrono::duration<double>(t2 - t1).count();
     std::cout << "Intersection Done! Time Elapsed: " << timeSec << "s" << std::endl;
     std::cout << "Step 5: Receive Result" << std::endl;
-    auto ret = checkIntResult(bfv, interResCtxt);
+    auto ret = checkIntResult(bfv, interResCtxt.isInter);
     std::cout << "Inter Result: " << ret << std::endl;
     std::cout << "OpenFHE Query Size: " << (double)(querySize) / 1000000 << "MB" << std::endl;
-}
-
-
-void testEncode() {
-
 }

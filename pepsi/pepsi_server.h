@@ -30,6 +30,12 @@ typedef struct _PEPSIDB {
 } PEPSIDB;
 
 
+typedef struct _ResponsePEPSIServer {
+    Ciphertext<DCRTPoly> isInter;
+    Ciphertext<DCRTPoly> maskVal;
+} ResponsePEPSIServer;
+
+
 PEPSIDB constructPEPSIDB (
     HE &bfv,
     std::vector<uint64_t> dataVec,
@@ -38,7 +44,7 @@ PEPSIDB constructPEPSIDB (
     bool isEncrypted
 );
 
-Ciphertext<DCRTPoly> compPEPSIInter(
+ResponsePEPSIServer compPEPSIInter(
     HE &bfv,
     PEPSIQuery query,
     PEPSIDB DB

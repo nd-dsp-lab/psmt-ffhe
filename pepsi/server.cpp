@@ -71,7 +71,7 @@ PEPSIDB constructPEPSIDB (
 }
 
 
-Ciphertext<DCRTPoly> compPEPSIInter(
+ResponsePEPSIServer compPEPSIInter(
     HE &bfv,
     PEPSIQuery query,
     PEPSIDB DB
@@ -99,5 +99,14 @@ Ciphertext<DCRTPoly> compPEPSIInter(
 
     // Do Additive Aggregation
     Ciphertext<DCRTPoly> ret = bfv.addmany(retVec);
-    return ret;
+
+    // Compute Random Mask
+    Ciphertext<DCRTPoly> maskVal = genRandCiphertext(bfv, NUM_RAND_MASKS);
+
+    // Compress ALL
+    ret = bfv.compress(ret, 3);
+    maskVal = bfv.compress(maskVal, 3);
+
+    // Done!
+    return ResponsePEPSIServer { ret, maskVal };
 }

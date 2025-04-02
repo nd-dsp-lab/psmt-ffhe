@@ -77,7 +77,7 @@ void testFullProtocol(
     }
 
     // Parameter Not Supported
-    if (depth > 23) {
+    if (depth > 19) {
         throw std::runtime_error("Depth is TOO high... :"  + std::to_string(depth));
     }
 
@@ -131,7 +131,7 @@ void testFullProtocol(
 
     std::cout << "Step 4: Do Intersection" << std::endl;
 
-    Ciphertext<DCRTPoly> interResCtxt;
+    ResponseServer interResCtxt;
 
     auto t1 = std::chrono::high_resolution_clock::now();
     if (interType == "CI") {        
@@ -158,10 +158,15 @@ void testFullProtocol(
     std::cout << "Intersection Done! Time Elapsed: " << timeSec << "s" << std::endl;
 
     std::cout << "Step 5: Receive Result" << std::endl;
-    auto ret = checkIntResult(bfv, interResCtxt);
+    auto ret = checkIntResult(bfv, interResCtxt.isInter);
+
+    size_t responseSize = ctxtSize(interResCtxt.isInter) + ctxtSize(interResCtxt.maskVal);
 
     std::cout << "Inter Result: " << ret << std::endl;
     std::cout << "OpenFHE Query Size: " << (double)(querySize) / 1000000 << "MB" << std::endl;
+    std::cout << "OpenFHE Response Size: " << (double)(responseSize) / 1000000 << "MB" << std::endl;
+
+    // Decrypted Value 
 }
 
 // Helper Functions for pack integers
@@ -609,6 +614,210 @@ void testRotAgg(int numParties) {
     std::vector<int64_t> retVec = bfv.decrypt(ret)->GetPackedValue();
     std::cout << "Output of first 20 Entries:" << std::endl;
     std::cout << std::vector<int64_t>(retVec.begin(), retVec.begin() + 20) << std::endl;
+}
+
+void testSanityCheck(int numParties) {
+    std::cout << "<< Test Code for Measuring Aggregation Cost" << std::endl;
+    HE bfv("BFV", 65537, 19);  
+    Ciphertext<DCRTPoly> _tmp, __tmp, ret;
+    Plaintext _ptxt;
+    std::vector<int64_t> msgVec(bfv.ringDim, 0);
+    msgVec[0] = 1;
+
+    // Prepare Dataset    
+    std::vector<Ciphertext<DCRTPoly>> ctVec(numParties);
+    // #pragma omp parallel for
+    for (int i = 0; i < numParties; i++) {        
+        _ptxt = bfv.packing(msgVec);
+        _tmp = bfv.encrypt(_ptxt);
+        __tmp = bfv.compress(_tmp, 3);
+        ctVec[i] = __tmp;
+    }
+
+    std::cout << "Yay!" << std::endl;
+
+    // Do Aggregation
+    auto t1 = std::chrono::high_resolution_clock::now();
+
+    auto t1agg = std::chrono::high_resolution_clock::now();
+    ret = bfv.addmany(ctVec);
+    size_t querySize = ctxtSize(ret);
+    auto t2agg = std::chrono::high_resolution_clock::now();
+    auto timeAgg = std::chrono::duration<double>(t2agg - t1agg).count();
+    std::cout << "Time for Aggregation: " << timeAgg << "s" << std::endl;
+
+    // Rot&Add
+    auto t1rot = std::chrono::high_resolution_clock::now();
+    for (int i = 1; i < bfv.ringDim; i*=2) {
+        _tmp = bfv.rotate(ret, i);
+        ret = bfv.add(ret, _tmp);
+    }
+    auto t2rot = std::chrono::high_resolution_clock::now();
+    auto timeRot = std::chrono::duration<double>(t2rot - t1rot).count();
+    std::cout << "Time for Rotation & Addition: " << timeRot << "s" << std::endl;
+
+    // Multiply a Random Number 
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int64_t>dist(1, bfv.prime-1);
+    int64_t rand = dist(gen);
+    std::vector<DCRTPoly>& cv = ret->GetElements();
+    for (uint32_t i = 0; i < cv.size(); i++) {
+        cv[i] = cv[i].Times(rand);
+    }
+    auto t2 = std::chrono::high_resolution_clock::now();
+    double timeSec = std::chrono::duration<double>(t2-t1).count();
+
+    // Expected Output
+    int64_t expOut = ((rand * numParties + (bfv.prime / 2)) % (bfv.prime)) - (bfv.prime / 2);
+
+    std::cout << "Done! Total Time Elapsed: " << timeSec << "s" << std::endl;
+    std::cout << "Size of Compressed Ctxt (MB): " << querySize / 1000000.0 << std::endl;
+    std::vector<int64_t> retVec = bfv.decrypt(ret)->GetPackedValue();
+    std::cout << "Output of first 20 Entries:" << std::endl;
+    std::cout << std::vector<int64_t>(retVec.begin(), retVec.begin() + 20) << std::endl;
+    std::cout << "RandVal:" << rand << std::endl;
+    std::cout << "Expected Output:" << expOut << std::endl;
+}
+
+void testAggCheck(int numParties) {
+    std::cout << "<< Test Code for Measuring New Aggregation Cost" << std::endl;
+    HE bfv("BFV", 65537, 19);  
+
+    std::vector<ResponseServer> responses(numParties);
+    std::vector<int64_t> msgVec(bfv.ringDim, 1);
+    Plaintext ptxt = bfv.packing(msgVec);
+    Ciphertext<DCRTPoly> isInter = bfv.encrypt(ptxt);
+    Ciphertext<DCRTPoly> maskVal = genRandCiphertext(bfv, NUM_RAND_MASKS);
+    isInter = bfv.compress(isInter, 3);
+    maskVal = bfv.compress(maskVal, 3);
+
+    std::cout << "Simulating Ciphertexts..." << std::endl;
+    // #pragma omp parallel for
+    for (int i = 0; i < numParties; i++) {
+        responses[i] = ResponseServer {isInter->Clone(), maskVal->Clone()};
+    }
+
+    // Run the Protocol
+    std::cout << "Running the Protocol..." << std::endl;
+    auto t1 = std::chrono::high_resolution_clock::now();
+    auto ret = compAggResponses(bfv, responses);
+    auto t2 = std::chrono::high_resolution_clock::now();
+    double tdiff = std::chrono::duration<double>(t2-t1).count();
+    std::cout << "Done! Total Time Elapsed: " << tdiff << "s" << std::endl;
+
+    Plaintext retVec = bfv.decrypt(ret);
+    std::vector<int64_t> retMsg = retVec->GetPackedValue();
+
+    std::cout << "16 Values: " << std::endl;
+    std::cout << std::vector<int64_t>(retMsg.begin(), retMsg.begin() + 16) << std::endl;
+    std::cout << "Expected Values: " << std::endl;
+
+    std::vector<int64_t> maskMsg = bfv.decrypt(maskVal)->GetPackedValue();
+    std::vector<int64_t> expMaskMsg(16);
+
+    for (int i = 0; i < 16; i++) {
+        expMaskMsg[i] = (((maskMsg[i] * numParties * numParties) % 65537 + 65537) % 65537 + 32768) % 65537 - 32768;
+    }
+
+    std::cout << expMaskMsg << std::endl;
+}
+
+void testVAFandAggCheck(int numParties) {
+    std::cout << "<< Test Code for Measuring New Aggregation Cost" << std::endl;
+    HE bfv("BFV", 65537, 19);  
+    std::cout << "Step 1-2: Setup Databases" << std::endl;
+
+    int64_t theAnswer;
+    bool allowIntersection = false;
+    if (allowIntersection) {
+        theAnswer = 42;
+    } else {
+        theAnswer = 2;
+    }
+
+    std::cout << "The answer client " << theAnswer << std::endl;
+    std::vector<uint32_t> clientMsg(4, theAnswer);
+
+    std::vector<std::vector<uint32_t>> serverMsg = genData(
+        (1<<15),    // numItem
+        4         // lenData; total size = lenData * 32
+    );  
+
+    // Inject Server's MSG
+    if (allowIntersection){
+        std::cout << "The answer server " << theAnswer << std::endl;
+        serverMsg[42] = std::vector<uint32_t>(4, theAnswer);
+    }
+
+    std::cout << "Step 1-3: Server Side Preprocessing" << std::endl;
+    EncryptedDB serverDB = constructEncDB(
+        bfv,
+        serverMsg,  // dataVec
+        1,    // numPack
+        3,          // alpha
+        1      // numAgg 
+    );
+
+    std::cout << "Step 2: Client Side Computation" << std::endl;
+    // Client Prepares and Encrypts the database
+    auto clientPrepMsg  = encodeDataClient(
+        clientMsg, bfv.prime
+    );
+
+    std::cout << "Step 3: Query Encryption" << std::endl;
+    auto queryCtxt = encryptQuery(bfv, clientPrepMsg);
+    // size_t querySize = ctxtSize(queryCtxt);
+
+    std::cout << "Step 4: Do Intersection" << std::endl;
+
+    ResponseServer interResCtxt;    
+
+    interResCtxt = compProbInterDB(
+        bfv, serverDB, queryCtxt
+    );
+
+    std::vector<int64_t> plainIsInter = bfv.decrypt(interResCtxt.isInter)->GetPackedValue();
+    std::vector<int64_t> plainMask = bfv.decrypt(interResCtxt.maskVal)->GetPackedValue();
+    std::cout << std::vector<int64_t>(plainIsInter.begin(), plainIsInter.begin() + 20) << std::endl;
+    std::cout << std::vector<int64_t>(plainMask.begin(), plainMask.begin() + 20) << std::endl;
+
+
+    std::vector<ResponseServer> responses(numParties);
+    Ciphertext<DCRTPoly> isInter = interResCtxt.isInter;
+    Ciphertext<DCRTPoly> maskVal = interResCtxt.maskVal;
+
+
+    std::cout << "Simulating Ciphertexts..." << std::endl;
+    // #pragma omp parallel for
+    for (int i = 0; i < numParties; i++) {
+        responses[i] = ResponseServer {isInter->Clone(), maskVal->Clone()};
+    }
+
+    // Run the Protocol
+    std::cout << "Running the Protocol..." << std::endl;
+    auto t1 = std::chrono::high_resolution_clock::now();
+    auto ret = compAggResponses(bfv, responses);
+    auto t2 = std::chrono::high_resolution_clock::now();
+    double tdiff = std::chrono::duration<double>(t2-t1).count();
+    std::cout << "Done! Total Time Elapsed: " << tdiff << "s" << std::endl;
+
+    Plaintext retVec = bfv.decrypt(ret);
+    std::vector<int64_t> retMsg = retVec->GetPackedValue();
+
+    std::cout << "16 Values: " << std::endl;
+    std::cout << std::vector<int64_t>(retMsg.begin(), retMsg.begin() + 16) << std::endl;
+    std::cout << "Expected Values: " << std::endl;
+
+    std::vector<int64_t> maskMsg = bfv.decrypt(maskVal)->GetPackedValue();
+    std::vector<int64_t> expMaskMsg(16);
+
+    for (int i = 0; i < 16; i++) {
+        expMaskMsg[i] = (((maskMsg[i] * numParties * numParties) % 65537 + 65537) % 65537 + 32768) % 65537 - 32768;
+        expMaskMsg[i] *= allowIntersection;
+    }
+
+    std::cout << expMaskMsg << std::endl;
 }
 
 

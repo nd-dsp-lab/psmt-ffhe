@@ -53,3 +53,19 @@ bool checkIntResult (
     }
     return 0;
 }
+
+
+bool checkIntResultFromAgg(
+    HE &bfv,
+    Ciphertext<DCRTPoly> resCtxt
+)  {
+    Plaintext ret = bfv.decrypt(resCtxt);
+    std::vector<int64_t> retVec =  ret->GetPackedValue();
+    bool flag = false;
+    for (uint32_t i = 0; i < NUM_RAND_MASKS; i++) {
+        if (retVec[i] != 0) {
+            return true;
+        }
+    }
+    return flag;
+}

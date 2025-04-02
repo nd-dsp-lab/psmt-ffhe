@@ -387,7 +387,7 @@ Ciphertext<DCRTPoly> compProbInterNoVAF (
 
 
 // Main Intersection Function 
-Ciphertext<DCRTPoly> compInterDB (
+ResponseServer compInterDB (
     HE &bfv,
     const EncryptedDB &DB,
     Ciphertext<DCRTPoly> queryCtxt
@@ -415,16 +415,24 @@ Ciphertext<DCRTPoly> compInterDB (
     Ciphertext<DCRTPoly> ret = bfv.addmany(chunkIntRes);
 
     // Final Masking
-    if (DB.numPack == 1) {
-        return ret;
-    } else {
+    if (DB.numPack > 1) {
         ret = bfv.mult(ret, DB.finalMask);
-        return ret;
-    }
+    }    
+
+    // Make a Random Masking Ciphertext
+    Ciphertext<DCRTPoly> maskVal = genRandCiphertext(bfv, NUM_RAND_MASKS);
+
+    ret = bfv.compress(ret, 3);
+    maskVal = bfv.compress(maskVal, 3);
+
+    // Summation over Slots
+    ret = sumOverSlots(bfv, ret);    
+
+    return ResponseServer { ret, maskVal };
 }
 
 // Main Intersection Function with Hybrid Aggregation
-Ciphertext<DCRTPoly> compInterDBHybrid (
+ResponseServer compInterDBHybrid (
     HE &bfv,
     const EncryptedDB &DB,
     Ciphertext<DCRTPoly> queryCtxt
@@ -486,16 +494,24 @@ Ciphertext<DCRTPoly> compInterDBHybrid (
     ret = bfv.addmany(retVec);
 
     // Final Masking
-    if (DB.numPack == 1) {
-        return ret;
-    } else {
+    if (DB.numPack > 1) {
         ret = bfv.mult(ret, DB.finalMask);
-        return ret;
-    }    
+    }
+
+    // Make a Random Masking Ciphertext
+    Ciphertext<DCRTPoly> maskVal = genRandCiphertext(bfv, NUM_RAND_MASKS);
+
+    ret = bfv.compress(ret, 3);
+    maskVal = bfv.compress(maskVal, 3);
+
+    // Summation over Slots
+    ret = sumOverSlots(bfv, ret);    
+
+    return ResponseServer { ret, maskVal };    
 }
 
 // Main Intersection Function 
-Ciphertext<DCRTPoly> compProbInterDB (
+ResponseServer compProbInterDB (
     HE &bfv,
     const EncryptedDB &DB,
     Ciphertext<DCRTPoly> queryCtxt
@@ -524,16 +540,24 @@ Ciphertext<DCRTPoly> compProbInterDB (
     Ciphertext<DCRTPoly> ret = bfv.addmany(chunkIntRes);
 
     // Final Masking
-    if (DB.numPack == 1) {
-        return ret;
-    } else {
+    if (DB.numPack > 1) {
         ret = bfv.mult(ret, DB.finalMask);
-        return ret;
     }
+
+    // Make a Random Masking Ciphertext
+    Ciphertext<DCRTPoly> maskVal = genRandCiphertext(bfv, NUM_RAND_MASKS);
+
+    ret = bfv.compress(ret, 3);
+    maskVal = bfv.compress(maskVal, 3);
+
+    // Summation over Slots
+    ret = sumOverSlots(bfv, ret);
+
+    return ResponseServer { ret, maskVal };  
 }
 
 // Main Intersection Function with Prob & Hybrid Aggregation
-Ciphertext<DCRTPoly> compProbInterDBHybrid (
+ResponseServer compProbInterDBHybrid (
     HE &bfv,
     const EncryptedDB &DB,
     Ciphertext<DCRTPoly> queryCtxt
@@ -594,10 +618,44 @@ Ciphertext<DCRTPoly> compProbInterDBHybrid (
     ret = bfv.addmany(retVec);
 
     // Final Masking
-    if (DB.numPack == 1) {
-        return ret;
-    } else {
+    if (DB.numPack > 1) {
         ret = bfv.mult(ret, DB.finalMask);
-        return ret;
-    }    
+    }
+
+    // Make a Random Masking Ciphertext
+    Ciphertext<DCRTPoly> maskVal = genRandCiphertext(bfv, NUM_RAND_MASKS);
+
+    ret = bfv.compress(ret, 3);
+    maskVal = bfv.compress(maskVal, 3);
+
+    // Summation over Slots
+    ret = sumOverSlots(bfv, ret);
+
+    return ResponseServer { ret, maskVal };  
+}
+
+
+// Operation by the leader sender
+Ciphertext<DCRTPoly> compAggResponses(
+    HE &bfv,
+    std::vector<ResponseServer> responses
+) {
+    uint32_t numServers = responses.size();
+
+    std::vector<Ciphertext<DCRTPoly>> isInters(numServers);
+    std::vector<Ciphertext<DCRTPoly>> maskVals(numServers);
+
+    // Read Responeses 
+    #pragma omp parallel for
+    for (uint32_t i = 0; i < numServers; i++) {
+        isInters[i] = responses[i].isInter;
+        maskVals[i] = responses[i].maskVal;
+    }
+
+    // Additive Aggregation
+    Ciphertext<DCRTPoly> isInter = bfv.addmany(isInters);
+    Ciphertext<DCRTPoly> maskVal = bfv.addmany(maskVals);
+
+    // Final Multiplication
+    return bfv.mult(isInter, maskVal);
 }
