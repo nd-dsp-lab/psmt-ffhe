@@ -13,7 +13,9 @@ public:
     // Constructor for BFV or BGV mode, but default here is BFV.
     HE(const std::string& mode    = "BFV",
        int64_t          modulus = 65537,
-       int32_t          depth   = 20) 
+       int32_t          depth   = 20,
+       int32_t          numParties = 1024
+    ) 
     {
         if (mode == "BFV") {
             CCParams<CryptoContextBFVRNS> parameters;
@@ -21,12 +23,16 @@ public:
             parameters.SetMultiplicativeDepth(depth);
             // This is for the noise flooding; 128-bit noise is added to the final ciphertext.
             parameters.SetMultipartyMode(NOISE_FLOODING_MULTIPARTY);
+            parameters.SetThresholdNumOfParties(numParties/2);
             std::cout  << "Parameters: " << parameters << std::endl;
             cc = GenCryptoContext(parameters);
         } else if (mode == "BGV") {
             CCParams<CryptoContextBGVRNS> parameters;
             parameters.SetPlaintextModulus(modulus);
             parameters.SetMultiplicativeDepth(depth);
+            parameters.SetMultipartyMode(NOISE_FLOODING_MULTIPARTY);
+            parameters.SetThresholdNumOfParties(numParties/2);            
+            parameters.SetScalingTechnique(FIXEDMANUAL);
             std::cout  << "Parameters: " << parameters << std::endl;
             cc = GenCryptoContext(parameters);
         } else {
@@ -37,10 +43,11 @@ public:
         cc->Enable(KEYSWITCH);
         cc->Enable(LEVELEDSHE);
         cc->Enable(ADVANCEDSHE);
+        cc->Enable(MULTIPARTY);
 
         keyPair = cc->KeyGen();
         cc->EvalMultKeyGen(keyPair.secretKey);
-        cc->EvalRotateKeyGen(keyPair.secretKey, {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384});
+        cc->EvalRotateKeyGen(keyPair.secretKey, {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768});
 
 
         // Print some approximate stats (optional)
@@ -86,6 +93,11 @@ public:
                              const Ciphertext<DCRTPoly>& b) {
         return cc->EvalAdd(a, b);
     }
+
+    Ciphertext<DCRTPoly> add(const Plaintext& a,
+                             const Ciphertext<DCRTPoly>& b) {
+    return cc->EvalAdd(a, b);
+    }    
 
     Ciphertext<DCRTPoly> sub(const Ciphertext<DCRTPoly>& a,
                              const Ciphertext<DCRTPoly>& b) {
